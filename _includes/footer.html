@@ -1,0 +1,26 @@
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="row" id="footer-body">
+            <div id="recent-posts-4" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 widget_recent_entries">		
+                <h3 class="widget-head">Últimos Posts</h3>		
+                <ul>
+                    {% for post in site.posts limit: 5 %}
+                    <li>
+                        <a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
+                        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>		
+            <div id="bl_socialbox-2" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 bl_socialbox">  		
+                <h3 class="widget-head">Também estou aqui</h3>    	
+                <div class="widget-body">
+                    <ul class="clearfix">
+                        <li><a target="_blank" data-title="Twitter" class="tips bl_icon_twitter" href="http://twitter.com/robissonmkt" data-original-title="" title=""><i class="icon-twitter-1"></i></a></li>	    	<li><a target="_blank" data-title="Google+" class="tips bl_icon_googleplus" href="http://plus.google.com/u/0/117980664349921702077" data-original-title="" title=""><i class="icon-gplus-1"></i></a></li>	    	<li><a target="_blank" data-title="Linkedin" class="tips bl_icon_linkedin" href="http://br.linkedin.com/pub/robisson-cardoso-de-oliveira/38/267/494" data-original-title="" title=""><i class="icon-linkedin-1"></i></a></li>	    		    		    		    		    		    		    		    		    	    		</ul>
+                </div>
+            </div>			
+        </div>
+    </div><!-- .site-info -->
+    <div class="row-fluid" id="footer-bottom">
+        Copyright © 2016 ·		</div>	
+</footer>

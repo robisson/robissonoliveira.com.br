@@ -1,0 +1,127 @@
+---
+layout: default
+---
+
+<div id="primary" class="row layout_right_side">
+
+    <div id="content" class="col-lg-8 col-md-8 col-sm-12 col-xs-12" role="main">
+        {% for post in site.posts limit:1 %}
+        <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
+
+            <div class="entry-image" style="min-height: 250px;background-color: #85A9B3;position: relative;">
+                <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}" rel="bookmark">
+                    <img data-src="{{ post.image_cover }}" alt="Protótipos em papel" class="hide images-lazy">
+                    <div class="loader" id="loader">
+                        <svg viewBox="0 0 32 32" width="32" height="32">
+                        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="entry-container">
+                <div class="post-format-badge post-format-badge-icons post-format-standard">
+                    <i class="icon-picture-1"></i>
+                </div>
+
+                <div class="entry-content">
+                    <h1 class="entry-title"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h1>
+                    <div class="post-meta">
+                        <ul>
+                            <li><i class="icon-clock-1"></i> <time class="entry-date" datetime="2016-07-21T18:02:07+00:00">{{ post.date | date: "%b %-d, %Y" }}</time></li>
+                            <li><i class="icon-folder-1"></i> <a href="https://www.robissonoliveira.com.br/category/desenvolvimento-de-software" title="View all posts in Desenvolvimento de Software">{{post.category}}</a> </li>	
+                            <li><i class="icon-comment-1"></i> <a class="comment_count" data-post="870" href="https://www.robissonoliveira.com.br/desenvolvimento-de-software/prototipacao-de-software#disqus_thread" data-disqus-identifier="870 http://www.robissonoliveira.com.br/?p=870">0 Comments</a></li></ul>
+                    </div>
+                    <p><span style="font-weight: 400;">{{ post.excerpt }}</span></p>
+                    <p>&nbsp;</p>
+                    <p> <a href="{{ post.url | prepend: site.baseurl }}" class="more-link">Continue lendo…</a></p>
+                </div><!-- .entry-content -->
+            </div><!-- .entry-container -->
+            <footer class="entry-meta clearfix">
+                <div class="up_arrow"></div>
+                <div class="pull-left author-meta">
+                    <h4>
+                        <img alt="" data-src="https://secure.gravatar.com/avatar/58b1b3a5309687576682f8bb0aaabded?s=55&amp;d=mm&amp;r=g" class="avatar avatar-55 photo hide images-lazy" height="55" width="55">
+                        <a href="/author/robisson">Robisson Oliveira</a>
+                    </h4>
+                </div>
+                <div class="pull-right share-story-container">
+                    <small class="muted pull-left">Compartilhe</small>
+                    <ul class="share-story">
+                        <li><a class="tips" data-title="Facebook" href="javascript:void(0);" onclick="social_share( & #39; http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.robissonoliveira.com.br%2Fdesenvolvimento-de-software%2Fprototipacao-de-software&amp;t=Como+a+prototipa%C3%A7%C3%A3o+deixou+minha+equipe+mais+%C3%A1gil+para+desenvolver+software&#39;);" data-original-title="" title=""><i class="icon-facebook-1"></i></a></li>				<li><a class="tips" data-title="Google+" href="javascript:void(0);" onclick="social_share( & #39; https://plus.google.com/share?url=https%3A%2F%2Fwww.robissonoliveira.com.br%2Fdesenvolvimento-de-software%2Fprototipacao-de-software&#39;);" data-original-title="" title=""><i class="icon-gplus-1"></i></a></li>				<li><a class="tips" data-title="Twitter" href="javascript:void(0);" onclick="social_share( & #39; http://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.robissonoliveira.com.br%2Fdesenvolvimento-de-software%2Fprototipacao-de-software&#39;);" data-original-title="" title=""><i class="icon-twitter-1"></i></a></li>								<li><a class="tips" data-title="Linkedin" href="javascript:void(0);" onclick="social_share( & #39; http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.robissonoliveira.com.br%2Fdesenvolvimento-de-software%2Fprototipacao-de-software&amp;title=Como+a+prototipa%C3%A7%C3%A3o+deixou+minha+equipe+mais+%C3%A1gil+para+desenvolver+software&#39;);" data-original-title="" title=""><i class="icon-linkedin-1"></i></a></li>								<li><a class="tips" data-title="Email" href="javascript:void(0);" onclick="social_share( & #39; mailto:?subject = Como + a + prototipa % C3 % A7 % C3 % A3o + deixou + minha + equipe + mais + % C3 % A1gil + para + desenvolver + software & amp; body = https % 3A % 2F % 2Fwww.robissonoliveira.com.br % 2Fdesenvolvimento - de - software % 2Fprototipacao - de - software & #39; );" data-original-title="" title=""><i class="icon-mail-1"></i></a></li>			
+                    </ul>
+                </div>
+                <div class="post-footer-like">
+
+                </div>	
+            </footer><!-- .entry-meta -->
+        </article><!-- #post-870 -->
+        {% endfor %}
+        <div class="pagination">
+            <span class="current box">1</span>
+            <a href="https://www.robissonoliveira.com.br/page/2" class="inactive box">2</a>
+            <a href="https://www.robissonoliveira.com.br/page/2">Next Page <i class="icon-right-open"></i></a>
+        </div>
+    </div>
+    <aside id="side-bar" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div id="bl_author-2" class="box bl_author">
+            <h3 class="widget-head">Sobre mim</h3>
+            <div class="widget-body">
+                <div class="bl_author_img">
+                    <img data-src="/wp-content/uploads/2016/07/perfil.jpg" class="hide images-lazy">
+                </div>
+                <div class="bl_author_bio"><h3>Robisson Oliveira</h3>
+                    <p class="muted">
+                        Trabalho na Guarida Imóveis gerenciando projetos de desenvolvimento de software , 
+                        nas horas vagas escrevo aqui sobre internet marketing, liderança e claro 
+                        desenvolvimento de software.<br> Quer saber mais ? é por 
+                        <a href="/sobre-mim">aqui</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="bl_socialbox-3" class="box bl_socialbox">  		
+            <h3 class="widget-head">Também estou aqui</h3>    	<div class="widget-body">
+                <ul class="clearfix">
+                    <li><a target="_blank" data-title="Twitter" class="tips bl_icon_twitter" href="http://twitter.com/robissonmkt" data-original-title="" title=""><i class="icon-twitter-1"></i></a></li>
+                    <li><a target="_blank" data-title="Google+" class="tips bl_icon_googleplus" href="http://plus.google.com/u/0/117980664349921702077" data-original-title="" title=""><i class="icon-gplus-1"></i></a></li>
+                    <li><a target="_blank" data-title="Linkedin" class="tips bl_icon_linkedin" href="http://br.linkedin.com/pub/robisson-cardoso-de-oliveira/38/267/494" data-original-title="" title=""><i class="icon-linkedin-1"></i></a></li>
+                    <li><a target="_blank" data-title="Rss" class="tips bl_icon_rss" href="http://www.robissonoliveira.com.br/feed" data-original-title="" title=""><i class="icon-rss-1"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="categories-2" class="box widget_categories">
+            <h3 class="widget-head">Categorias</h3>		
+            <ul>
+                {% for category in site.categories order:ascending %}
+                <li class="cat-item cat-item-17">
+                    <a href="{{ category | first | slugify}}">{{ category | first | capitalize}}</a> 
+                    <span class="badge">{{ site.categories[category].size }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="bl_tabs-2" class="box bl_tabs">    <h3 class="widget-head">Últimos Posts</h3>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="bl_side_posts">
+                    <ul>
+
+                        {% for post in site.posts limit:5  %}
+
+                        <li style="right: 0px;">
+                            <a class="tab_attachment " href="{{ post.url | prepend: site.baseurl }}">
+                                <img data-src="{{post.image_thumb_60}}" alt="{{post.title}}">  
+                            </a>
+                            <div class="tab_text">
+                                <a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
+                            </div>					        
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>		
+    </aside>
+
+</div>
