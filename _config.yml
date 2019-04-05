@@ -3,7 +3,3 @@ name: Robisson Oliveira
 description: >
   Desenvolvimento de software, internet
   marketing e gerenciamento de projetos
-  
-sass:
-  sass_dir: _sass
-  style: compressed

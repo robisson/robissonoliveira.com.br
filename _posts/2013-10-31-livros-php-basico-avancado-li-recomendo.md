@@ -30,6 +30,8 @@ WSS_DATA:
   - 's:141:"a:7:{s:6:"google";i:26;s:8:"facebook";i:22;s:11:"stumbleupon";i:0;s:7:"twitter";i:0;s:8:"linkedin";i:1;s:9:"pinterest";i:0;s:5:"total";i:49;}";'
 dsq_thread_id:
   - 4911109774
+dsq_needs_sync:
+  - 1
 categories:
   - backend
 format: image
@@ -158,7 +160,7 @@ Este livro não fala sobre como programar de uma forma ou de outra ou qual algor
 
 &nbsp;
 
-[<img class="alignleft wp-image-247 size-full" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/10/The-Definitive-Guide-to-Apache-mod_rewrite.png" alt="The Definitive Guide to Apache mod_rewrite" width="121" height="121" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/10/The-Definitive-Guide-to-Apache-mod_rewrite.png 121w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/10/The-Definitive-Guide-to-Apache-mod_rewrite-60x60.png 60w" sizes="(max-width: 121px) 100vw, 121px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/10/The-Definitive-Guide-to-Apache-mod_rewrite.png){.lightbox}
+[<img class="alignleft wp-image-247 size-full" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/10/The-Definitive-Guide-to-Apache-mod_rewrite.png" alt="The Definitive Guide to Apache mod_rewrite" width="121" height="121" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/10/The-Definitive-Guide-to-Apache-mod_rewrite.png){.lightbox}
 
 **The Definitive Guide to Apache mod_rewrite &#8211;  Rich Bowen**
 

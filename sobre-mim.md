@@ -27,8 +27,14 @@ WSS_DATA:
   - 's:138:"a:7:{s:6:"google";i:0;s:8:"facebook";i:0;s:11:"stumbleupon";i:0;s:7:"twitter";i:0;s:8:"linkedin";i:0;s:9:"pinterest";i:0;s:5:"total";i:0;}";'
 dsq_thread_id:
   - 4911109803
+dsq_needs_sync:
+  - 1
 ---
-[<img class="wp-image-897 size-medium alignright" src="https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil-300x300.jpg" alt="Robisson Oliveira" width="300" height="300" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil-300x300.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil-150x150.jpg 150w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil-768x768.jpg 768w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil-1024x1024.jpg 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil-60x60.jpg 60w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil.jpg){.lightbox}Trabalho no mercado de tecnologia da informação a mais de 6 anos, já atuei como Analista de Infraestrutura focado em redes Linux e Cisco e também como Analista de Desenvolvimento ,  programando principalmente com PHP e Postgrees . Atualmente sou gestor de TI na Guarida Imóveis gerenciando projetos de desenvolvimento de software para WEB, dispositivos móveis e Internet Marketing. Nas horas vagas vou compartilhar informações do dia a dia e espero que possa aprimorar o que sei e ajudar quem for possível.
+[<img class="wp-image-897 size-medium alignright" src="https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil-300x300.jpg" alt="Robisson Oliveira" width="300" height="300" />](https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/perfil.jpg){.lightbox}Trabalho no mercado de tecnologia da informação a mais de 10 anos, já atuei como Analista de Infraestrutura senior focado em redes Linux e Cisco e também como Analista de Desenvolvimento senior,  programando principalmente com PHP e Postgrees . Atualmente sou responsável pela área de desenvolvimento de software na Guarida Imóveis onde desenvolvemos produtos e serviços digitais para o mercado Imobiliário para a web e dispositivos móveis.
+
+Atualmente tenho focado bastante em como desenvolver times de alta performance através de um trabalho com propósito e melhoria contínua. O que mais tem me influenciado de 2016 em diante são conhecimentos sobre Lean, Kanban, UX, modelos de inovação e inteligência artificial.
+
+Nas horas vagas vou compartilhar informações do dia a dia e espero que possa aprimorar o que sei e ajudar quem for possível.
 
 Tenho forte hábito de leitura, então segue algumas referências sobre livros que já li e recomendo.
 

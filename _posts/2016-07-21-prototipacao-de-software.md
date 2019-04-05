@@ -4,9 +4,6 @@ title: Como a prototipação deixou minha equipe mais ágil para desenvolver sof
 date: 2016-07-21T18:02:07+00:00
 author: Robisson Oliveira
 layout: post
-category: Desenvolvimento de Software
-image_cover: /wp-content/uploads/2016/07/263209030_640.jpg
-image_thumb_60: /wp-content/uploads/2016/07/263209030_640-60x60.jpg
 guid: http://www.robissonoliveira.com.br/?p=870
 permalink: /desenvolvimento-de-software/prototipacao-de-software
 bluth_post_layout:
@@ -17,6 +14,8 @@ bluth_twitter_status:
   - 
 dsq_thread_id:
   - 5004093273
+dsq_needs_sync:
+  - 1
 categories:
   - Desenvolvimento de Software
 ---
@@ -26,6 +25,7 @@ categories:
 
 <!--more-->
 
+## 
 
 ## <span style="color: #339966;"><b>O dilema da comunicação</b></span>
 
@@ -106,7 +106,7 @@ categories:
 <span style="font-weight: 400;">Abaixo segue um exemplo para mostrar o quanto é simples:</span>
 
 <div id="attachment_872" style="width: 179px" class="wp-caption aligncenter">
-  <a class="lightbox" href="http://www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3.jpg"><img class="wp-image-872 size-medium" title="Prototipação de software em papel" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3-169x300.jpg" alt="Prototipação de software em papel" width="169" height="300" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3-169x300.jpg 169w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3-768x1365.jpg 768w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3-576x1024.jpg 576w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3.jpg 1152w" sizes="(max-width: 169px) 100vw, 169px" /></a>
+  <a class="lightbox" href="http://www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3.jpg"><img class="wp-image-872 size-medium" title="Prototipação de software em papel" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/07/5446929020346106145-account_id3-169x300.jpg" alt="Prototipação de software em papel" width="169" height="300" /></a>
   
   <p class="wp-caption-text">
     Exemplo de software protipado com papel e caneta

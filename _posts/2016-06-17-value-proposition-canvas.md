@@ -14,6 +14,8 @@ bluth_twitter_status:
   - 
 dsq_thread_id:
   - 4911119192
+dsq_needs_sync:
+  - 1
 categories:
   - Modelos de inovação
 format: image
@@ -70,7 +72,7 @@ format: image
 
 <span style="font-weight: 400;">Então vamos começar pela ferramenta, o Value Proposition Canvas. É formado por dois lados, o </span>**Perfil do Cliente** <span style="font-weight: 400;">e o </span>**Mapa do valor**<span style="font-weight: 400;">, uma vez que os dois sejam mapeados é feito o </span>**encaixe** <span style="font-weight: 400;">entre eles. que é quando um atende ao outro. E então temos um perfil de cliente recebendo a proposta de valor ideal, pelo menos essa é a intenção.</span>
 
-[<img class="aligncenter wp-image-787" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/value-proposition-canvas-300x142.jpg" alt="value-proposition-canvas" width="500" height="236" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/value-proposition-canvas-300x142.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/value-proposition-canvas-768x362.jpg 768w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/value-proposition-canvas.jpg 918w" sizes="(max-width: 500px) 100vw, 500px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/value-proposition-canvas.jpg){.lightbox}
+[<img class="aligncenter wp-image-787" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/value-proposition-canvas-300x142.jpg" alt="value-proposition-canvas" width="500" height="236" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/value-proposition-canvas.jpg){.lightbox}
 
 <p style="text-align: center;">
   <em>Value Proposition Canvas, apresentado no livro <a href="https://strategyzer.com/books/value-proposition-design">Value Proposition Design</a></em>
@@ -88,7 +90,7 @@ format: image
 
 ### **Perfil do cliente**
 
-[<img class="aligncenter wp-image-814 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/perfil-do-cliente-300x272.jpg" alt="perfil-do-cliente" width="300" height="272" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/perfil-do-cliente-300x272.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/perfil-do-cliente.jpg 548w" sizes="(max-width: 300px) 100vw, 300px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/perfil-do-cliente.jpg){.lightbox}
+[<img class="aligncenter wp-image-814 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/perfil-do-cliente-300x272.jpg" alt="perfil-do-cliente" width="300" height="272" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/perfil-do-cliente.jpg){.lightbox}
 
 ### <span style="font-weight: 400;">O perfil do cliente é formado por três partes: tarefas, dores e ganhos.  E cada uma dessas partes possui um grau de priorização.</span>
 
@@ -96,7 +98,7 @@ format: image
 
 #### **Tarefas do cliente**
 
-[<img class="aligncenter wp-image-816 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/tarefas-do-cliente-272x300.jpg" alt="tarefas-do-cliente" width="272" height="300" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/tarefas-do-cliente-272x300.jpg 272w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/tarefas-do-cliente.jpg 348w" sizes="(max-width: 272px) 100vw, 272px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/tarefas-do-cliente.jpg){.lightbox}
+[<img class="aligncenter wp-image-816 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/tarefas-do-cliente-272x300.jpg" alt="tarefas-do-cliente" width="272" height="300" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/tarefas-do-cliente.jpg){.lightbox}
 
 <span style="font-weight: 400;">As tarefas do cliente descrevem algo que ele deseja fazer, realizar ou satisfazer. Uma tarefa do cliente poderia ser, puxando para o mercado que eu trabalho, “alugar uma casa”. Para nos ajudar a definir as tarefas do cliente, a ferramenta divide as mesmas em três tipos principais: funcionais, sociais e pessoais/emocionais.</span>
 
@@ -112,7 +114,7 @@ format: image
 
 #### **Dores do cliente**
 
-[<img class="aligncenter wp-image-809 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/dores-do-cliente-300x193.jpg" alt="dores-do-cliente" width="300" height="193" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/dores-do-cliente-300x193.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/dores-do-cliente.jpg 468w" sizes="(max-width: 300px) 100vw, 300px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/dores-do-cliente.jpg){.lightbox}
+[<img class="aligncenter wp-image-809 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/dores-do-cliente-300x193.jpg" alt="dores-do-cliente" width="300" height="193" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/dores-do-cliente.jpg){.lightbox}
 
 <span style="font-weight: 400;">As dores do cliente descrevem os obstáculos, problemas, riscos ou inconvenientes que o cliente passou antes ou depois de realizar as tarefas. No exemplo da casa para alugar, a dor poderia ser encontrar a casa ideal ou encontrar uma casa com um valor que caiba no seu orçamento.</span>
 
@@ -124,7 +126,7 @@ format: image
 
 #### **Ganhos do cliente**
 
-[<img class="aligncenter wp-image-810 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/ganhos-do-cliente-300x185.jpg" alt="ganhos-do-cliente" width="300" height="185" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/ganhos-do-cliente-300x185.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/ganhos-do-cliente.jpg 468w" sizes="(max-width: 300px) 100vw, 300px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/ganhos-do-cliente.jpg){.lightbox}
+[<img class="aligncenter wp-image-810 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/ganhos-do-cliente-300x185.jpg" alt="ganhos-do-cliente" width="300" height="185" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/ganhos-do-cliente.jpg){.lightbox}
 
 <span style="font-weight: 400;">Os ganhos</span> <span style="font-weight: 400;">do cliente descrevem o que o cliente ganha quando realiza uma tarefa. Eles podem ser divididos em necessários, esperados, desejados ou inesperados.</span>
 
@@ -142,7 +144,7 @@ format: image
 
 ### **Mapa do valor**
 
-[<img class="aligncenter wp-image-811 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-300x279.jpg" alt="mapa-do-valor" width="300" height="279" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-300x279.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor.jpg 537w" sizes="(max-width: 300px) 100vw, 300px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor.jpg){.lightbox}
+[<img class="aligncenter wp-image-811 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-300x279.jpg" alt="mapa-do-valor" width="300" height="279" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor.jpg){.lightbox}
 
 <span style="font-weight: 400;">O mapa do valor descreve como você cria valor para o seu cliente. É divido em três partes: produtos e serviços; analgésicos e ganhos criados.</span>
 
@@ -150,7 +152,7 @@ format: image
 
 #### **Produtos e serviços**
 
-[<img class="aligncenter wp-image-815 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/produtos-servicos-188x300.jpg" alt="produtos-servicos" width="188" height="300" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/produtos-servicos-188x300.jpg 188w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/produtos-servicos.jpg 314w" sizes="(max-width: 188px) 100vw, 188px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/produtos-servicos.jpg){.lightbox}
+[<img class="aligncenter wp-image-815 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/produtos-servicos-188x300.jpg" alt="produtos-servicos" width="188" height="300" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/produtos-servicos.jpg){.lightbox}
 
 <span style="font-weight: 400;">É uma lista de itens que você tem a oferecer. Como você ajuda os clientes a executarem suas tarefas funcionais, sociais e emocionais. Os produtos e serviços podem ser bens produzidos, ou seja, produtos tangíveis. Podem ser intangíveis, digitais ou financeiros. No nosso exemplo do cliente que quer alugar uma casa, nossos produtos e serviços poderiam ser “uma carteira ampla de imóveis” ou “equipe de corretores especializados”.</span>
 
@@ -160,7 +162,7 @@ format: image
 
 #### **Analgésicos**
 
-[<img class="aligncenter wp-image-812 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-analgesicos-300x176.jpg" alt="mapa-do-valor-analgesicos" width="300" height="176" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-analgesicos-300x176.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-analgesicos.jpg 516w" sizes="(max-width: 300px) 100vw, 300px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-analgesicos.jpg){.lightbox}
+[<img class="aligncenter wp-image-812 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-analgesicos-300x176.jpg" alt="mapa-do-valor-analgesicos" width="300" height="176" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-analgesicos.jpg){.lightbox}
 
 <span style="font-weight: 400;">Os analgésicos descrevem como você elimina ou diminui as dores do cliente. De que forma você soluciona as dificuldades ou obstáculos antes ou depois das tarefas. Elas representam o “como” sua proposta de valor atua. No nosso exemplo da casa para alugar, poderia ser “economiza tempo e dinheiro na descoberta de um imóvel”.</span>
 
@@ -170,7 +172,7 @@ format: image
 
 #### **Criadores de ganho**
 
-[<img class="aligncenter wp-image-813 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-ganhos-criados-300x169.jpg" alt="mapa-do-valor-ganhos-criados" width="300" height="169" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-ganhos-criados-300x169.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-ganhos-criados.jpg 516w" sizes="(max-width: 300px) 100vw, 300px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-ganhos-criados.jpg){.lightbox}
+[<img class="aligncenter wp-image-813 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-ganhos-criados-300x169.jpg" alt="mapa-do-valor-ganhos-criados" width="300" height="169" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/mapa-do-valor-ganhos-criados.jpg){.lightbox}
 
 <span style="font-weight: 400;">Os criadores de ganho descrevem explicitamente como seus produtos e serviços geram os ganhos esperados ou inesperados para o cliente. Pode ser que a teoria dos ganhos criados e os analgésicos pareçam a mesma aqui. Mas os analgésicos referem-se as dores do cliente e os ganhos criados referem-se as ganhos do cliente. É mais uma forma de expor visualmente como seus produtos e serviços estão alinhados e criando valor para o perfil do cliente.</span>
 
@@ -178,7 +180,7 @@ format: image
 
 #### **Encaixe**
 
-[<img class="aligncenter wp-image-818" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/fit-value-proposition-canvas.jpg" alt="fit-value-proposition-canvas" width="500" height="232" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/fit-value-proposition-canvas.jpg 940w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/fit-value-proposition-canvas-300x139.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/fit-value-proposition-canvas-768x356.jpg 768w" sizes="(max-width: 500px) 100vw, 500px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/fit-value-proposition-canvas.jpg){.lightbox}
+[<img class="aligncenter wp-image-818" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/fit-value-proposition-canvas.jpg" alt="fit-value-proposition-canvas" width="500" height="232" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/fit-value-proposition-canvas.jpg){.lightbox}
 
 <span style="font-weight: 400;">Depois que você entendeu seu cliente e sua proposta de valor, vem o encaixe entre elas. O encaixe acontece quando seus produtos e serviços contemplam as tarefas mais importantes, curam as dores mais agudas e geram os ganhos necessários para os clientes.</span>
 
@@ -214,11 +216,11 @@ format: image
 
 <span style="font-weight: 400;">Se estamos projetando nossa proposta de valor começando pela tecnologia ou inovação estamos </span>**impulsionando**<span style="font-weight: 400;">. Um exemplo seria uma invenção tecnológica onde podemos identificar que essa tecnologia pode ser a solução para um problema. Sendo ainda mais direto, podemos dizer que este caso é um problema em busca de uma solução.</span>
 
-[<img class="aligncenter wp-image-822" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/impulso-tecnologia-em-inovacao-300x200.jpg" alt="impulso-tecnologia-em-inovacao" width="500" height="333" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/impulso-tecnologia-em-inovacao-300x200.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/impulso-tecnologia-em-inovacao.jpg 687w" sizes="(max-width: 500px) 100vw, 500px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/impulso-tecnologia-em-inovacao.jpg){.lightbox}
+[<img class="aligncenter wp-image-822" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/impulso-tecnologia-em-inovacao-300x200.jpg" alt="impulso-tecnologia-em-inovacao" width="500" height="333" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/impulso-tecnologia-em-inovacao.jpg){.lightbox}
 
 <span style="font-weight: 400;">Começando pela perspectiva do cliente, ou seja, conhecendo-o para mapear suas tarefas, dores e ganhos, estamos </span>**puxando**<span style="font-weight: 400;">, ou seja, identificamos um problema não resolvido em busca de uma solução.</span>
 
-[<img class="aligncenter wp-image-823" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/puxando-pelo-mercado-inovacao.jpg" alt="puxando-pelo-mercado-inovacao" width="500" height="333" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/puxando-pelo-mercado-inovacao.jpg 687w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/puxando-pelo-mercado-inovacao-300x200.jpg 300w" sizes="(max-width: 500px) 100vw, 500px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/puxando-pelo-mercado-inovacao.jpg){.lightbox}
+[<img class="aligncenter wp-image-823" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/puxando-pelo-mercado-inovacao.jpg" alt="puxando-pelo-mercado-inovacao" width="500" height="333" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/puxando-pelo-mercado-inovacao.jpg){.lightbox}
 
 &nbsp;
 
@@ -292,7 +294,7 @@ format: image
 
 ### **Encontrando o modelo de negócio ideal**
 
-[<img class="aligncenter size-full wp-image-826" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/businnes-canvas-e-proporistion-canvas.jpg" alt="businnes-canvas-e-proporistion-canvas" width="312" height="380" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/businnes-canvas-e-proporistion-canvas.jpg 312w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/businnes-canvas-e-proporistion-canvas-246x300.jpg 246w" sizes="(max-width: 312px) 100vw, 312px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/businnes-canvas-e-proporistion-canvas.jpg){.lightbox}
+[<img class="aligncenter size-full wp-image-826" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/businnes-canvas-e-proporistion-canvas.jpg" alt="businnes-canvas-e-proporistion-canvas" width="312" height="380" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/businnes-canvas-e-proporistion-canvas.jpg){.lightbox}
 
 <span style="font-weight: 400;">Um modelo de negócio define a forma como você captura, entrega e gera valor para uma organização. </span>
 
@@ -384,7 +386,7 @@ format: image
 
 <span style="font-weight: 400;">Com base nisso você </span>**extrai suas hipóteses** <span style="font-weight: 400;">e as </span>**prioriza** <span style="font-weight: 400;">em grau de importância. Depois monte testes para validá-las usando o </span>**cartão de teste**<span style="font-weight: 400;">, então </span>**priorize seus testes,** <span style="font-weight: 400;">coloque-os para </span>**rodar** <span style="font-weight: 400;">e capture os resultados dos testes para aprender com o </span>**cartão do aprendizado** <span style="font-weight: 400;">e validar, invalidar ou testar novamente a hipótese.</span>
 
-[<img class="aligncenter wp-image-830" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/test-card-learning-card-innovation.jpg" alt="test-card-learning-card-innovation" width="500" height="352" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/test-card-learning-card-innovation.jpg 794w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/test-card-learning-card-innovation-300x211.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/test-card-learning-card-innovation-768x541.jpg 768w" sizes="(max-width: 500px) 100vw, 500px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/test-card-learning-card-innovation.jpg){.lightbox}
+[<img class="aligncenter wp-image-830" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/test-card-learning-card-innovation.jpg" alt="test-card-learning-card-innovation" width="500" height="352" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/test-card-learning-card-innovation.jpg){.lightbox}
 
 &nbsp;
 
@@ -392,7 +394,7 @@ format: image
 
 <span style="font-weight: 400;">Coloco abaixo uma imagem do ciclo completo de teste:</span>
 
-[<img class="aligncenter size-large wp-image-833" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/process-test-value-proposition-design-1024x207.jpg" alt="process-test-value-proposition-design" width="740" height="150" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/process-test-value-proposition-design-1024x207.jpg 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/process-test-value-proposition-design-300x61.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/process-test-value-proposition-design-768x156.jpg 768w" sizes="(max-width: 740px) 100vw, 740px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/process-test-value-proposition-design.jpg){.lightbox}
+[<img class="aligncenter size-large wp-image-833" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/process-test-value-proposition-design-1024x207.jpg" alt="process-test-value-proposition-design" width="740" height="150" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/process-test-value-proposition-design.jpg){.lightbox}
 
 <p style="text-align: center;">
   clique para ampliar!
@@ -408,7 +410,7 @@ format: image
 
 <span style="font-weight: 400;">Vou colocar abaixo uma imagem do quadro do progresso e onde ele pode ser baixado direto no site da Strategyzer.</span>
 
-[<img class="aligncenter wp-image-837" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design-1024x728.jpg" alt="progress-board-value-proposition-design" width="500" height="355" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design-1024x728.jpg 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design-300x213.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design-768x546.jpg 768w, https://www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design.jpg 1289w" sizes="(max-width: 500px) 100vw, 500px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design.jpg){.lightbox}
+[<img class="aligncenter wp-image-837" src="//www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design-1024x728.jpg" alt="progress-board-value-proposition-design" width="500" height="355" />](http://www.robissonoliveira.com.br/wp-content/uploads/2016/05/progress-board-value-proposition-design.jpg){.lightbox}
 
 ### **O que você aprendeu até aqui ?**
 

@@ -30,6 +30,8 @@ WSS_DATA:
   - 's:138:"a:7:{s:6:"google";i:0;s:8:"facebook";i:0;s:11:"stumbleupon";i:0;s:7:"twitter";i:0;s:8:"linkedin";i:1;s:9:"pinterest";i:0;s:5:"total";i:1;}";'
 dsq_thread_id:
   - 4911109545
+dsq_needs_sync:
+  - 1
 categories:
   - Liderança
 format: image

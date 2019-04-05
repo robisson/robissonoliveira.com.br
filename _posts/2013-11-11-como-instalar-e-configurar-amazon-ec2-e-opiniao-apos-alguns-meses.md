@@ -30,6 +30,8 @@ WSS_DATA:
   - 's:142:"a:7:{s:6:"google";i:21;s:8:"facebook";i:12;s:11:"stumbleupon";i:0;s:7:"twitter";i:0;s:8:"linkedin";i:17;s:9:"pinterest";i:0;s:5:"total";i:50;}";'
 dsq_thread_id:
   - 4911109683
+dsq_needs_sync:
+  - 1
 categories:
   - Infraestrutura de TI
 format: image
@@ -90,7 +92,7 @@ A primeira coisa que você precisa fazer é criar sua conta na Amazon AWS o link
 
 Preencha o campo email, marque a opção **I am a new user** e clique no botão para prosseguir.
 
-[<img class="aligncenter wp-image-320 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-0-300x176.png" alt="ec2-passo-0" width="300" height="176" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-0-300x176.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-0.png 841w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-0.png){.lightbox}
+[<img class="aligncenter wp-image-320 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-0-300x176.png" alt="ec2-passo-0" width="300" height="176" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-0.png){.lightbox}
 
 &nbsp;
 
@@ -103,7 +105,7 @@ O próximo passo é preencher seu nome, confirmar seu email e escolher uma senha
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-1.png"><img class="aligncenter wp-image-325 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-1-300x159.png" alt="ec2-passo-1" width="300" height="159" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-1-300x159.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-1.png 713w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-1.png"><img class="aligncenter wp-image-325 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-1-300x159.png" alt="ec2-passo-1" width="300" height="159" /></a>
 </p>
 
 &nbsp;
@@ -113,7 +115,7 @@ A seguir seus dados de contato conforme mostra a imagem abaixo.
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-2.png"><img class="alignnone wp-image-327 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-2-300x258.png" alt="ec2-passo-2" width="300" height="258" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-2-300x258.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-2.png 786w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-2.png"><img class="alignnone wp-image-327 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-2-300x258.png" alt="ec2-passo-2" width="300" height="258" /></a>
 </p>
 
 &nbsp;
@@ -122,7 +124,7 @@ Embora o serviço seja gratuito por 1 ano, a Amazon lhe pede informações de ca
 
 &nbsp;
 
-[<img class="aligncenter wp-image-392 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-31-300x252.png" alt="ec2-passo-3" width="300" height="252" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-31-300x252.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-31.png 734w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-31.png){.lightbox}
+[<img class="aligncenter wp-image-392 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-31-300x252.png" alt="ec2-passo-3" width="300" height="252" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-31.png){.lightbox}
 
 &nbsp;
 
@@ -133,7 +135,7 @@ Na próxima tela o sistema pede uma confirmação por telefone, você coloca seu
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-4.png"><img class="aligncenter wp-image-331 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-4-300x231.png" alt="ec2-passo-4" width="300" height="231" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-4-300x231.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-4-194x150.png 194w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-4.png 714w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-4.png"><img class="aligncenter wp-image-331 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-4-300x231.png" alt="ec2-passo-4" width="300" height="231" /></a>
 </p>
 
 &nbsp;
@@ -143,7 +145,7 @@ Após digitar o PIN é só aguardar e tela abaixo  e clicar em **Continuar.**
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-5.png"><img class="aligncenter wp-image-333 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-5-300x179.png" alt="ec2-passo-5" width="300" height="179" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-5-300x179.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-5.png 721w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-5.png"><img class="aligncenter wp-image-333 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-5-300x179.png" alt="ec2-passo-5" width="300" height="179" /></a>
 </p>
 
 &nbsp;
@@ -153,7 +155,7 @@ O próximo passo é escolher que tipo de suporte você deseja, claro que eu esco
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-6.png"><img class="aligncenter wp-image-335 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-6-300x221.png" alt="ec2-passo-6" width="300" height="221" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-6-300x221.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-6.png 757w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-6.png"><img class="aligncenter wp-image-335 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-6-300x221.png" alt="ec2-passo-6" width="300" height="221" /></a>
 </p>
 
 &nbsp;
@@ -169,7 +171,7 @@ Uma vez logado no console da Amazon, você tem todos os serviços da mesma a dis
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8.png"><img class="aligncenter wp-image-341 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8-300x129.png" alt="ec2-passo-8" width="300" height="129" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8-300x129.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8-1024x441.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8-700x300.png 700w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8.png 1115w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8.png"><img class="aligncenter wp-image-341 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-8-300x129.png" alt="ec2-passo-8" width="300" height="129" /></a>
 </p>
 
 &nbsp;
@@ -179,7 +181,7 @@ A Amazon possui algumas regiões com datacenters no mundo, quando você configur
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-9.png"><img class="aligncenter wp-image-344 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-9-300x234.png" alt="ec2-passo-9" width="300" height="234" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-9-300x234.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-9-194x150.png 194w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-9.png 499w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-9.png"><img class="aligncenter wp-image-344 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-9-300x234.png" alt="ec2-passo-9" width="300" height="234" /></a>
 </p>
 
 &nbsp;
@@ -193,7 +195,7 @@ Para criar a instância basta clicar em **instances **no menu esquerdo Instanc
 &nbsp;
 
 <p style="text-align: center;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-10.png"><img class="aligncenter wp-image-347 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-10-300x136.png" alt="ec2-passo-10" width="300" height="136" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-10-300x136.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-10-1024x465.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-10.png 1599w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-10.png"><img class="aligncenter wp-image-347 size-medium" title="Clique para a ampliar" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-10-300x136.png" alt="ec2-passo-10" width="300" height="136" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -201,7 +203,7 @@ Para criar a instância basta clicar em **instances **no menu esquerdo Instanc
 </p>
 
 <p style="text-align: left;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-11.png"><img class="aligncenter wp-image-352 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-11-300x45.png" alt="ec2-passo-11" width="300" height="45" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-11-300x45.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-11-1024x154.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-11.png 1539w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-11.png"><img class="aligncenter wp-image-352 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-11-300x45.png" alt="ec2-passo-11" width="300" height="45" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -209,7 +211,7 @@ Para criar a instância basta clicar em **instances **no menu esquerdo Instanc
 </p>
 
 <p style="text-align: left;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-12.png"><img class="aligncenter wp-image-353 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-12-300x136.png" alt="ec2-passo-12" width="300" height="136" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-12-300x136.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-12-1024x464.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-12.png 1599w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-12.png"><img class="aligncenter wp-image-353 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-12-300x136.png" alt="ec2-passo-12" width="300" height="136" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -221,7 +223,7 @@ Para criar a instância basta clicar em **instances **no menu esquerdo Instanc
 </p>
 
 <p style="text-align: left;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13.png"><img class="aligncenter wp-image-355 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13-300x130.png" alt="ec2-passo-13" width="300" height="130" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13-300x130.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13-1024x446.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13-700x300.png 700w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13.png 1593w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13.png"><img class="aligncenter wp-image-355 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-13-300x130.png" alt="ec2-passo-13" width="300" height="130" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -229,7 +231,7 @@ Para criar a instância basta clicar em **instances **no menu esquerdo Instanc
 </p>
 
 <p style="text-align: left;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-14.png"><img class="aligncenter wp-image-356 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-14-300x49.png" alt="ec2-passo-14" width="300" height="49" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-14-300x49.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-14-1024x170.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-14.png 1583w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-14.png"><img class="aligncenter wp-image-356 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-14-300x49.png" alt="ec2-passo-14" width="300" height="49" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -237,7 +239,7 @@ Para criar a instância basta clicar em **instances **no menu esquerdo Instanc
 </p>
 
 <p style="text-align: left;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15.png"><img class="aligncenter wp-image-358 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15-300x137.png" alt="ec2-passo-15" width="300" height="137" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15-300x137.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15-1024x469.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15-870x400.png 870w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15.png 1381w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15.png"><img class="aligncenter wp-image-358 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-15-300x137.png" alt="ec2-passo-15" width="300" height="137" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -245,7 +247,7 @@ Para criar a instância basta clicar em **instances **no menu esquerdo Instanc
 </p>
 
 <p style="text-align: left;">
-  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-16.png"><img class="aligncenter wp-image-359 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-16-300x121.png" alt="ec2-passo-16" width="300" height="121" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-16-300x121.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-16-1024x415.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-16.png 1589w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a class="lightbox" title="Clique para ampliar" href="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-16.png"><img class="aligncenter wp-image-359 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-16-300x121.png" alt="ec2-passo-16" width="300" height="121" /></a>
 </p>
 
 <p style="text-align: left;">
@@ -262,7 +264,7 @@ Execute o PuttyGen que vai converter nossa chave, com ele aberto clique em **co
 
 &nbsp;
 
-[<img class="aligncenter wp-image-363 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-17-300x86.png" alt="ec2-passo-17" width="300" height="86" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-17-300x86.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-17.png 493w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-17.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-363 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-17-300x86.png" alt="ec2-passo-17" width="300" height="86" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-17.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -274,7 +276,7 @@ Agora vamos acessar nosso servidor usando o Putty se você nunca usou o putty co
 
 &nbsp;
 
-[<img class="aligncenter wp-image-365 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-18-300x290.png" alt="ec2-passo-18" width="300" height="290" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-18-300x290.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-18.png 464w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-18.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-365 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-18-300x290.png" alt="ec2-passo-18" width="300" height="290" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-18.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -282,7 +284,7 @@ Volte para o menu **session **e em hostname coloque endereço da seguinte forma
 
 &nbsp;
 
-[<img class="aligncenter wp-image-366 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-19-300x190.png" alt="ec2-passo-19" width="300" height="190" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-19-300x190.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-19.png 674w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-19.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-366 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-19-300x190.png" alt="ec2-passo-19" width="300" height="190" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-19.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -312,7 +314,7 @@ Se acessarmos agora nosso enderço de IP público pelo browser já teremos a seg
 
 &nbsp;
 
-[<img class="aligncenter wp-image-372 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-20-300x146.png" alt="ec2-passo-20" width="300" height="146" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-20-300x146.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-20-1024x499.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-20.png 1592w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-20.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-372 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-20-300x146.png" alt="ec2-passo-20" width="300" height="146" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-20.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -326,7 +328,7 @@ Agora que já temos nosso servidor PHP/Mysql rodando falta vincularmos ele a um 
 
 &nbsp;
 
-[<img class="aligncenter wp-image-376 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-21-300x115.png" alt="ec2-passo-21" width="300" height="115" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-21-300x115.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-21-1024x394.png 1024w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-21.png 1100w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-21.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-376 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-21-300x115.png" alt="ec2-passo-21" width="300" height="115" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-21.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -334,7 +336,7 @@ Em seguida clique em **created Hosted Zone **
 
 &nbsp;
 
-[<img class="aligncenter wp-image-377 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-22-300x53.png" alt="ec2-passo-22" width="300" height="53" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-22-300x53.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-22.png 596w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-22.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-377 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-22-300x53.png" alt="ec2-passo-22" width="300" height="53" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-22.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -342,7 +344,7 @@ Agora digite seu domínio sem o WWW e clique em **create hosted zone.**
 
 &nbsp;
 
-[<img class="aligncenter wp-image-379 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-23-224x300.png" alt="ec2-passo-23" width="224" height="300" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-23-224x300.png 224w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-23.png 467w" sizes="(max-width: 224px) 100vw, 224px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-23.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-379 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-23-224x300.png" alt="ec2-passo-23" width="224" height="300" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-23.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -352,7 +354,7 @@ Feito isso você vai ver a seguinte entrada confirmando a sua criação de zona 
 
 &nbsp;
 
-[<img class="aligncenter wp-image-382 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-24-300x46.png" alt="ec2-passo-24" width="300" height="46" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-24-300x46.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-24.png 941w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-24.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-382 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-24-300x46.png" alt="ec2-passo-24" width="300" height="46" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-24.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 
@@ -362,7 +364,7 @@ Agora você já criou a Zona de DNS padrão da Amazon, mas falta adicionar as en
 
 &nbsp;
 
-[<img class="aligncenter wp-image-383 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-25-300x92.png" alt="ec2-passo-25" width="300" height="92" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-25-300x92.png 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-25.png 987w" sizes="(max-width: 300px) 100vw, 300px" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-25.png "Clique para ampliar"){.lightbox}
+[<img class="aligncenter wp-image-383 size-medium" src="//www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-25-300x92.png" alt="ec2-passo-25" width="300" height="92" />](https://www.robissonoliveira.com.br/wp-content/uploads/2013/11/ec2-passo-25.png "Clique para ampliar"){.lightbox}
 
 &nbsp;
 

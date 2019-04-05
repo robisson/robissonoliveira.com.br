@@ -30,6 +30,8 @@ WSS_DATA:
   - 's:138:"a:7:{s:6:"google";i:1;s:8:"facebook";i:2;s:11:"stumbleupon";i:0;s:7:"twitter";i:0;s:8:"linkedin";i:2;s:9:"pinterest";i:0;s:5:"total";i:5;}";'
 dsq_thread_id:
   - 4912311879
+dsq_needs_sync:
+  - 1
 categories:
   - Liderança
 format: image
@@ -46,7 +48,7 @@ O hábito é basicamente composto por três coisas:
   * **Uma rotina &#8211; **pode ser física ou mental.
   * **Uma recompensa &#8211;** que auxilia seu cérebro a decidir se este comportamento vale a pena e deve ser memorizado.
 
-[<img class=" wp-image-475 aligncenter" src="//www.robissonoliveira.com.br/wp-content/uploads/2014/10/loop-habito-300x149.jpg" alt="loop-habito" width="392" height="195" srcset="https://www.robissonoliveira.com.br/wp-content/uploads/2014/10/loop-habito-300x149.jpg 300w, https://www.robissonoliveira.com.br/wp-content/uploads/2014/10/loop-habito.jpg 439w" sizes="(max-width: 392px) 100vw, 392px" />](http://www.robissonoliveira.com.br/wp-content/uploads/2014/10/loop-habito.jpg){.lightbox}
+[<img class=" wp-image-475 aligncenter" src="//www.robissonoliveira.com.br/wp-content/uploads/2014/10/loop-habito-300x149.jpg" alt="loop-habito" width="392" height="195" />](http://www.robissonoliveira.com.br/wp-content/uploads/2014/10/loop-habito.jpg){.lightbox}
 
 &nbsp;
 

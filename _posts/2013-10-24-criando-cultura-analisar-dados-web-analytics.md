@@ -35,6 +35,8 @@ WSS_DATA:
   - 's:138:"a:7:{s:6:"google";i:2;s:8:"facebook";i:2;s:11:"stumbleupon";i:0;s:7:"twitter";i:0;s:8:"linkedin";i:4;s:9:"pinterest";i:0;s:5:"total";i:8;}";'
 dsq_thread_id:
   - 4919232481
+dsq_needs_sync:
+  - 1
 categories:
   - Web Analytics
 ---
