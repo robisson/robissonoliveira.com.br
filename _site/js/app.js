@@ -1,43 +1,31 @@
-var app = (function () {
+var app = (function() {
+  "use strict";
 
-    "use strict"
+  var loadImages = function() {
+    var images = document.querySelectorAll("img.images-lazy");
 
-    var loadImages = function () {
+    for (var i = 0; i < images.length; i++) {
+      var el = images[i];
+      var src = images[i].getAttribute("data-src");
 
-        var images = document.querySelectorAll('img.images-lazy');
+      el.onload = function() {
+        this.classList.remove("hide");
+        var loader = this.parentNode.querySelector("#loader");
 
-        for (var i = 0; i < images.length; i++) {
-
-            var el = images[i];
-            var src = images[i].getAttribute('data-src');
-
-            el.onload = function () {
-
-                this.classList.remove('hide');
-                var loader = this.parentNode.querySelector('#loader');
-
-                if (loader != null) {
-
-                    loader.classList.add('hide');
-
-                }
-
-            };
-
-            el.setAttribute('src', src);
-
+        if (loader != null) {
+          loader.classList.add("hide");
         }
+      };
 
-    };
+      el.setAttribute("src", src);
+    }
+  };
 
-    var initialize = function () {
+  var initialize = function() {
+    loadImages();
+  };
 
-        loadImages();
-
-    };
-
-    return {initialize: initialize}
-
+  return { initialize: initialize };
 })();
 
 app.initialize();
