@@ -1,12 +1,29 @@
 {
-  "name": "pwa",
+  "name": "robissonoliveira.com.br",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "My personal site",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "gulp build",
+    "start": "gulp watch"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robisson/robissonoliveira.com.br.git"
+  },
+  "author": "Robisson Oliveira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robisson/robissonoliveira.com.br/issues"
+  },
+  "homepage": "https://github.com/robisson/robissonoliveira.com.br#readme",
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "gulp": "^3.9.1",
+    "gulp-copy": "^1.1.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1"
+  }
 }

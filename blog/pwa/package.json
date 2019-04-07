@@ -1,0 +1,20 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "connect": "^3.6.1",
+    "serve-static": "^1.12.1"
+  },
+  "devDependencies": {
+    "connect": "^3.6.1",
+    "serve-static": "^1.12.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
