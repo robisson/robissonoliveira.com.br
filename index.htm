@@ -22,10 +22,17 @@
   </head>
 
   <body>
+    <div id="top-detail-header">
+      <div class="bg-red"></div>
+      <div class="bg-green"></div>
+      <div class="bg-blue"></div>
+      <div class="bg-green-light"></div>
+    </div>
+    <div class="clearfix"></div>
     <div class="container-fluid">
       <div class="row">
         <nav class="navbar navbar-default">
-          <div class="container-fluid">
+          <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button
@@ -63,8 +70,14 @@
         </nav>
       </div>
       <section class="row" id="last-article">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
           <span>Último artigo</span>
+          <img
+            width="100%"
+            src="assets/images/article.jpg"
+            alt="This is Service Design Doing"
+            class="visible-xs visible-sm"
+          />
           <h1>
             Como o Javascript funciona: Entendendo as funções e suas formas de
             uso
@@ -77,38 +90,88 @@
             funções em Javascript, pelo menos não ainda, então esse eu resolvi
             escrever.
           </p>
-          <p class="text-tight">
-            <a href="#">Ler artigo completo</a>
+          <p class="text-right">
+            <b>
+              <a href="#">Ler artigo completo</a>
+            </b>
           </p>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
           <img
             width="100%"
             src="assets/images/article.jpg"
             alt="This is Service Design Doing"
+            class="visible-lg visible-md"
           />
         </div>
       </section>
       <section id="home-presentation" class="row">
-        <div class="col-lg-2">
-          <img src="assets/images/robisson-home.png" alt="Robisson Oliveira" />
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <img
+            class="home-presentation__profile"
+            src="assets/images/robisson-home.png"
+            alt="Robisson Oliveira"
+          />
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6 col-sm-8">
           <h3>Robisson Oliviera</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat.
+            Sou líder de desenvolvimento de software na Guarida Imóveis, onde
+            desenvolvemos aplicações para web e mobile voltado para o mercado
+            imobiliario.
+          </p>
+          <p>
+            Fiz esse site para compartilhar conhecimento das coisas que gosto e
+            também reforçar meus própios conhecimentos.
           </p>
         </div>
-        <div class="col-lg-4" id="home-social-media">
-          <img src="assets/images/linkedin.png" alt="Perfil no Linekdin" />
-          <img src="assets/images/medium.png" alt="Perfil no Medium" />
-          <img src="assets/images/github.png" alt="Perfil no Github" />
-          <img src="assets/images/twitter.png" alt="Perfil no Twitter" />
+        <div class="col-lg-4 col-md-3 col-sm-12" id="home-social-media">
+          <div>
+            <a
+              title="Perfil no Linkedin"
+              href="https://www.linkedin.com/in/robisson/"
+              target="_blank"
+            >
+              <img
+                class="social-media-icon"
+                src="assets/images/linkedin.png"
+                alt="Perfil no Linekdin"
+              />
+            </a>
+            <a
+              title="Perfil no Medium"
+              href="https://medium.com/@robisson"
+              target="_blank"
+            >
+              <img
+                class="social-media-icon"
+                src="assets/images/medium.png"
+                alt="Perfil no Medium"
+              />
+            </a>
+            <a
+              title="Perfil no Github"
+              href="https://github.com/robisson"
+              target="_blank"
+            >
+              <img
+                class="social-media-icon"
+                src="assets/images/github.png"
+                alt="Perfil no Github"
+              />
+            </a>
+            <a
+              title="Perfil no Twitter"
+              href="https://twitter.com/robissonmkt"
+              target="_blank"
+            >
+              <img
+                class="social-media-icon"
+                src="assets/images/twitter.png"
+                alt="Perfil no Twitter"
+              />
+            </a>
+          </div>
         </div>
       </section>
       <section class="row" id="what-i-reading">
@@ -120,35 +183,22 @@
           </p>
           <hr />
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-4 col-sm-3">
           <img
+            width="100%"
             src="assets/images/current_book.png"
             alt="This is Service Design Doing"
           />
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-md-8 col-sm-9 description">
           <h2>This is Service Design Doing</h2>
           <h4>Marc Stickdorn, Jakob Schneider</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Faz um tempo que venho lendo livros de User EXperience (UX). Pelos
+            resumos que li e as indicações This is Service Design parece ter uma
+            visão holística em relação ao processo
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-        <div class="col-lg-12">
+          <hr />
           <p>
             Gosto de registrar os livros que já li. Venho fazendo isso desde
             2013.
@@ -164,29 +214,33 @@
           </p>
           <hr />
         </div>
-        <div class="col-lg-3">
-          <img src="assets/images/last-article/article.png" alt="" />
-          <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
-          <p>21/03/2018</p>
-          <p><a href="#">Ler artigo completo</a></p>
-        </div>
-        <div class="col-lg-3">
-          <img src="assets/images/last-article/article.png" alt="" />
-          <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
-          <p>21/03/2018</p>
-          <p><a href="#">Ler artigo completo</a></p>
-        </div>
-        <div class="col-lg-3">
-          <img src="assets/images/last-article/article.png" alt="" />
-          <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
-          <p>21/03/2018</p>
-          <p><a href="#">Ler artigo completo</a></p>
-        </div>
-        <div class="col-lg-3">
-          <img src="assets/images/last-article/article.png" alt="" />
-          <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
-          <p>21/03/2018</p>
-          <p><a href="#">Ler artigo completo</a></p>
+        <div class="row">
+          <div class="col-lg-offset-2 col-md-offset-1 col-sm-offset-1">
+            <div class="col-lg-3 col-md-3 col-sm-3 last-articles__card-article">
+              <div>
+                <img src="assets/images/last-article/article.png" alt="" />
+                <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
+                <p>21/03/2018</p>
+                <p><a href="#">Ler artigo completo</a></p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 last-articles__card-article">
+              <div>
+                <img src="assets/images/last-article/article.png" alt="" />
+                <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
+                <p>21/03/2018</p>
+                <p><a href="#">Ler artigo completo</a></p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 last-articles__card-article">
+              <div>
+                <img src="assets/images/last-article/article.png" alt="" />
+                <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
+                <p>21/03/2018</p>
+                <p><a href="#">Ler artigo completo</a></p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="row" id="open-source-project">
@@ -197,36 +251,43 @@
           </p>
           <hr />
         </div>
-        <div class="col-lg-offset-1">
-          <div class="col-lg-10">
-            <div class="col-lg-6">
-              <img
-                width="100%"
-                src="assets/images/last-article/open-source.png"
-                alt=""
-              />
-            </div>
-            <div class="col-lg-6">
-              <h2>WIPLean</h2>
-              <p>
-                É uma aplicação que combina Kanban com OKR para gerenciar as
-                metas de uma orga- nização e suas execução.
-              </p>
-              <p>
-                É feito com ReactJs, Graphql, Nodejs e MongoDB. Ainda está em
-                desenvolvimento. Fique a vontade para contribuir :).
-              </p>
-              <p><a href="#">Ver no github.com</a></p>
+        <div class="row">
+          <div class="col-lg-offset-1 col-md-offset-1">
+            <div class="col-lg-10 col-md-10">
+              <div class="col-lg-6 col-md-6 col-sm-5">
+                <img
+                  width="100%"
+                  src="assets/images/last-article/open-source.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-7 open-source-project__bg">
+                <h2>WIPLean</h2>
+                <p>
+                  É uma aplicação que combina Kanban com OKR para gerenciar as
+                  metas de uma orga- nização e suas execução.
+                </p>
+                <p>
+                  É feito com ReactJs, Graphql, Nodejs e MongoDB. Ainda está em
+                  desenvolvimento. Fique a vontade para contribuir :).
+                </p>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <p class="text-right"><a href="#">Ver no github.com</a></p>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section class="row" id="newsletter">
-        <div class="col-lg-offset-2">
-          <div class="col-lg-6">
+        <div class="col-lg-offset-2 col-md-offset-2">
+          <div class="col-lg-6 col-md-6">
             <h3>Quer saber quando novos post forem publicados?</h3>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-6">
             <div class="form-inline">
               <input type="text" class="form-control" />
               <button class="btn btn-danger">Cadastrar</button>
@@ -234,10 +295,9 @@
           </div>
         </div>
       </section>
-    </div>
-    <div class="row">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
+      <div class="row">
+        <nav class="navbar navbar-default navbar-bottom">
+          <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button
@@ -274,5 +334,6 @@
           <!-- /.container-fluid -->
         </nav>
       </div>
+    </div>
   </body>
 </html>

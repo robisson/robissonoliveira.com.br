@@ -1,17 +1,123 @@
-$background-gray: #DDDDDD;
-$background-gray-hard: #2E3641;
-$background-red: #F69087;
-$background-green:#B0CB7A;
-$background-green:#B0CB7A;
-$background-green-light:#85CCB1;
-$background-blue: #85A9B3;
+$background-gray: #dddddd;
+$background-gray-hard: #2e3641;
+$background-red: #f69087;
+$background-green: #b0cb7a;
+$background-green: #b0cb7a;
+$background-green-light: #85ccb1;
+$background-blue: #85a9b3;
 
-section{
-  margin-bottom: 6em;
+.bg-red {
+  background-color: $background-red;
+}
+
+.bg-green {
+  background-color: $background-green;
+}
+
+.bg-blue {
+  background-color: $background-blue;
+}
+.bg-green-light {
+  background-color: $background-green-light;
+}
+
+.navbar-default {
+  background-color: $background-gray-hard;
+  border: $background-gray-hard;
+}
+
+.navbar-bottom {
+  margin-bottom: 0px;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: $background-gray-hard;
+  font-weight: bold;
+}
+
+a {
+  color: $background-red;
+}
+
+section {
+  margin-bottom: 4em;
+  padding: 2em;
+}
+
+@media (max-width: 768px) {
+  section {
+    margin-bottom: 4em;
+    padding: 1em 0;
+  }
+}
+
+hr {
+  border-color: black;
+  text-align: left;
+}
+
+#top-detail-header {
+  width: 100%;
+  & > div {
+    float: left;
+    width: 25%;
+    height: 5px;
+  }
 }
 
 #home-presentation {
   background-color: $background-gray-hard;
+  color: $background-gray;
+
+  .home-presentation__profile {
+    width: 100%;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  #home-social-media {
+    text-align: center;
+    margin-top: 5em;
+
+    .social-media-icon {
+      width: 48px;
+    }
+  }
 }
 
+#what-i-reading {
+  .description {
+    font-size: 1.2em;
+  }
+}
 
+#last-articles {
+  background-color: $background-blue;
+
+  .last-articles__card-article {
+    background-color: white;
+    margin: 1em;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#newsletter {
+  background-color: $background-blue;
+  margin-bottom: 0;
+}
