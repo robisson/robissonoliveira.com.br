@@ -1,0 +1,69 @@
+body{
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+header#masthead .bl_search
+{
+	float: left;
+}
+.pull-left{
+	float: right;
+}
+.pull-right{
+	float: left;
+}
+
+.navbar .nav,
+.navbar .brand,
+.post-meta ul li,
+.navbar .nav > li,
+.bl_socialbox li
+{
+	float: right;
+}
+
+
+.widget_recent_entries li span.badge, #side-bar .widget_nav_menu ul li span.badge, .widget_categories li span.badge, .widget_recent_comments li span.badge, .widget_pages li span.badge, .widget_meta li span.badge, .widget_archive li span.badge{
+	right: auto;
+	left: 15px;
+}
+footer.entry-meta .up_arrow:after, footer.entry-meta .up_arrow:before{
+	left: auto;
+	right: 45px;
+}
+.input-append .add-on:last-child, .input-append .btn:last-child, .input-append .btn-group:last-child > .dropdown-toggle{
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+}
+.input-append input, .input-append select, .input-append .uneditable-input{
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;	
+}
+footer.entry-meta .author-meta{
+	padding-left: 0;
+	padding-right: 70px;
+}
+footer.entry-meta .avatar{
+	left: auto;
+	right: 0;
+}
+.navbar .nav > li > a {
+  border-left: 0;
+  border-right: 3px solid transparent;
+}
+.commentlist article.comment {
+  padding: 20px 80px 20px 10px;
+}
+article.comment .avatar {
+  right: -60px;
+  left: auto;
+}
+.instagram-images-container{
+	direction: ltr;
+}
+.widget_tag_cloud .tagcloud a{
+	float: right;
+}

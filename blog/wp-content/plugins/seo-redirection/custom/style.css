@@ -1,0 +1,45 @@
+.Folder_background_1 { padding-left: 24px; background:url("images/folder.png") no-repeat left center }
+.Folder_background_0{ padding-left: 24px; background:url("images/folder_off.png") no-repeat left center; color:#B6B6B6; }
+
+.Page_background_1 { padding-left: 24px; background:url("images/page.png") no-repeat left center }
+.Page_background_0 { padding-left: 24px; background:url("images/page_off.png") no-repeat left center; color:#B6B6B6; }
+
+.Regex_background_1 { padding-left: 24px; background:url("images/regex.png") no-repeat left center }
+.Regex_background_0 { padding-left: 24px; background:url("images/regex_off.png") no-repeat left center; color:#B6B6B6; }
+
+
+.arrow_from{ padding-left: 20px; background:url("images/arrow_from.png") no-repeat left top}
+.arrow_to{ padding-left: 20px; background:url("images/arrow_to.png") no-repeat left bottom}
+
+
+
+.procontainer {
+border:1px solid #999;
+float:left;
+width:100%;
+min-width: 820px;
+background:#fff;
+-webkit-border-radius:8px;
+-moz-border-radius:8px;
+border-radius:8px;
+margin-top:15px;
+}
+
+
+.procontainer .ad{
+padding-left:410px;
+padding-top:5px;
+background:url(images/pro.png) no-repeat 5px 5px;
+height:51px;
+}
+
+
+ ul.features li {
+     background-image: url("images/check.gif");
+     background-position: 0 3px;
+     background-repeat: no-repeat;
+     font-size: 14px;
+     margin-bottom: 10px;
+     margin-left: 20px;
+     padding-left: 23px;
+ }

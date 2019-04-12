@@ -1,0 +1,22 @@
+#scrolltriggered { display: none; position: fixed; z-index: 1000; bottom: -210px; background-color: #ffe14f; font-size: 15px; border: solid 3px #FFF; -webkit-box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1); color: #000000; }
+#scrolltriggered #closebox { z-index: 1001; background: #aa9232; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; height: 20px; width: 20px; display: inline-block; position: absolute; top: 5px; right: 5px; font-family: Georgia, Times, serif; color: #fcd94b; text-align: center; font-size: 14px; line-height: 16px; text-decoration: none; }
+#scrolltriggered #closebox:hover { background: #bba137; }
+#scrolltriggered #inscroll { -webkit-box-shadow: inset 0px 0px 50px 10px #fad047; -moz-box-shadow: inset 0px 0px 50px 10px #fad047; box-shadow: inset 0px 0px 50px 10px #fad047; font-size: 12px; padding: 20px 20px 10px 20px; }
+#scrolltriggered #inscroll p { margin: 0 0 9px 0; line-height: 15px; }
+#scrolltriggered #inscroll strong { font-weight: bold; }
+#scrolltriggered #inscroll ul { margin: 14px 0 9px 0; padding: 0; }
+#scrolltriggered #inscroll ul li { font-family: Georgia, Times, serif; font-size: 16px; list-style: none; padding: 0 0 0 20px; line-height: 19px; background: url("bullet.png") 0 5px no-repeat; }
+#scrolltriggered #inscroll h5 { font-family: Georgia, Times, serif; font-size: 20px; font-weight: normal; margin: 0 0 10px 0; }
+#scrolltriggered #inscroll h5 span { color: #c41000; }
+#scrolltriggered #inscroll form { margin: 10px 0 0; }
+#scrolltriggered #inscroll form input { border: solid 1px #b19734; -webkit-box-shadow: inset 0px 0px 3px 1px #e2e2e2; -moz-box-shadow: inset 0px 0px 3px 1px #e2e2e2; box-shadow: inset 0px 0px 3px 1px #e2e2e2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; height: 25px; display: inline-block; line-height: 25px; padding: 0 5px; width: 60%; }
+#scrolltriggered #inscroll form input.error { border-color: #ff4318; background-color: #eca8a8; }
+#scrolltriggered #inscroll form input[type=submit], #scrolltriggered #inscroll form input.submit { display: block; position: relative; width: 33% !important; height: 26px; background-color: #d42c1e; border: 1px solid #c22816 !important; cursor: pointer; float: right; font-family: Georgia, Times, serif; color: #FFF; /* CSS3 */ -moz-box-shadow: inset 0 1 0 #e27066; -webkit-box-shadow: inset 0 1 0 #e27066; box-shadow: 0 1px 0 0 #e27066 inset; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+#scrolltriggered #inscroll form input[type=submit]:hover, #scrolltriggered #inscroll form input.submit:hover { background-color: #ed3a2b; -moz-box-shadow: inset 0 1 0 #f3796f; -webkit-box-shadow: inset 0 1 0 #f3796f; box-shadow: 0 1px 0 0 #f3796f inset; }
+#scrolltriggered #inscroll ul.stb_social { overflow: hidden; margin: 10px -7px 0 0; clear: both; }
+#scrolltriggered #inscroll ul.stb_social li { float: left; list-style: none; background: none; padding: 0; height: 30px; margin: 0 7px 0 0; }
+#scrolltriggered #inscroll ul.stb_social li.fb.standard { width: 50px; overflow: hidden; }
+#scrolltriggered #inscroll ul.stb_social li.twitter.regular { width: 80px; }
+#scrolltriggered #inscroll ul.stb_social li.google.medium { width: 60px; }
+#scrolltriggered #inscroll ul.stb_social li.fb.box_count, #scrolltriggered #inscroll ul.stb_social li.google.tall, #scrolltriggered #inscroll ul.stb_social li.twitter.vertical, #scrolltriggered #inscroll ul.stb_social li.linkedin.top, #scrolltriggered #inscroll ul.stb_social li.stumbleupon.s5, #scrolltriggered #inscroll ul.stb_social li.pinterest.vertical { height: 66px !important; }
+#scrolltriggered #stbMsgArea { display: none; padding: 10px 0 0; margin: 0; }

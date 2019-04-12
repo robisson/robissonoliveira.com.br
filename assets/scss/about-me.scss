@@ -1,0 +1,106 @@
+#about-me-header {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background: url("/assets/images/bigger.jpeg") no-repeat top left;
+  text-align: center;
+  padding-top: calc(50vh - 249px / 2);
+  color: white;
+
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+#about-me-body {
+  margin-top: 90vh;
+  margin-bottom: 0;
+
+  img {
+    width: 100%;
+  }
+
+  .social-icons {
+    img {
+      width: 48px;
+    }
+  }
+}
+
+#skills,
+#references {
+  margin-bottom: 0;
+
+  & > div {
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .bg-blue {
+    background-color: $background-green;
+    padding: 1em;
+    height: 185px;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      float: left;
+      width: 50%;
+      display: block;
+      text-transform: uppercase;
+      list-style-type: none;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+#references {
+  .bg-blue {
+    background-color: $background-blue;
+
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      margin-top: 40px;
+      img {
+        width: 48px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #about-me-body {
+    img:first-child {
+      max-width: 50%;
+      margin: 0 0 1.5em 25%;
+    }
+
+    .social-icons {
+      text-align: center;
+      img {
+        margin: 1em;
+      }
+    }
+  }
+
+  #skills {
+    .bg-blue {
+      height: 220px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+#scrolltriggered { display: none; position: fixed; z-index: 1000; bottom: -210px; background: #6eb127 url("bg.png") 0 0 repeat; -webkit-box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1); }
+#scrolltriggered #inscroll { background: url("bg.png") 0 0 repeat; font-size: 12px; padding: 0 20px 10px 20px; color: #FFF; font-family: Tahoma, Geneva, sans-serif; text-shadow: 0 1px 0px #dadada; }
+#scrolltriggered #inscroll h5 { font-family: Arial, Helvetica, sans-serif; color: #FFF; font-size: 18px; text-shadow: 0 1px 0px #66a523; display: block; padding: 10px 15px 0 0; }
+#scrolltriggered #inscroll p { font-size: 16px; }
+#scrolltriggered #inscroll ul { font-size: 14px; margin: 10px 0; padding: 0; }
+#scrolltriggered #inscroll ul li { list-style: none; font-size: 14px; background: url("bullet.png") 0 6px no-repeat; padding: 0 0 0 25px; line-height: 1.5; }
+#scrolltriggered #inscroll form { overflow: hidden; margin: 10px 0 0 0; }
+#scrolltriggered #inscroll form input { line-height: 30px; background-color: #e5e5e5; -webkit-border-radius: 5px; border-radius: 5px; color: #7a7a7a; display: block; float: left; padding: 0 10px; border: solid 1px #5c8e2c; width: 57%; outline: none; height: 30px; }
+#scrolltriggered #inscroll form input.submit, #scrolltriggered #inscroll form input[type=submit] { background-color: #be1616 !important; width: 33% !important; height: 32px !important; cursor: pointer; float: right !important; color: #FFF !important; }
+#scrolltriggered #inscroll form input.submit:hover, #scrolltriggered #inscroll form input[type=submit]:hover { background-color: #db1010 !important; }
+#scrolltriggered #inscroll ul.stb_social { overflow: hidden; margin: 10px -7px 0 0; clear: both; }
+#scrolltriggered #inscroll ul.stb_social li { float: left; list-style: none; background: none; padding: 0; height: 30px; margin: 0 7px 0 0; }
+#scrolltriggered #inscroll ul.stb_social li.fb.standard { width: 50px; overflow: hidden; }
+#scrolltriggered #inscroll ul.stb_social li.twitter.regular { width: 80px; }
+#scrolltriggered #inscroll ul.stb_social li.google.medium { width: 60px; }
+#scrolltriggered #inscroll ul.stb_social li.fb.box_count, #scrolltriggered #inscroll ul.stb_social li.google.tall, #scrolltriggered #inscroll ul.stb_social li.twitter.vertical, #scrolltriggered #inscroll ul.stb_social li.linkedin.top, #scrolltriggered #inscroll ul.stb_social li.stumbleupon.s5, #scrolltriggered #inscroll ul.stb_social li.pinterest.vertical { height: 66px !important; }
+#scrolltriggered #closebox { z-index: 1001; position: absolute; top: 8px; right: 8px; background-color: #609130; width: 20px; height: 20px; color: #FFF; font-size: 13px; font-family: Tahoma, Geneva, sans-serif; text-align: center; text-decoration: none; -webkit-border-radius: 10px; border-radius: 10px; -webkit-box-shadow: 0px 0px 0px 4px #88ac62; box-shadow: 0px 0px 0px 4px #88ac62; line-height: 18px; }
+#scrolltriggered #closebox:hover { -webkit-box-shadow: 0px 0px 0px 4px #94b373; box-shadow: 0px 0px 0px 4px #94b373; }
+#scrolltriggered #stbMsgArea { display: none; padding: 10px 0 0; margin: 0; }

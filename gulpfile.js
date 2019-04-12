@@ -24,7 +24,7 @@ gulp.task('images', () =>
 
 gulp.task("minify-html", function() {
   return gulp
-    .src("./*.htm")
+    .src(["./*.htm", "./sobre-mim/*.htm"])
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("dist"));
 });

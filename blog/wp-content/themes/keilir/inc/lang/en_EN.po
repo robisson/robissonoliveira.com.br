@@ -1,0 +1,1783 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Keilir v1.75\n"
+"POT-Creation-Date: 2014-08-29 15:08-0000\n"
+"PO-Revision-Date: 2014-08-29 15:09-0000\n"
+"Last-Translator: Bluthemes.com <support@bluthemes.com>\n"
+"Language-Team: Bluth Company <bluth@bluth.is>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.8\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:5 single.php:77
+msgid "Page not found"
+msgstr "Page not found"
+
+#: 404.php:6
+msgid "We could not find the page you were looking for."
+msgstr "We could not find the page you were looking for."
+
+#: 404.php:8 index.php:116 page-left-sidebar.php:70 page-single-column.php:66
+#: page.php:73
+msgid "Try searching"
+msgstr "Try searching"
+
+#: comments.php:17 functions.php:115 inc/meta-top.php:27
+msgid "No Comments"
+msgstr "No Comments"
+
+#: comments.php:17 functions.php:113 inc/meta-top.php:27
+msgid "Comment"
+msgstr "Comment"
+
+#: comments.php:17 functions.php:114 inc/meta-top.php:27
+#: inc/widgets/bl_tabs.php:132
+msgid "Comments"
+msgstr "Comments"
+
+#: comments.php:28
+msgid "Older Comments"
+msgstr "Older Comments"
+
+#: comments.php:29
+msgid "Newer Comments"
+msgstr "Newer Comments"
+
+#: comments.php:36
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: functions.php:112
+msgid "Search..."
+msgstr "Search..."
+
+#: functions.php:116
+msgid "No email provided!"
+msgstr "No email provided!"
+
+#: functions.php:117
+msgid "Thank you for subscribing!"
+msgstr "Thank you for subscribing!"
+
+#: functions.php:240
+msgid "Previous Page"
+msgstr "Previous Page"
+
+#: functions.php:254
+msgid "Next Page"
+msgstr "Next Page"
+
+#: functions.php:333
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:333 functions.php:368
+msgid "(Edit)"
+msgstr "(Edit)"
+
+#: functions.php:343
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: functions.php:355
+msgid "Author"
+msgstr "Author"
+
+#: functions.php:359
+msgid "Your comment is awaiting moderation."
+msgstr "Your comment is awaiting moderation."
+
+#: functions.php:401 inc/post-format/content-audio.php:54
+#: inc/post-format/content-gallery.php:53 inc/post-format/content-image.php:38
+#: inc/post-format/content-link.php:39 inc/post-format/content-video.php:50
+#: inc/post-format/content.php:38 inc/post-format/single-image.php:37
+#: inc/post-format/single.php:38
+msgid "Continue reading..."
+msgstr "Continue reading..."
+
+#: functions.php:457 inc/mailchimp/subscribe.php:27
+msgid "No email address provided"
+msgstr "No email address provided"
+
+#: functions.php:462 inc/mailchimp/subscribe.php:32
+msgid "Email address is invalid"
+msgstr "Email address is invalid"
+
+#: inc/cf-post-formats/cf-post-formats.php:41
+msgid "Loading..."
+msgstr "Loading..."
+
+#: inc/cf-post-formats/views/format-audio.php:2
+msgid "Audio URL (oEmbed) or Embed Code"
+msgstr "Audio URL (oEmbed) or Embed Code"
+
+#: inc/cf-post-formats/views/format-gallery.php:2
+msgid "Gallery Images"
+msgstr "Gallery Images"
+
+#: inc/cf-post-formats/views/format-gallery.php:26
+msgid "Upload Images"
+msgstr "Upload Images"
+
+#: inc/cf-post-formats/views/format-link.php:2
+msgid "URL"
+msgstr "URL"
+
+#: inc/cf-post-formats/views/format-quote.php:3
+msgid "Source Name"
+msgstr "Source Name"
+
+#: inc/cf-post-formats/views/format-quote.php:7
+msgid "Source URL"
+msgstr "Source URL"
+
+#: inc/cf-post-formats/views/format-video.php:2
+msgid "Video URL (oEmbed) or Embed Code"
+msgstr "Video URL (oEmbed) or Embed Code"
+
+#: inc/cf-post-formats/views/tabs.php:9
+msgid "Standard"
+msgstr "Standard"
+
+#: inc/class-tgm-plugin-activation.php:164
+msgid "Install Required Plugins"
+msgstr "Install Required Plugins"
+
+#: inc/class-tgm-plugin-activation.php:165
+msgid "Install Plugins"
+msgstr "Install Plugins"
+
+#: inc/class-tgm-plugin-activation.php:166
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Installing Plugin: %s"
+
+#: inc/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr "Something went wrong."
+
+#: inc/class-tgm-plugin-activation.php:178
+#: inc/class-tgm-plugin-activation.php:490
+msgid "Return to Required Plugins Installer"
+msgstr "Return to Required Plugins Installer"
+
+#: inc/class-tgm-plugin-activation.php:179
+#: inc/class-tgm-plugin-activation.php:1846
+msgid "Plugin activated successfully."
+msgstr "Plugin activated successfully."
+
+#: inc/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "All plugins installed and activated successfully. %1$s"
+
+#: inc/class-tgm-plugin-activation.php:517
+#: inc/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr "Return to the Dashboard"
+
+#: inc/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr "The following plugin was activated successfully: %s."
+
+#: inc/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr "Dismiss this notice"
+
+#: inc/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr "External Link"
+
+#: inc/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr "Private Repository"
+
+#: inc/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr "Pre-Packaged"
+
+#: inc/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr "WordPress Repository"
+
+#: inc/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr "Required"
+
+#: inc/class-tgm-plugin-activation.php:1106
+msgid "Recommended"
+msgstr "Recommended"
+
+#: inc/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr "Not Installed"
+
+#: inc/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr "Installed But Not Activated"
+
+#: inc/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+
+#: inc/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr "Plugin"
+
+#: inc/class-tgm-plugin-activation.php:1298
+msgid "Source"
+msgstr "Source"
+
+#: inc/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr "Type"
+
+#: inc/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr "Status"
+
+#: inc/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr "Install"
+
+#: inc/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr "Activate"
+
+#: inc/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr "Install package not available."
+
+#: inc/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+
+#: inc/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr "Unpacking the package&#8230;"
+
+#: inc/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr "Installing the plugin&#8230;"
+
+#: inc/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr "Plugin install failed."
+
+#: inc/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr "Plugin installed successfully."
+
+#: inc/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr "Plugin activation failed."
+
+#: inc/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+
+#: inc/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installed and activated successfully."
+
+#: inc/class-tgm-plugin-activation.php:1956
+#: inc/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr "Show Details"
+
+#: inc/class-tgm-plugin-activation.php:1956
+#: inc/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr "Hide Details"
+
+#: inc/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr "All installations and activations have been completed."
+
+#: inc/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+
+#: inc/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+
+#: inc/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "An error occurred while installing %1$s: <strong>%2$s</strong>."
+
+#: inc/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "The installation of %1$s failed."
+
+#: inc/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s installed successfully."
+
+#: inc/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr "All installations have been completed."
+
+#: inc/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installing Plugin %1$s (%2$d/%3$d)"
+
+#: inc/meta-bottom.php:20
+msgid "Share story"
+msgstr "Share story"
+
+#: inc/meta-top.php:9
+msgid "View all posts in"
+msgstr "View all posts in"
+
+#: inc/post-format/content-audio.php:57 inc/post-format/content-gallery.php:56
+#: inc/post-format/content-image.php:41 inc/post-format/content-link.php:42
+#: inc/post-format/content-video.php:53 inc/post-format/content.php:41
+#: inc/post-format/single-audio.php:53 inc/post-format/single-gallery.php:43
+#: inc/post-format/single-image.php:38 inc/post-format/single-link.php:39
+#: inc/post-format/single-video.php:36 inc/post-format/single.php:39
+msgid "Pages:"
+msgstr "Pages:"
+
+#: inc/recent-posts.php:7
+msgid "Things you might like"
+msgstr "Things you might like"
+
+#: inc/theme-options.php:23 inc/theme-options/options-framework.php:251
+msgid "Save Options"
+msgstr "Save Options"
+
+#: inc/theme-options.php:24 inc/theme-options/options-framework.php:252
+msgid "Restore Defaults"
+msgstr "Restore Defaults"
+
+#: inc/theme-options.php:24 inc/theme-options/options-framework.php:252
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Click OK to reset. Any theme settings will be lost!"
+
+#: inc/theme-options/options-framework.php:173
+#: inc/theme-options/options-framework.php:388 options.php:71
+msgid "Theme Options"
+msgstr "Theme Options"
+
+#: inc/theme-options/options-framework.php:204
+msgid "Clear"
+msgstr "Clear"
+
+#: inc/theme-options/options-framework.php:205
+msgid "Default"
+msgstr "Default"
+
+#: inc/theme-options/options-framework.php:206
+msgid "Select Color"
+msgstr "Select Color"
+
+#: inc/theme-options/options-framework.php:284
+msgid "Default options restored."
+msgstr "Default options restored."
+
+#: inc/theme-options/options-framework.php:338
+msgid "Options saved."
+msgstr "Options saved."
+
+#: inc/theme-options/options-media-uploader.php:51
+msgid "No file chosen"
+msgstr "No file chosen"
+
+#: inc/theme-options/options-media-uploader.php:54
+#: inc/theme-options/options-media-uploader.php:111
+msgid "Upload"
+msgstr "Upload"
+
+#: inc/theme-options/options-media-uploader.php:56
+#: inc/theme-options/options-media-uploader.php:112
+msgid "Remove"
+msgstr "Remove"
+
+#: inc/theme-options/options-media-uploader.php:59
+msgid "Upgrade your version of WordPress for full media support."
+msgstr "Upgrade your version of WordPress for full media support."
+
+#: inc/theme-options/options-media-uploader.php:83
+msgid "View File"
+msgstr "View File"
+
+#: inc/theme-options/options-sanitize.php:232
+msgid "No Repeat"
+msgstr "No Repeat"
+
+#: inc/theme-options/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr "Repeat Horizontally"
+
+#: inc/theme-options/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr "Repeat Vertically"
+
+#: inc/theme-options/options-sanitize.php:235
+msgid "Repeat All"
+msgstr "Repeat All"
+
+#: inc/theme-options/options-sanitize.php:248
+msgid "Top Left"
+msgstr "Top Left"
+
+#: inc/theme-options/options-sanitize.php:249
+msgid "Top Center"
+msgstr "Top Center"
+
+#: inc/theme-options/options-sanitize.php:250
+msgid "Top Right"
+msgstr "Top Right"
+
+#: inc/theme-options/options-sanitize.php:251
+msgid "Middle Left"
+msgstr "Middle Left"
+
+#: inc/theme-options/options-sanitize.php:252
+msgid "Middle Center"
+msgstr "Middle Center"
+
+#: inc/theme-options/options-sanitize.php:253
+msgid "Middle Right"
+msgstr "Middle Right"
+
+#: inc/theme-options/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr "Bottom Left"
+
+#: inc/theme-options/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr "Bottom Center"
+
+#: inc/theme-options/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr "Bottom Right"
+
+#: inc/theme-options/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr "Scroll Normally"
+
+#: inc/theme-options/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr "Fixed in Place"
+
+#: inc/theme-options/options-sanitize.php:344
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/theme-options/options-sanitize.php:345
+msgid "Italic"
+msgstr "Italic"
+
+#: inc/theme-options/options-sanitize.php:346
+msgid "Bold"
+msgstr "Bold"
+
+#: inc/theme-options/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr "Bold Italic"
+
+#: inc/widgets/bl_author.php:26 inc/widgets/bl_html.php:56
+#: inc/widgets/bl_social_counter.php:32 inc/widgets/blu_author.php:27
+#: inc/widgets/blu_posts.php:30
+msgid "Title:"
+msgstr "Title:"
+
+#: inc/widgets/bl_html.php:75
+msgid "Automatically add paragraphs"
+msgstr "Automatically add paragraphs"
+
+#: inc/widgets/bl_instagram.php:132
+msgid "Followers"
+msgstr "Followers"
+
+#: inc/widgets/bl_instagram.php:136
+msgid "Following"
+msgstr "Following"
+
+#: inc/widgets/bl_instagram.php:140
+msgid "Images"
+msgstr "Images"
+
+#: inc/widgets/bl_newsletter.php:124
+msgid "Email address"
+msgstr "Email address"
+
+#: inc/widgets/bl_newsletter.php:125
+msgid "Subscribe!"
+msgstr "Subscribe!"
+
+#: inc/widgets/bl_tabs.php:131 options.php:1193
+msgid "Posts"
+msgstr "Posts"
+
+#: inc/widgets/bl_tabs.php:133
+msgid "Tags"
+msgstr "Tags"
+
+#: inc/widgets/blu_author.php:123 inc/widgets/blu_author.php:195
+#, php-format
+msgid "All posts by %s"
+msgstr "All posts by %s"
+
+#: inc/widgets/blu_author.php:191
+#, php-format
+msgid "Continue reading: %s"
+msgstr "Continue reading: %s"
+
+#: inc/widgets/blu_posts.php:34
+msgid "Sub-Title:"
+msgstr "Sub-Title:"
+
+#: inc/widgets/blu_posts.php:38
+msgid "Number of posts to load:"
+msgstr "Number of posts to load:"
+
+#: inc/widgets/blu_posts.php:46
+msgid "Only Show Categories:"
+msgstr "Only Show Categories:"
+
+#: inc/widgets/blu_posts.php:47
+msgid "Hold CTRL for multiple, leave empty for all categories"
+msgstr "Hold CTRL for multiple, leave empty for all categories"
+
+#: inc/widgets/blu_posts.php:65
+msgid "Sort by:"
+msgstr "Sort by:"
+
+#: inc/widgets/blu_posts.php:67
+msgid "Page title"
+msgstr "Page title"
+
+#: inc/widgets/blu_posts.php:68
+msgid "Page order"
+msgstr "Page order"
+
+#: inc/widgets/blu_posts.php:69
+msgid "Page ID"
+msgstr "Page ID"
+
+#: inc/widgets/widgets.php:66
+msgid "Footer Widgets"
+msgstr "Footer Widgets"
+
+#: inc/widgets/widgets.php:68
+msgid "There are 4 slots available in the footer"
+msgstr "There are 4 slots available in the footer"
+
+#: index.php:43
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Daily Archives: %s"
+
+#: index.php:46
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Monthly Archives: %s"
+
+#: index.php:49
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Yearly Archives: %s"
+
+#: index.php:52
+#, php-format
+msgid "Category: %s"
+msgstr "Category: %s"
+
+#: index.php:55
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Tag Archives: %s"
+
+#: index.php:58 sidebar.php:11
+msgid "Archives"
+msgstr "Archives"
+
+#: index.php:113 page-left-sidebar.php:67 page-single-column.php:63
+#: page.php:70
+msgid "Post not found"
+msgstr "Post not found"
+
+#: index.php:114 page-left-sidebar.php:68 page-single-column.php:64
+#: page.php:71
+msgid "We could not find that post you were looking for."
+msgstr "We could not find that post you were looking for."
+
+#: options.php:34
+msgid "Image"
+msgstr "Image"
+
+#: options.php:35
+msgid "Pattern"
+msgstr "Pattern"
+
+#: options.php:36
+msgid "Solid Color"
+msgstr "Solid Color"
+
+#: options.php:76
+msgid "Background"
+msgstr "Background"
+
+#: options.php:77
+msgid "What kind of background do you want?"
+msgstr "What kind of background do you want?"
+
+#: options.php:84
+msgid "Background Image"
+msgstr "Background Image"
+
+#: options.php:85
+msgid ""
+"Upload your background image here. Recommended size is 1400x875 px or 1.6 to "
+"1 ratio."
+msgstr ""
+"Upload your background image here. Recommended size is 1400x875 px or 1.6 to "
+"1 ratio."
+
+#: options.php:92
+msgid "Show stripe overlay"
+msgstr "Show stripe overlay"
+
+#: options.php:93
+msgid ""
+"Uncheck this to remove the stripe overlay that covers the background image"
+msgstr ""
+"Uncheck this to remove the stripe overlay that covers the background image"
+
+#: options.php:100
+msgid "Select a background pattern"
+msgstr "Select a background pattern"
+
+#: options.php:101
+msgid "Select a background pattern from the list or upload your own below."
+msgstr "Select a background pattern from the list or upload your own below."
+
+#: options.php:123
+msgid "Upload Pattern"
+msgstr "Upload Pattern"
+
+#: options.php:124
+msgid ""
+"Upload a new pattern here. If this feature is used it will overwrite the "
+"selection above."
+msgstr ""
+"Upload a new pattern here. If this feature is used it will overwrite the "
+"selection above."
+
+#: options.php:130
+msgid "Background Color"
+msgstr "Background Color"
+
+#: options.php:131
+msgid "Select the background color"
+msgstr "Select the background color"
+
+#: options.php:138
+msgid "Facebook App Id"
+msgstr "Facebook App Id"
+
+#: options.php:139
+msgid ""
+"Insert you Facebook app id here. If you don't have one for your webpage you "
+"can create it <a target=\"_blank\" href=\"https://developers.facebook.com/"
+"apps\">here</a>"
+msgstr ""
+"Insert you Facebook app id here. If you don't have one for your webpage you "
+"can create it <a target=\"_blank\" href=\"https://developers.facebook.com/"
+"apps\">here</a>"
+
+#: options.php:144
+msgid "Enable Facebook comments for posts"
+msgstr "Enable Facebook comments for posts"
+
+#: options.php:145
+msgid ""
+"Check this to use Facebook comments instead of regular wordpress comments "
+"for posts. Requires a Facebook app id in the field above."
+msgstr ""
+"Check this to use Facebook comments instead of regular wordpress comments "
+"for posts. Requires a Facebook app id in the field above."
+
+#: options.php:151
+msgid "Disable Responsive CSS"
+msgstr "Disable Responsive CSS"
+
+#: options.php:152
+msgid ""
+"Check this to disable responsive css. Responsive css enable the webpage to "
+"adapt to every screen size allowing mobile users to browse the website more "
+"easily."
+msgstr ""
+"Check this to disable responsive css. Responsive css enable the webpage to "
+"adapt to every screen size allowing mobile users to browse the website more "
+"easily."
+
+#: options.php:158
+msgid "Layout"
+msgstr "Layout"
+
+#: options.php:159
+msgid ""
+"Select the layout you want, left sidebar, right sidebar or no sidebar. "
+"Default: Right sidebar"
+msgstr ""
+"Select the layout you want, left sidebar, right sidebar or no sidebar. "
+"Default: Right sidebar"
+
+#: options.php:170
+msgid "Right-to-Left Language"
+msgstr "Right-to-Left Language"
+
+#: options.php:171
+msgid "Check this if your language is written in a Right-to-Left direction"
+msgstr "Check this if your language is written in a Right-to-Left direction"
+
+#: options.php:177
+msgid "Footer text"
+msgstr "Footer text"
+
+#: options.php:178
+msgid "{year} will be replaced with the current year"
+msgstr "{year} will be replaced with the current year"
+
+#: options.php:184
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: options.php:185
+msgid ""
+"Add your Google Analytics tracking code here. Google Analytics is a free web "
+"analytics service more info here: <a href=\"http://www.google.com/analytics/"
+"\">Google Analytics</a>"
+msgstr ""
+"Add your Google Analytics tracking code here. Google Analytics is a free web "
+"analytics service more info here: <a href=\"http://www.google.com/analytics/"
+"\">Google Analytics</a>"
+
+#: options.php:191
+msgid "SEO plugin support"
+msgstr "SEO plugin support"
+
+#: options.php:192
+msgid ""
+"Check this to give an SEO plugin control of meta description, title and open "
+"graph tags."
+msgstr ""
+"Check this to give an SEO plugin control of meta description, title and open "
+"graph tags."
+
+#: options.php:198
+msgid "Fluid footer"
+msgstr "Fluid footer"
+
+#: options.php:199
+msgid ""
+"By default the footer uses a responsive grid system with a percentage based "
+"width, by checking this the footer makes every widget fluid so large items "
+"in the footer will work properly."
+msgstr ""
+"By default the footer uses a responsive grid system with a percentage based "
+"width, by checking this the footer makes every widget fluid so large items "
+"in the footer will work properly."
+
+#: options.php:205
+msgid "Show tagline under site name"
+msgstr "Show tagline under site name"
+
+#: options.php:206
+msgid "Shows the tagline under the site name if there is no logo"
+msgstr "Shows the tagline under the site name if there is no logo"
+
+#: options.php:212
+msgid "Disable color bars"
+msgstr "Disable color bars"
+
+#: options.php:213
+msgid "Check the color bars you want to remove"
+msgstr "Check the color bars you want to remove"
+
+#: options.php:226
+msgid "Color bar first column"
+msgstr "Color bar first column"
+
+#: options.php:227
+msgid "Select a color for the first column in the color bar"
+msgstr "Select a color for the first column in the color bar"
+
+#: options.php:233
+msgid "Color bar second column"
+msgstr "Color bar second column"
+
+#: options.php:234
+msgid "Select a color for the second column in the color bar"
+msgstr "Select a color for the second column in the color bar"
+
+#: options.php:240
+msgid "Color bar third column"
+msgstr "Color bar third column"
+
+#: options.php:241
+msgid "Select a color for the third column in the color bar"
+msgstr "Select a color for the third column in the color bar"
+
+#: options.php:247
+msgid "Color bar fourth column"
+msgstr "Color bar fourth column"
+
+#: options.php:248
+msgid "Select a color for the fourth column in the color bar"
+msgstr "Select a color for the fourth column in the color bar"
+
+#: options.php:268
+msgid "Logo"
+msgstr "Logo"
+
+#: options.php:269
+msgid ""
+"Upload your logo here. Remove the image to show the name of the website in "
+"text instead."
+msgstr ""
+"Upload your logo here. Remove the image to show the name of the website in "
+"text instead."
+
+#: options.php:274
+msgid "Favicon"
+msgstr "Favicon"
+
+#: options.php:275
+msgid ""
+"Upload a favicon. Favicons are the icons that appear in the tabs of the "
+"browser and left of the address bar. (16x16 pixels)"
+msgstr ""
+"Upload a favicon. Favicons are the icons that appear in the tabs of the "
+"browser and left of the address bar. (16x16 pixels)"
+
+#: options.php:279
+msgid "Show search in header"
+msgstr "Show search in header"
+
+#: options.php:280
+msgid "Uncheck this to remove the search input from the header"
+msgstr "Uncheck this to remove the search input from the header"
+
+#: options.php:286
+msgid "Disable Sticky Header"
+msgstr "Disable Sticky Header"
+
+#: options.php:287
+msgid ""
+"Check this to disable the sticky header feature. (The header won't stay "
+"fixed at the top of the window when you scroll down)"
+msgstr ""
+"Check this to disable the sticky header feature. (The header won't stay "
+"fixed at the top of the window when you scroll down)"
+
+#: options.php:302
+msgid "Posts & Pages"
+msgstr "Posts & Pages"
+
+#: options.php:306
+msgid "Front Page layout"
+msgstr "Front Page layout"
+
+#: options.php:307
+msgid ""
+"Select the kind of layout you want on the front page. List is a compact "
+"version with an image on the left side. Default has a large image on top."
+msgstr ""
+"Select the kind of layout you want on the front page. List is a compact "
+"version with an image on the left side. Default has a large image on top."
+
+#: options.php:319
+msgid "Archives layout"
+msgstr "Archives layout"
+
+#: options.php:320
+msgid ""
+"Select the kind of layout you want on the archives. These include pages like "
+"category, tags, monthly archives etc."
+msgstr ""
+"Select the kind of layout you want on the archives. These include pages like "
+"category, tags, monthly archives etc."
+
+#: options.php:331
+msgid "Sticky Post layout"
+msgstr "Sticky Post layout"
+
+#: options.php:332
+msgid ""
+"Select the kind of layout you want for sticky posts. With this you can make "
+"the sticky post appear in a different layout than the other posts."
+msgstr ""
+"Select the kind of layout you want for sticky posts. With this you can make "
+"the sticky post appear in a different layout than the other posts."
+
+#: options.php:364
+msgid "Show full version of featured images (not cropped)"
+msgstr "Show full version of featured images (not cropped)"
+
+#: options.php:365
+msgid ""
+"Check this to make the featured image, that sits on top of the post, render "
+"the full version of the image so the height will be dynamic not fixed as the "
+"cropped version is."
+msgstr ""
+"Check this to make the featured image, that sits on top of the post, render "
+"the full version of the image so the height will be dynamic not fixed as the "
+"cropped version is."
+
+#: options.php:371
+msgid "Center align title and post meta"
+msgstr "Center align title and post meta"
+
+#: options.php:372
+msgid ""
+"Check this to center align the post title and the meta data below it (date, "
+"category tags etc.)"
+msgstr ""
+"Check this to center align the post title and the meta data below it (date, "
+"category tags etc.)"
+
+#: options.php:378
+msgid "Disable share buttons in the post footer"
+msgstr "Disable share buttons in the post footer"
+
+#: options.php:379
+msgid ""
+"Check this to remove \"Share story\" and all the share buttons in the posts "
+"footer."
+msgstr ""
+"Check this to remove \"Share story\" and all the share buttons in the posts "
+"footer."
+
+#: options.php:385
+msgid "Disable the meta footer for posts"
+msgstr "Disable the meta footer for posts"
+
+#: options.php:386
+msgid ""
+"Check this to remove the footer with the author image and share buttons from "
+"all posts"
+msgstr ""
+"Check this to remove the footer with the author image and share buttons from "
+"all posts"
+
+#: options.php:392
+msgid "Disable the meta footer for pages"
+msgstr "Disable the meta footer for pages"
+
+#: options.php:393
+msgid ""
+"Check this to remove the footer with the author image and share buttons from "
+"all pages"
+msgstr ""
+"Check this to remove the footer with the author image and share buttons from "
+"all pages"
+
+#: options.php:399
+msgid "Disable hover zoom effect on post images"
+msgstr "Disable hover zoom effect on post images"
+
+#: options.php:400
+msgid ""
+"Check this to remove the zoom effect when the mouse pointer is hovered above "
+"a post image"
+msgstr ""
+"Check this to remove the zoom effect when the mouse pointer is hovered above "
+"a post image"
+
+#: options.php:409
+msgid "Enable posts excerpt (post summary)"
+msgstr "Enable posts excerpt (post summary)"
+
+#: options.php:410
+msgid ""
+"Check this to only show the post excerpt or the summary of a post in the "
+"browse page. The default behavior is to show the whole post but you can "
+"provide a cut-off point by adding the <a href=\"http://codex.wordpress.org/"
+"Customizing_the_Read_More\" target=\"_blank\">More</a> tag."
+msgstr ""
+"Check this to only show the post excerpt or the summary of a post in the "
+"browse page. The default behavior is to show the whole post but you can "
+"provide a cut-off point by adding the <a href=\"http://codex.wordpress.org/"
+"Customizing_the_Read_More\" target=\"_blank\">More</a> tag."
+
+#: options.php:416
+msgid "Exerpt Length"
+msgstr "Exerpt Length"
+
+#: options.php:417
+msgid ""
+"How many words would you like to show in the post summary. Default: 55 words"
+msgstr ""
+"How many words would you like to show in the post summary. Default: 55 words"
+
+#: options.php:424
+msgid "Continue Reading link as a button"
+msgstr "Continue Reading link as a button"
+
+#: options.php:425
+msgid ""
+"Check this to make the continue reading link a button. You can style this "
+"button in the Custom CSS by using a rule like this: .more-link{ background: "
+"red!important }"
+msgstr ""
+"Check this to make the continue reading link a button. You can style this "
+"button in the Custom CSS by using a rule like this: .more-link{ background: "
+"red!important }"
+
+#: options.php:431
+msgid "Show Continue Reading link"
+msgstr "Show Continue Reading link"
+
+#: options.php:432
+msgid ""
+"Uncheck this to hide the Continue Reading link that appears below the post "
+"conent."
+msgstr ""
+"Uncheck this to hide the Continue Reading link that appears below the post "
+"conent."
+
+#: options.php:438
+msgid "Disable Post Header"
+msgstr "Disable Post Header"
+
+#: options.php:439
+msgid ""
+"Check this to disable the header that renders above each post. Note: this "
+"will also remove the post icon for each post."
+msgstr ""
+"Check this to disable the header that renders above each post. Note: this "
+"will also remove the post icon for each post."
+
+#: options.php:447
+msgid "Disable Related Posts"
+msgstr "Disable Related Posts"
+
+#: options.php:448
+msgid ""
+"Related articles are show below each post when you view it. Check this to "
+"disable that feature."
+msgstr ""
+"Related articles are show below each post when you view it. Check this to "
+"disable that feature."
+
+#: options.php:454
+msgid "Related Posts by Tag or Category first"
+msgstr "Related Posts by Tag or Category first"
+
+#: options.php:455
+msgid ""
+"If \"Category\" is selected the theme will search for related posts by "
+"category and if none are found tags will be used to find related posts. If "
+"you choose Tags it will work exactly the opposite way."
+msgstr ""
+"If \"Category\" is selected the theme will search for related posts by "
+"category and if none are found tags will be used to find related posts. If "
+"you choose Tags it will work exactly the opposite way."
+
+#: options.php:467
+msgid "Post footer share buttons"
+msgstr "Post footer share buttons"
+
+#: options.php:468
+msgid "Select the sharing options you want to display in the post footer."
+msgstr "Select the sharing options you want to display in the post footer."
+
+#: options.php:572
+msgid "Icons"
+msgstr "Icons"
+
+#: options.php:576
+msgid "Disable Post Icons"
+msgstr "Disable Post Icons"
+
+#: options.php:577
+msgid "Check this to disable the post icons"
+msgstr "Check this to disable the post icons"
+
+#: options.php:583
+msgid "Images or Icons"
+msgstr "Images or Icons"
+
+#: options.php:584
+msgid ""
+"You can upload an icon for each post type or select an icon from the "
+"included icon set."
+msgstr ""
+"You can upload an icon for each post type or select an icon from the "
+"included icon set."
+
+#: options.php:591
+msgid "Post Icons"
+msgstr "Post Icons"
+
+#: options.php:592
+msgid "Do you want different icons per post format or category?"
+msgstr "Do you want different icons per post format or category?"
+
+#: options.php:605
+msgid " Icon"
+msgstr " Icon"
+
+#: options.php:606
+msgid "Select a post icon for the category: "
+msgstr "Select a post icon for the category: "
+
+#: options.php:613
+msgid " Image"
+msgstr " Image"
+
+#: options.php:614
+msgid "Upload an image icon for the category: "
+msgstr "Upload an image icon for the category: "
+
+#: options.php:620
+msgid " Post Color"
+msgstr " Post Color"
+
+#: options.php:621
+msgid "Select the color for the "
+msgstr "Select the color for the "
+
+#: options.php:630 options.php:638
+msgid "Standard Post Icon"
+msgstr "Standard Post Icon"
+
+#: options.php:631
+msgid "Select an icon for the standard post type. (Default: icon-calendar-3)"
+msgstr "Select an icon for the standard post type. (Default: icon-calendar-3)"
+
+#: options.php:639
+msgid "Upload an image icon for Standard Posts"
+msgstr "Upload an image icon for Standard Posts"
+
+#: options.php:645
+msgid "Standard Post Color"
+msgstr "Standard Post Color"
+
+#: options.php:646
+msgid "Select the color for the standard post icon and links"
+msgstr "Select the color for the standard post icon and links"
+
+#: options.php:653 options.php:661
+msgid "Gallery Post Icon"
+msgstr "Gallery Post Icon"
+
+#: options.php:654
+msgid "Select an icon for the gallery post type. (Default: icon-picture)"
+msgstr "Select an icon for the gallery post type. (Default: icon-picture)"
+
+#: options.php:662
+msgid "Upload an image icon for Gallery Posts"
+msgstr "Upload an image icon for Gallery Posts"
+
+#: options.php:668
+msgid "Gallery Post Color"
+msgstr "Gallery Post Color"
+
+#: options.php:669
+msgid "Select the color for the gallery post icon and links"
+msgstr "Select the color for the gallery post icon and links"
+
+#: options.php:676 options.php:684
+msgid "Image Post Icon"
+msgstr "Image Post Icon"
+
+#: options.php:677
+msgid "Select an icon for the image post type. (Default: icon-picture-1)"
+msgstr "Select an icon for the image post type. (Default: icon-picture-1)"
+
+#: options.php:685
+msgid "Upload an image icon for Image Posts"
+msgstr "Upload an image icon for Image Posts"
+
+#: options.php:691
+msgid "Image Post Color"
+msgstr "Image Post Color"
+
+#: options.php:692
+msgid "Select the color for the image post icon and links"
+msgstr "Select the color for the image post icon and links"
+
+#: options.php:699 options.php:707
+msgid "Link Post Icon"
+msgstr "Link Post Icon"
+
+#: options.php:700
+msgid "Select an icon for the link post type. (Default: icon-link)"
+msgstr "Select an icon for the link post type. (Default: icon-link)"
+
+#: options.php:708
+msgid "Upload an image icon for Link Posts"
+msgstr "Upload an image icon for Link Posts"
+
+#: options.php:714
+msgid "Link Post Color"
+msgstr "Link Post Color"
+
+#: options.php:715
+msgid "Select the color for the link post icon and links"
+msgstr "Select the color for the link post icon and links"
+
+#: options.php:722 options.php:730
+msgid "Quote Post Icon"
+msgstr "Quote Post Icon"
+
+#: options.php:723
+msgid "Select an icon for the quote post type. (Default: icon-quote-left)"
+msgstr "Select an icon for the quote post type. (Default: icon-quote-left)"
+
+#: options.php:731
+msgid "Upload an image icon for Quote Posts"
+msgstr "Upload an image icon for Quote Posts"
+
+#: options.php:737
+msgid "Quote Post Color"
+msgstr "Quote Post Color"
+
+#: options.php:738
+msgid "Select the color for the quote post icon and links"
+msgstr "Select the color for the quote post icon and links"
+
+#: options.php:745 options.php:753
+msgid "Audio Post Icon"
+msgstr "Audio Post Icon"
+
+#: options.php:746
+msgid "Select an icon for the audio post type. (Default: icon-volume-up)"
+msgstr "Select an icon for the audio post type. (Default: icon-volume-up)"
+
+#: options.php:754
+msgid "Upload an image icon for Audio Posts"
+msgstr "Upload an image icon for Audio Posts"
+
+#: options.php:760
+msgid "Audio Post Color"
+msgstr "Audio Post Color"
+
+#: options.php:761
+msgid "Select the color for the audio post icon and links"
+msgstr "Select the color for the audio post icon and links"
+
+#: options.php:768 options.php:776
+msgid "Video Post Icon"
+msgstr "Video Post Icon"
+
+#: options.php:769
+msgid "Select an icon for the video post type. (Default: icon-videocam)"
+msgstr "Select an icon for the video post type. (Default: icon-videocam)"
+
+#: options.php:777
+msgid "Upload an image icon for Video Posts"
+msgstr "Upload an image icon for Video Posts"
+
+#: options.php:783
+msgid "Video Post Color"
+msgstr "Video Post Color"
+
+#: options.php:784
+msgid "Select the color for the video post icon and links"
+msgstr "Select the color for the video post icon and links"
+
+#: options.php:791 options.php:799
+msgid "Facebook Status Post Icon"
+msgstr "Facebook Status Post Icon"
+
+#: options.php:792
+msgid ""
+"Select an icon for the facebook status post type. (Default: icon-facebook-1)"
+msgstr ""
+"Select an icon for the facebook status post type. (Default: icon-facebook-1)"
+
+#: options.php:800
+msgid "Upload an image icon for Facebook Status Posts"
+msgstr "Upload an image icon for Facebook Status Posts"
+
+#: options.php:806
+msgid "Facebook Status Post Color"
+msgstr "Facebook Status Post Color"
+
+#: options.php:807
+msgid "Select the color for the Facebook status post icon and links"
+msgstr "Select the color for the Facebook status post icon and links"
+
+#: options.php:814
+msgid "Twitter Status Post Icon"
+msgstr "Twitter Status Post Icon"
+
+#: options.php:815
+msgid ""
+"Select an icon for the Twitter status post type. (Default: icon-twitter-1)"
+msgstr ""
+"Select an icon for the Twitter status post type. (Default: icon-twitter-1)"
+
+#: options.php:822
+msgid "Twitter status Post Icon"
+msgstr "Twitter status Post Icon"
+
+#: options.php:823
+msgid "Upload an image icon for Twitter status Posts"
+msgstr "Upload an image icon for Twitter status Posts"
+
+#: options.php:829
+msgid "Twitter status Post Color"
+msgstr "Twitter status Post Color"
+
+#: options.php:830
+msgid "Select the color for the Twitter status post icon and links"
+msgstr "Select the color for the Twitter status post icon and links"
+
+#: options.php:837 options.php:845
+msgid "Sticky Post Icon"
+msgstr "Sticky Post Icon"
+
+#: options.php:838
+msgid "Select an icon for sticky posts. (Default: icon-pin)"
+msgstr "Select an icon for sticky posts. (Default: icon-pin)"
+
+#: options.php:846
+msgid "Upload an image icon for Sticky Posts"
+msgstr "Upload an image icon for Sticky Posts"
+
+#: options.php:852
+msgid "Sticky Post Color"
+msgstr "Sticky Post Color"
+
+#: options.php:853
+msgid "Select the color for the sticky post icon and links"
+msgstr "Select the color for the sticky post icon and links"
+
+#: options.php:862
+msgid "Colors & Fonts"
+msgstr "Colors & Fonts"
+
+#: options.php:867
+msgid "Heading font"
+msgstr "Heading font"
+
+#: options.php:868
+msgid "Select a font type for all heading"
+msgstr "Select a font type for all heading"
+
+#: options.php:874
+msgid "Main font"
+msgstr "Main font"
+
+#: options.php:875
+msgid "Select a font type for normal text"
+msgstr "Select a font type for normal text"
+
+#: options.php:881
+msgid "Menu links font"
+msgstr "Menu links font"
+
+#: options.php:882
+msgid "Select a font type for the menu items in the header"
+msgstr "Select a font type for the menu items in the header"
+
+#: options.php:888
+msgid "Brand font"
+msgstr "Brand font"
+
+#: options.php:889
+msgid ""
+"Select a font type for the brand. If you use text instead of a logo in your "
+"header this setting changes the font family for that text."
+msgstr ""
+"Select a font type for the brand. If you use text instead of a logo in your "
+"header this setting changes the font family for that text."
+
+#: options.php:895
+msgid "Body font size"
+msgstr "Body font size"
+
+#: options.php:896
+msgid ""
+"Select the size for the body in other words the default font size if no "
+"other specific size is set. (default: 14px)"
+msgstr ""
+"Select the size for the body in other words the default font size if no "
+"other specific size is set. (default: 14px)"
+
+#: options.php:905
+msgid "Post title font size"
+msgstr "Post title font size"
+
+#: options.php:906
+msgid "Select the size for the post title. (default: 38px)"
+msgstr "Select the size for the post title. (default: 38px)"
+
+#: options.php:915
+msgid "Post text font size"
+msgstr "Post text font size"
+
+#: options.php:916
+msgid "Select the size for the post text. (default: 18px)"
+msgstr "Select the size for the post text. (default: 18px)"
+
+#: options.php:925
+msgid "Page title font size"
+msgstr "Page title font size"
+
+#: options.php:926
+msgid "Select the size for page titles. (default: 38px)"
+msgstr "Select the size for page titles. (default: 38px)"
+
+#: options.php:935
+msgid "Page text font size"
+msgstr "Page text font size"
+
+#: options.php:936
+msgid "Select the size for page text. (default: 16px)"
+msgstr "Select the size for page text. (default: 16px)"
+
+#: options.php:945
+msgid "Top Header Color"
+msgstr "Top Header Color"
+
+#: options.php:946
+msgid "Select the color for the top header that includes the menu and logo"
+msgstr "Select the color for the top header that includes the menu and logo"
+
+#: options.php:952
+msgid "Top Header Font Color"
+msgstr "Top Header Font Color"
+
+#: options.php:953
+msgid "Select the color for the top header menu links"
+msgstr "Select the color for the top header menu links"
+
+#: options.php:959
+msgid "Post Header Color"
+msgstr "Post Header Color"
+
+#: options.php:960
+msgid "Select the color for the top header of each post"
+msgstr "Select the color for the top header of each post"
+
+#: options.php:966
+msgid "Archives Header Color"
+msgstr "Archives Header Color"
+
+#: options.php:967
+msgid ""
+"Select the color for the archive header. This header only appears if the "
+"layout is set to List in Posts & Pages."
+msgstr ""
+"Select the color for the archive header. This header only appears if the "
+"layout is set to List in Posts & Pages."
+
+#: options.php:973
+msgid "Archives Header Font Color"
+msgstr "Archives Header Font Color"
+
+#: options.php:974
+msgid ""
+"Select the font color for the archive header. This header only appears if "
+"the layout is set to List in Posts & Pages."
+msgstr ""
+"Select the font color for the archive header. This header only appears if "
+"the layout is set to List in Posts & Pages."
+
+#: options.php:980
+msgid "Archives paragraph Font Color"
+msgstr "Archives paragraph Font Color"
+
+#: options.php:981
+msgid ""
+"Select the font color for the archive paragraph below the heading. This can "
+"be the category description or tag description."
+msgstr ""
+"Select the font color for the archive paragraph below the heading. This can "
+"be the category description or tag description."
+
+#: options.php:987
+msgid "Widget Header Color"
+msgstr "Widget Header Color"
+
+#: options.php:988
+msgid "Select the default color for the top header of each widget"
+msgstr "Select the default color for the top header of each widget"
+
+#: options.php:994
+msgid "Widget Header Font Color"
+msgstr "Widget Header Font Color"
+
+#: options.php:995
+msgid "Select the color for the heading in each widget"
+msgstr "Select the color for the heading in each widget"
+
+#: options.php:1001
+msgid "Footer Color"
+msgstr "Footer Color"
+
+#: options.php:1002
+msgid "Select the default color for the footer"
+msgstr "Select the default color for the footer"
+
+#: options.php:1010
+msgid "Advertising"
+msgstr "Advertising"
+
+#: options.php:1015
+msgid "Google Ads"
+msgstr "Google Ads"
+
+#: options.php:1019
+msgid "Google Publisher ID"
+msgstr "Google Publisher ID"
+
+#: options.php:1020
+msgid ""
+"Found in the top right corner of your <a href=\"https://www.google.com/"
+"adsense/\" target=\"_blank\">adsense account</a>."
+msgstr ""
+"Found in the top right corner of your <a href=\"https://www.google.com/"
+"adsense/\" target=\"_blank\">adsense account</a>."
+
+#: options.php:1026
+msgid "Google Ad unit ID"
+msgstr "Google Ad unit ID"
+
+#: options.php:1027
+msgid ""
+"Found in your Ad Units area under <strong>ID</strong> <a href=\"https://www."
+"google.com/adsense/app#myads-springboard\" target=\"_blank\">here</a>."
+msgstr ""
+"Found in your Ad Units area under <strong>ID</strong> <a href=\"https://www."
+"google.com/adsense/app#myads-springboard\" target=\"_blank\">here</a>."
+
+#: options.php:1033
+msgid "Ad spot #1 - Above the header."
+msgstr "Ad spot #1 - Above the header."
+
+#: options.php:1034
+msgid ""
+"Select what kind of ad you want added above the top menu. <a target=\"_blank"
+"\" href=\"http://www.bluth.is/wordpress/keilir/wp-content/uploads/2013/07/"
+"ad_above_example.png\">See Example</a>"
+msgstr ""
+"Select what kind of ad you want added above the top menu. <a target=\"_blank"
+"\" href=\"http://www.bluth.is/wordpress/keilir/wp-content/uploads/2013/07/"
+"ad_above_example.png\">See Example</a>"
+
+#: options.php:1039 options.php:1075 options.php:1135
+msgid "None"
+msgstr "None"
+
+#: options.php:1040 options.php:1076 options.php:1136
+msgid "Shortcode or HTML code like Adsense"
+msgstr "Shortcode or HTML code like Adsense"
+
+#: options.php:1041 options.php:1077 options.php:1137
+msgid "Image with a link"
+msgstr "Image with a link"
+
+#: options.php:1045 options.php:1081 options.php:1141
+msgid "Add Shortcode or HTML code here"
+msgstr "Add Shortcode or HTML code here"
+
+#: options.php:1046 options.php:1082 options.php:1142
+msgid ""
+"Insert a shortcode provided by this theme or any plugin. You can also add "
+"advertising code from any provider or use plain html. To add Adsense just "
+"paste the embed code here that they provide and save."
+msgstr ""
+"Insert a shortcode provided by this theme or any plugin. You can also add "
+"advertising code from any provider or use plain html. To add Adsense just "
+"paste the embed code here that they provide and save."
+
+#: options.php:1053 options.php:1089 options.php:1149
+msgid "Upload Image"
+msgstr "Upload Image"
+
+#: options.php:1054 options.php:1150
+msgid ""
+"Upload an image to add above the header menu and add a link for it in the "
+"input box below"
+msgstr ""
+"Upload an image to add above the header menu and add a link for it in the "
+"input box below"
+
+#: options.php:1060 options.php:1096 options.php:1156
+msgid "Image link"
+msgstr "Image link"
+
+#: options.php:1061 options.php:1097 options.php:1157
+msgid "Add a link to the image"
+msgstr "Add a link to the image"
+
+#: options.php:1069
+msgid "Ad spot #2 - Between posts"
+msgstr "Ad spot #2 - Between posts"
+
+#: options.php:1070
+msgid ""
+"Here you can add advertising between posts. <a target=\"_blank\" href="
+"\"http://www.bluth.is/wordpress/keilir/wp-content/uploads/2013/07/"
+"ad_posts_example.png\">See Example</a>"
+msgstr ""
+"Here you can add advertising between posts. <a target=\"_blank\" href="
+"\"http://www.bluth.is/wordpress/keilir/wp-content/uploads/2013/07/"
+"ad_posts_example.png\">See Example</a>"
+
+#: options.php:1090
+msgid ""
+"Upload an image to add between posts and add a link for it in the input box "
+"below"
+msgstr ""
+"Upload an image to add between posts and add a link for it in the input box "
+"below"
+
+#: options.php:1104
+msgid "Display Frequency"
+msgstr "Display Frequency"
+
+#: options.php:1105
+msgid "How often do you want the ad to appear?"
+msgstr "How often do you want the ad to appear?"
+
+#: options.php:1111
+msgid "Between every post"
+msgstr "Between every post"
+
+#: options.php:1112
+msgid "Every 2th posts"
+msgstr "Every 2th posts"
+
+#: options.php:1113
+msgid "Every 3th post"
+msgstr "Every 3th post"
+
+#: options.php:1114
+msgid "Every 4th post"
+msgstr "Every 4th post"
+
+#: options.php:1115
+msgid "Every 5th post"
+msgstr "Every 5th post"
+
+#: options.php:1119 options.php:1164
+msgid "Add white background"
+msgstr "Add white background"
+
+#: options.php:1120 options.php:1165
+msgid "Check this to wrap the ad content in a white box"
+msgstr "Check this to wrap the ad content in a white box"
+
+#: options.php:1129
+msgid "Ad spot #3 - Above the content."
+msgstr "Ad spot #3 - Above the content."
+
+#: options.php:1130
+msgid ""
+"Select what kind of ad you want added above the main container. <a target="
+"\"_blank\" href=\"http://www.bluth.is/wordpress/keilir/wp-content/"
+"uploads/2013/07/ad_content_example.png\">See Example</a>"
+msgstr ""
+"Select what kind of ad you want added above the main container. <a target="
+"\"_blank\" href=\"http://www.bluth.is/wordpress/keilir/wp-content/"
+"uploads/2013/07/ad_content_example.png\">See Example</a>"
+
+#: options.php:1172
+msgid "Add padding"
+msgstr "Add padding"
+
+#: options.php:1173
+msgid "Add padding to the banner container"
+msgstr "Add padding to the banner container"
+
+#: options.php:1180
+msgid "Banner placement"
+msgstr "Banner placement"
+
+#: options.php:1181
+msgid "Where do you want the banner to appear?"
+msgstr "Where do you want the banner to appear?"
+
+#: options.php:1191
+msgid "Frontpage"
+msgstr "Frontpage"
+
+#: options.php:1192
+msgid "Pages"
+msgstr "Pages"
+
+#: options.php:1199
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+#: options.php:1203
+msgid "Add Custom CSS rules here"
+msgstr "Add Custom CSS rules here"
+
+#: options.php:1204
+msgid ""
+"Here you can overwrite specific css rules if you want to customize your "
+"theme a little. Write into this box just like you would do in a regular css "
+"file. Example: body{ color: #444; }"
+msgstr ""
+"Here you can overwrite specific css rules if you want to customize your "
+"theme a little. Write into this box just like you would do in a regular css "
+"file. Example: body{ color: #444; }"
+
+#: sidebar.php:18
+msgid "Meta"
+msgstr "Meta"
+
+#: single.php:51
+msgid "Older"
+msgstr "Older"
+
+#: single.php:56
+msgid "Newer"
+msgstr "Newer"
+
+#~ msgid "Something went wrong with the plugin API."
+#~ msgstr "Something went wrong with the plugin API."
+
+#~ msgid "All plugins installed and activated successfully. %s"
+#~ msgstr "All plugins installed and activated successfully. %s"
+
+#~ msgid "Select icons from the icon set"
+#~ msgstr "Select icons from the icon set"
+
+#~ msgid "Upload my own image icons (40x40 pixels)"
+#~ msgstr "Upload my own image icons (40x40 pixels)"
+
+#~ msgid "Upload your background image here."
+#~ msgstr "Upload your background image here."
+
+#~ msgid "These are widgets for the Footer."
+#~ msgstr "These are widgets for the Footer."

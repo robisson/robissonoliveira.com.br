@@ -1,0 +1,82 @@
+table.socialstats_added {border-collapse:collapse;width:100%;}
+table.socialstats_added th {padding:3px 10px 3px 10px;border:1px solid #DFDFDF;background-color:#F0F0F0;font-weight:bold;}
+table.socialstats_added td {padding:3px 10px 3px 10px;border:1px solid #DFDFDF;}
+
+.socialstats_header {padding:10px 20px 10px 0px;}
+table.social_stats_header_new {width:100%}
+table.social_stats_header_new td{width:50%}
+.socialstats_header2{padding:5px 0px 3px 10px;border-bottom:1px solid #BFBFBF;margin-bottom:0px;background-color:#bdc7d8}
+.socialstats_content_box {text-align:left;background-color:#FFF;padding:20px;border:1px solid #eceff5;}
+.socialstats_content_box_2 {text-align:left;background-color:#FFF;padding:0px 20px 20px 20px;border:1px solid #eceff5;}
+.socialstats_content_box_3 {text-align:left;background-color:#FFF;padding:10px 15px 15px 15px;border:1px solid #eceff5;}
+.socialstats_image {width:16px;height:16px;}
+.socialstats_image_mid {width:16px;height:16px;vertical-align:text-bottom;}
+.socialstats_image_small {width:14px;height:14px;vertical-align:text-bottom;}
+fieldset.socialstats_fieldset {padding:15px; border:1px solid #BFBFBF;width:100%;background-color:#FFF;}
+fieldset.socialstats_fieldset label {float:left;margin:0px;padding:0px;}
+.socialstats_tbl_main {padding:0px;margin:0px;border-collapse:collapse;width:100%}
+.socialstats_tbl_main td {vertical-align:top;}
+div.socialstats_error {text-align:center;background-color:#ffebe8;border:1px solid #dd3c10;padding:3px 10px 3px 10px;margin-top:10px;margin-right:20px;margin-left:20px;}
+div.socialstats_success {text-align:center;background-color:#F7F7F7;border:1px solid #7f93bc;padding:3px 10px 3px 10px;margin-top:10px;margin-right:20px;margin-left:20px;}
+
+div.socialstats_tweet_box {margin-bottom:3px;}
+div.socialstats_tweet_box div {margin:0px;padding:0px;}
+div.socialstats_tweet_box div table{border:0px;padding:0px;border-collapse:collapse;}
+div.socialstats_tweet_box div table td{vertical-align:top;padding:5px;background-color:#EFEFF7;}
+div.socialstats_tweet_box div table td img{height:35px;width:35px;border:2px solid #FFF;}
+
+div#socialstats_tweets_load_button {text-align:center;}
+#socialstats_tweets_load {background-color:#eceff5;border-top:1px solid #d8dfea;border-left:1px solid #d8dfea;border-bottom:1px solid #7f93bc;border-right:1px solid #7f93bc;}
+
+.msg_success {text-align:center;background-color:#d8dfea;padding:5px 10px 5px 10px;font-weight:bold;font-size:14px;}
+.msg_error {text-align:center;background-color:#ffebe8;padding:5px 10px 5px 10px;font-weight:bold;font-size:14px;}
+
+.socialstats_font14 {font-size:14px;}
+.socialstats_font14 a{font-size:14px;}
+
+.socialstats_postbox_container_full {padding-right:1%;width:99%;float:left;}
+.socialstats_postbox_container {padding-right: 1.5%;width:47%;float:left;}
+.socialstats_postbox_container_right {padding-left: 1.5%;padding-right:1%;width:47%;float:left;}
+.socialstats_postbox {border:1px solid #DFDFDF;margin:0px 0px 20px 0px;}
+.socialstats_handle {cursor:pointer;background-color:#DFDFDF;}
+.socialstats_inside {margin:0px 10px 10px 10px;position:relative;}
+h3 {font-size:13px;font-weight:bold;line-height:1;margin:0px;padding:7px 9px;}
+
+table.socialstats_grid {width:100%;border-spacing: 2px 2px;-webkit-border-horizontal-spacing: 2px;-webkit-border-vertical-spacing: 2px;border-color: gray;table-layout:fixed;}
+table.socialstats_grid th{white-space:nowrap;}
+table.socialstats_grid th div{overflow:hidden; text-overflow:clip; white-space:nowrap;}
+table.socialstats_grid tr{line-height:22px;}
+table.socialstats_grid td{padding:0px 8px 0px 8px;}
+table.socialstats_grid th{border-bottom:2px solid #DCDCD8;text-align:right;padding-right:5px;}
+.socialstats_label {width: 45%;}
+.socialstats_label div{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.socialstats_views {text-align:right;padding-right:5px;}
+.socialstats_label_2 {width: 85%;}
+.socialstats_label_2 div{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.socialstats_views_2 {text-align:right;padding-right:5px;}
+.socialstats_label_3 {width: 25%;}
+.socialstats_label_3 div{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.socialstats_views_3 {text-align:right;padding-right:5px;}
+.socialstats_alternate {background-color:#eceff5;}
+
+table.socialstats_dashboard_agg {width:100%;border-collapse:collapse;}
+table.socialstats_dashboard_agg th {padding:10px 5px 3px 5px;font-size:15px;border-left:1px solid #bdc7d8;border-right:1px solid #bdc7d8;width:20%;}
+table.socialstats_dashboard_agg td {padding:3px 5px 10px 5px;font-size:16px;font-weight:bold;border-bottom:1px solid #DFDFDF;border-left:1px solid #DFDFDF;border-right:1px solid #DFDFDF;text-align:center;width:20%;}
+
+
+.socialstats_graph_head {font-size:14px;padding:0px 0px 10px 0px;font-weight:bold;}
+
+.content_link_big {font-size:16px;padding:5px 0px 5px 0px;font-weight:bold;}
+.content_link_big span {color:#21759B;}
+.fontBold18 {font-weight: bold; font-size:18px;}
+.fontBold18 a{font-weight: normal; font-size:18px;}
+
+a.button_link {color:#8F3211;font-size:14px;font-weight:bold;text-decoration:none;}
+a.button_link:hover{text-decoration: none;}
+a.button_link h2{background-color:#FFCF4F;border: 1px solid #CFAE19;padding:3px 10px 3px 10px;-moz-border-radius: 3px;border-radius: 3px;-webkit-border-radius: 3px;color:#8F3211;font-size:14px;font-weight:bold;font-decoration:none;}
+a.button_link h2{color:#8F3211;font-size:16px;font-weight:bold;font-decoration:none;}
+
+div.button_link a:hover {text-decoration: none;}
+
+
+.socialstats_button_blue {background: -moz-linear-gradient(top, #8F9FBF, #3F557F);background: -webkit-gradient(linear, left top, left bottom, from(#8F9FBF), to(#3F557F));filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#8F9FBF, endColorstr=#3F557F);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#8F9FBF, endColorstr=#3F557F)";border: 1px solid #3F557F !important;padding:5px 10px;-moz-border-radius: 3px;border-radius: 3px;-webkit-border-radius: 3px;color:#FFFFFF;white-space:nowrap;text-align:center;cursor:pointer;font-size:14px;}

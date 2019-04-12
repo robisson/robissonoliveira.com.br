@@ -1,0 +1,9 @@
+dss_dashboard_widget p.sub {font: italic 13px Georgia, "Times New Roman", "Bitstream Charter", Times, serif;color: #777;margin: -12px;padding: 5px 10px 15px;}
+#dss_dashboard_widget .table {margin: 0 -9px 10px;padding: 0 10px;}
+#dss_dashboard_widget table {width: 100%;}
+#dss_dashboard_widget td.b {font: normal 14px Georgia, "Times New Roman", "Bitstream Charter", Times, serif;text-align: right;padding-right: 6px;}
+#dss_dashboard_widget table td {padding: 3px 0;border-top: 1px solid #ECECEC;white-space: nowrap;}
+#dss_dashboard_widget table tr.first td {border-top: none;}
+#dss_dashboard_widget td.first,#dss_dashboard_widget td.last {width: 1px;}
+#dss_dashboard_widget .t {color: #777;font-size: 12px;padding-top: 6px;padding-right: 12px;}
+#dss_dashboard_widget td.b a {font-size: 18px;}#dss_dashboard_widget tr.first td {border: none;}

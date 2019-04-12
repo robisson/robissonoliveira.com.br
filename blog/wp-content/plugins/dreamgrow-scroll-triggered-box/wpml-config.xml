@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<wpml-config>
+	<custom-types>
+		<custom-type translate="1">dgd_scrollbox</custom-type>
+	</custom-types>
+</wpml-config>

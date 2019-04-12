@@ -1,0 +1,2 @@
+[24-Sep-2015 20:40:50 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/robisson/public_html/wp-content/plugins/w3-total-cache/lib/Minify/Minify/CSS/Compressor.php on line 129
+[24-Sep-2015 20:41:40 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/robisson/public_html/wp-content/plugins/w3-total-cache/lib/Minify/Minify/CSS/Compressor.php on line 129

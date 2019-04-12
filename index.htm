@@ -47,21 +47,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Robisson Oliviera</a>
+              <a class="navbar-brand" href="/">Robisson Oliviera</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
                 <li class="active">
-                  <a href="#"
+                  <a href="/"
                     >Página inicial <span class="sr-only">(current)</span></a
                   >
                 </li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Livros</a></li>
-                <li><a href="#">Sobre mim</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="sobre-mim.htm">Sobre mim</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -79,20 +77,21 @@
             class="visible-xs visible-sm"
           />
           <h1>
-            Como o Javascript funciona: Entendendo as funções e suas formas de
-            uso
+            Como o JavaScript funciona: rastreando as alterações no DOM usando o
+            MutationObserver
           </h1>
-          <small>20/03/2019</small>
+          <small>09/04/2019</small>
           <p class="lead">
-            Eu venho traduzindo há algumas semanas a série de artigos do
-            Alexander Zlatkov como o Javascript funciona. São todos artigos de
-            qualidade altíssima. Entre os artigos dele não tem um para falar das
-            funções em Javascript, pelo menos não ainda, então esse eu resolvi
-            escrever.
+            Este é o post #10 da série dedicada a explorar JavaScript e seus
+            componentes de construção. Nesse artigo vamos ver como rastrear
+            alterações do DOM com a API MutationObserver.
           </p>
           <p class="text-right">
             <b>
-              <a href="#">Ler artigo completo</a>
+              <a target="_blank"
+                href="https://medium.com/reactbrasil/como-o-javascript-funciona-rastreando-as-altera%C3%A7%C3%B5es-no-dom-usando-o-mutationobserver-33d9533acadf"
+                >Ler artigo completo</a
+              >
             </b>
           </p>
         </div>
@@ -106,7 +105,7 @@
         </div>
       </section>
       <section id="home-presentation" class="row">
-        <div class="col-lg-2 col-md-3 col-sm-4">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
           <img
             class="home-presentation__profile"
             src="assets/images/robisson-home.png"
@@ -121,8 +120,8 @@
             imobiliario.
           </p>
           <p>
-            Fiz esse site para compartilhar conhecimento das coisas que gosto e
-            também reforçar meus própios conhecimentos.
+            Fiz esse site para compartilhar conhecimentos das coisas que gosto e
+            também reforçar o que já sei.
           </p>
         </div>
         <div class="col-lg-4 col-md-3 col-sm-12" id="home-social-media">
@@ -218,26 +217,60 @@
           <div class="col-lg-offset-2 col-md-offset-1 col-sm-offset-1">
             <div class="col-lg-3 col-md-3 col-sm-3 last-articles__card-article">
               <div>
-                <img src="assets/images/last-article/article.png" alt="" />
-                <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
-                <p>21/03/2018</p>
-                <p><a href="#">Ler artigo completo</a></p>
+                <img
+                  src="assets/images/push.png"
+                  alt="Como o JavaScript funciona: a mecânica das notificações por
+                push na Web"
+                />
+                <h3>
+                  Como o JavaScript funciona: a mecânica das notificações por
+                  push na Web
+                </h3>
+                <p>01/04/2019</p>
+                <p class="text-right">
+                  <a
+                    href="https://medium.com/reactbrasil/como-o-javascript-funciona-a-mec%C3%A2nica-das-notifica%C3%A7%C3%B5es-por-push-na-web-d36ddc93b669"
+                    >Ler artigo completo</a
+                  >
+                </p>
               </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 last-articles__card-article">
               <div>
-                <img src="assets/images/last-article/article.png" alt="" />
-                <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
-                <p>21/03/2018</p>
-                <p><a href="#">Ler artigo completo</a></p>
+                <img
+                  src="assets/images/sw.png"
+                  alt="Como o JavaScript funciona: Service Workers, seu ciclo de vida e casos de uso"
+                />
+                <h3>
+                  Como o JavaScript funciona: Service Workers, seu ciclo de vida
+                  e casos de uso
+                </h3>
+                <p>25/03/2019</p>
+                <p class="text-right">
+                  <a
+                    href="https://medium.com/reactbrasil/como-o-javascript-funciona-service-workers-seu-ciclo-de-vida-e-casos-de-uso-8404870ee728"
+                    >Ler artigo completo</a
+                  >
+                </p>
               </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 last-articles__card-article">
               <div>
-                <img src="assets/images/last-article/article.png" alt="" />
-                <h3>Como o Javascript funciona: Como funciona a Engine V8</h3>
-                <p>21/03/2018</p>
-                <p><a href="#">Ler artigo completo</a></p>
+                <img
+                  src="assets/images/web_workers.png"
+                  alt="Como o JavaScript funciona: Os blocos de construção dos Web Workers + 5 casos quando você deve usá-los"
+                />
+                <h3>
+                  Como o JavaScript funciona: Os blocos de construção dos Web
+                  Workers + 5 casos quando você deve usá-los
+                </h3>
+                <p>18/03/2019</p>
+                <p class="text-right">
+                  <a
+                    href="https://medium.com/reactbrasil/como-o-javascript-funciona-os-blocos-de-constru%C3%A7%C3%A3o-de-web-workers-5-casos-quando-voc%C3%AA-deve-c486217b6089"
+                    >Ler artigo completo</a
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -247,7 +280,8 @@
         <div class="col-lg-12">
           <h1>Projetos Open Source</h1>
           <p>
-            Estou tentando escrever um post por semana, nem sempre é possível
+            Estou tentando na medida do possivel contribuir com a comunidade
+            open source
           </p>
           <hr />
         </div>
@@ -255,17 +289,14 @@
           <div class="col-lg-offset-1 col-md-offset-1">
             <div class="col-lg-10 col-md-10">
               <div class="col-lg-6 col-md-6 col-sm-5">
-                <img
-                  width="100%"
-                  src="assets/images/last-article/open-source.png"
-                  alt=""
-                />
+                <img width="100%" src="assets/images/wipkanban.jpeg" alt="" />
               </div>
               <div class="col-lg-6 col-md-6 col-sm-7 open-source-project__bg">
-                <h2>WIPLean</h2>
+                <h2>WIPKanban</h2>
                 <p>
-                  É uma aplicação que combina Kanban com OKR para gerenciar as
-                  metas de uma orga- nização e suas execução.
+                  Comecei a utilizar o método Kanban na empresa e senti falta de
+                  um software que junte isso da operação até os níveis mais alto
+                  da empresa.
                 </p>
                 <p>
                   É feito com ReactJs, Graphql, Nodejs e MongoDB. Ainda está em
@@ -276,21 +307,14 @@
                 <br />
                 <br />
                 <br />
-                <p class="text-right"><a href="#">Ver no github.com</a></p>
+                <p class="text-right">
+                  <a
+                    target="_blank"
+                    href="https://github.com/wipkanban/wipkanban"
+                    >Ver no github.com</a
+                  >
+                </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="row" id="newsletter">
-        <div class="col-lg-offset-2 col-md-offset-2">
-          <div class="col-lg-6 col-md-6">
-            <h3>Quer saber quando novos post forem publicados?</h3>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <div class="form-inline">
-              <input type="text" class="form-control" />
-              <button class="btn btn-danger">Cadastrar</button>
             </div>
           </div>
         </div>
@@ -312,21 +336,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Robisson Oliviera</a>
+              <a class="navbar-brand" href="/">Robisson Oliviera</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
                 <li class="active">
-                  <a href="#"
+                  <a href="/"
                     >Página inicial <span class="sr-only">(current)</span></a
                   >
                 </li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Livros</a></li>
-                <li><a href="#">Sobre mim</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="sobre-mim.htm">Sobre mim</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->

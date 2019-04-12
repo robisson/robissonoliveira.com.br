@@ -1,0 +1,44 @@
+#current-book {
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+#books {
+  .books__book {
+    margin: 1em 0;
+
+    img {
+      float: left;
+      margin: 1em 1em 1em 0;
+      max-width: 300px;
+      max-height: 300px;
+    }
+
+    &__description {
+      font-size: 1.2em;
+
+      &__tag {
+        background-color: $background-blue;
+        color: white;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #books {
+    .books__book {
+      img {
+        margin: 1em auto;
+        float: none;
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+      }
+    }
+  }
+}

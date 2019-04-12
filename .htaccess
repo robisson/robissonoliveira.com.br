@@ -1,0 +1,18 @@
+#elimando dominio sem www
+Rewritecond %{http_host} ^robissonoliveira.com.br [NC]
+Rewriterule ^(.*)$ https://www.robissonoliveira.com.br/$1 [L,R=301]
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /blog/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /blog/$1 [L,R=301]
+</IfModule>
+
+# END WordPress

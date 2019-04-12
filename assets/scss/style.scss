@@ -6,6 +6,10 @@ $background-green: #b0cb7a;
 $background-green-light: #85ccb1;
 $background-blue: #85a9b3;
 
+.bg-gray {
+  background-color: #eeeeee;
+}
+
 .bg-red {
   background-color: $background-red;
 }
@@ -57,7 +61,7 @@ section {
 
 @media (max-width: 768px) {
   section {
-    margin-bottom: 4em;
+    margin-bottom: 1.5em;
     padding: 1em 0;
   }
 }
@@ -65,6 +69,14 @@ section {
 hr {
   border-color: black;
   text-align: left;
+}
+
+#last-article {
+  
+  img.visible-lg {
+    margin-top: 15%;
+    
+  }
 }
 
 #top-detail-header {

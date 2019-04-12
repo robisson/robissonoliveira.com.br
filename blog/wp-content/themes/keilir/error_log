@@ -1,0 +1,11 @@
+[25-Jul-2015 05:11:30 America/Denver] PHP Fatal error:  Call to undefined function of_get_option() in /home/robisson/public_html/wp-content/themes/keilir/index.php on line 8
+[31-Aug-2015 06:03:01 America/Denver] PHP Fatal error:  Call to undefined function of_get_option() in /home/robisson/public_html/wp-content/themes/keilir/index.php on line 8
+[31-Aug-2015 06:03:01 America/Denver] PHP Fatal error:  Call to undefined function of_get_option() in /home/robisson/public_html/wp-content/themes/keilir/index.php on line 8
+[31-Aug-2015 06:07:43 America/Denver] PHP Fatal error:  Call to undefined function of_get_option() in /home/robisson/public_html/wp-content/themes/keilir/index.php on line 8
+[31-Aug-2015 06:07:43 America/Denver] PHP Fatal error:  Call to undefined function of_get_option() in /home/robisson/public_html/wp-content/themes/keilir/index.php on line 8
+[21-Sep-2015 02:08:21 America/Denver] PHP Fatal error:  Call to undefined function post_password_required() in /home/robisson/public_html/wp-content/themes/keilir/comments.php on line 3
+[01-Mar-2016 11:06:25 America/Denver] PHP Fatal error:  Call to undefined function language_attributes() in /home/robisson/public_html/wp-content/themes/keilir/header.php on line 3
+[01-Mar-2016 11:06:25 America/Denver] PHP Fatal error:  Call to undefined function load_theme_textdomain() in /home/robisson/public_html/wp-content/themes/keilir/functions.php on line 4
+[01-Mar-2016 11:06:25 America/Denver] PHP Fatal error:  Call to undefined function of_get_option() in /home/robisson/public_html/wp-content/themes/keilir/footer.php on line 3
+[01-Mar-2016 11:06:27 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home/robisson/public_html/wp-content/themes/keilir/404.php on line 1
+[01-Mar-2016 11:06:27 America/Denver] PHP Fatal error:  Call to undefined function get_header() in /home/robisson/public_html/wp-content/themes/keilir/404.php on line 1
