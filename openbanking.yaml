@@ -1,0 +1,59 @@
+apiVersion: api-management.sensedia.com/v1
+kind: RestAPI
+metadata:
+  # apenas valores de exemplo. os valores são livres aqui
+  type: production
+  owner: engineering
+spec:
+  # Campos identificadores
+  name: "My Api"
+  version: "1.0.0"
+  # Outros campos
+  description: "string"
+  basePath: "string"
+  stageRef:
+    name: "my stage"
+  ownerTeamRef:
+    name: "my team"
+  visibility:
+    type: Team | Organization    
+    teamRef:
+      name: <string>
+  flow:
+  resources:
+  - name: "my-resource"
+    description: "string"
+    flow:
+    operations:
+    - method: GET | POST | PUT | PATCH | DELETE | OPTIONS
+      path: "operation path"
+      description: "operation description"      
+      flow:
+        requestInterceptors:
+        - type: "IpFiltering"
+          config:
+            ips: ["192,168.1.1", "10.0.0.1"]
+            type: "Allow"        
+        - type: "Log"
+          config:
+            encryptContent: true
+            encryptParams: true 
+        - type: "OAuth"
+          config:
+             allowedgGrantTypes: ["AuthorizationCode", "Implicit"]
+        - type: "RateLimit"
+          config: 
+            calls: 10
+            unit: Second | Minute | Hour | Day | Month
+            softLimit:
+              enabled: true
+              percentage: 5
+            returnQuotaHeader: true
+        - type: "RestrictAccess"
+          config:
+          - environmentRefs:
+            - name: "Env1"
+            - name: "Env2"
+            type: "Allow"
+        destination: "http://httpbin.org"
+        responseInterceptors:
