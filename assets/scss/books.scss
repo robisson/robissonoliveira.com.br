@@ -7,6 +7,8 @@
 }
 
 #books {
+  clear: both;
+  display: flow-root;
   padding-top: 1em;
 
   &.books--filtered {
@@ -35,6 +37,11 @@
       margin: .75em 1em .75em 0;
       max-width: 110px;
       max-height: 170px;
+    }
+
+    .bg-gray {
+      overflow: hidden;
+      padding-bottom: .75em;
     }
 
     &__description {
@@ -76,6 +83,12 @@
   text-transform: uppercase;
 }
 
+.books__year-index__total {
+  color: #777;
+  font-size: .95em;
+  margin: -.35em 0 1em;
+}
+
 .books__year-index__button {
   background: white;
   border: 1px solid $background-blue;
@@ -88,6 +101,12 @@
   &:focus {
     text-decoration: none;
   }
+}
+
+.books__year-index__count {
+  color: inherit;
+  font-size: .85em;
+  opacity: .75;
 }
 
 .books__year-index__button--active {
