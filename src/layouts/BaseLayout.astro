@@ -1,0 +1,60 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const { title, description = "Meu espaco para falar de desenvolvimento de software e negocios.", currentPath = "" } = Astro.props;
+
+const links = [
+  { href: "/", label: "Pagina inicial", key: "home" },
+  { href: "/blog/", label: "Blog", key: "blog" },
+  { href: "/livros.htm", label: "Livros", key: "livros" },
+  { href: "/sobre-mim.htm", label: "Sobre mim", key: "sobre" },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="top-detail-header" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="site-nav">
+      <div class="site-nav__inner">
+        <a class="site-nav__brand" href="/">Robisson Oliveira</a>
+        <div class="site-nav__links">
+          {links.map((link) => (
+            <a
+              class="site-nav__link"
+              href={link.href}
+              aria-current={currentPath === link.key ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+    <main class="page">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        Robisson Oliveira - Desenvolvimento de software, arquitetura e cloud.
+      </div>
+    </footer>
+  </body>
+</html>

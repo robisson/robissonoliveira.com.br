@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Robisson Oliveira - Site local em Astro" currentPath="home">
+  <section class="intro">
+    <p class="eyebrow">Preview Astro</p>
+    <h1>Uma base local para evoluir o site estatico.</h1>
+    <p class="lead">
+      Esta versao em Astro serve para testar layout, blog em Markdown e estrutura de codigo antes de substituir o site estatico publicado.
+    </p>
+  </section>
+
+  <section class="blog-shell">
+    <div class="post-list">
+      <article class="post-card">
+        <p class="post-card__meta">Blog proprio no Git</p>
+        <h2 class="post-card__title"><a href="/blog/">Ver proposta de blog</a></h2>
+        <p class="post-card__description">
+          Posts escritos em Markdown, versionados no repositorio e renderizados como HTML estatico.
+        </p>
+      </article>
+      <article class="post-card">
+        <p class="post-card__meta">Site atual preservado</p>
+        <h2 class="post-card__title"><a href="/livros.htm">Abrir pagina de livros atual</a></h2>
+        <p class="post-card__description">
+          Os arquivos estaticos existentes continuam no repositorio; o Astro entra como ambiente de evolucao.
+        </p>
+      </article>
+    </div>
+    <aside class="side-panel">
+      <h2>Como testar</h2>
+      <p>Rode <code>npm run dev</code> e acesse o endereco local mostrado pelo Astro.</p>
+      <p>O primeiro foco e validar visual, navegacao e fluxo de escrita.</p>
+    </aside>
+  </section>
+</BaseLayout>

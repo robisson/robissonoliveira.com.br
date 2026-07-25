@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} - Robisson Oliveira`} description={post.data.description} currentPath="blog">
+  <article class="article">
+    <header class="article__header">
+      <p class="eyebrow">{post.data.series ?? "Blog"}</p>
+      <h1>{post.data.title}</h1>
+      <p class="post-meta">
+        {post.data.pubDate.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
+        {post.data.language === "en" ? " - English" : ""}
+      </p>
+      <div class="tag-list">
+        {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+      </div>
+    </header>
+    <div class="article__body">
+      <Content />
+    </div>
+    {post.data.originalUrl && (
+      <p class="post-meta">
+        Publicado originalmente em <a href={post.data.originalUrl}>Medium</a>.
+      </p>
+    )}
+  </article>
+</BaseLayout>

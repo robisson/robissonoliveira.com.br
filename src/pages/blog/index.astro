@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const series = Array.from(new Set(posts.map((post) => post.data.series).filter(Boolean)));
+---
+
+<BaseLayout
+  title="Blog - Robisson Oliveira"
+  description="Artigos de Robisson Oliveira sobre arquitetura, cloud, engenharia de software e JavaScript."
+  currentPath="blog"
+>
+  <section class="intro">
+    <p class="eyebrow">Blog</p>
+    <h1>Artigos no proprio site, versionados no Git.</h1>
+    <p class="lead">
+      Uma proposta para substituir o Medium por conteudo local em Markdown, com HTML estatico gerado pelo Astro.
+    </p>
+  </section>
+
+  <section class="blog-shell">
+    <div class="post-list">
+      {posts.map((post) => (
+        <article class="post-card">
+          <p class="post-card__meta">
+            {post.data.pubDate.toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
+            {post.data.series ? ` - ${post.data.series}` : ""}
+          </p>
+          <h2 class="post-card__title">
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          </h2>
+          <p class="post-card__description">{post.data.description}</p>
+          <div class="tag-list">
+            {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <aside class="side-panel">
+      <h2>Organizacao</h2>
+      <p>Series detectadas para migracao inicial:</p>
+      <div class="tag-list">
+        {series.map((name) => <span class="tag">{name}</span>)}
+      </div>
+      <p style="margin-top: 16px;">
+        Cada post fica em <code>src/content/blog</code> com metadados no topo do Markdown.
+      </p>
+    </aside>
+  </section>
+</BaseLayout>
