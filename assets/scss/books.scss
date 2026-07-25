@@ -7,18 +7,52 @@
 }
 
 #books {
+  padding-top: 1em;
+
+  &.books--filtered {
+    .books__year-section,
+    .books__book {
+      display: none;
+    }
+
+    .books__year-section.books__year-section--active,
+    .books__book.books__book--active {
+      display: block;
+    }
+  }
+
+  .books__year-section {
+    h3 {
+      margin-top: 0;
+    }
+  }
+
   .books__book {
-    margin: 1em 0;
+    margin: .75em 0;
 
     img {
       float: left;
-      margin: 1em 1em 1em 0;
-      max-width: 150px;
-      max-height: 300px;
+      margin: .75em 1em .75em 0;
+      max-width: 110px;
+      max-height: 170px;
     }
 
     &__description {
-      font-size: 1.2em;
+      font-size: 1em;
+
+      h3 {
+        font-size: 1.25em;
+        margin-top: .65em;
+      }
+
+      h4 {
+        font-size: 1em;
+        margin-bottom: .5em;
+      }
+
+      p:last-child {
+        line-height: 1.45;
+      }
 
       &__tag {
         background-color: $background-blue;
@@ -29,15 +63,61 @@
   }
 }
 
+.books__year-index {
+  margin: 0 0 1em;
+  padding: 1em 2em 0;
+}
+
+.books__year-index__title {
+  color: #555;
+  font-size: .85em;
+  font-weight: bold;
+  margin: 0 0 .75em;
+  text-transform: uppercase;
+}
+
+.books__year-index__button {
+  background: white;
+  border: 1px solid $background-blue;
+  color: $background-gray-hard;
+  display: inline-block;
+  margin: 0 .5em .5em 0;
+  padding: .45em .75em;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.books__year-index__button--active {
+  background: $background-blue;
+  color: white;
+}
+
 @media (max-width: 768px) {
+  .books__year-index {
+    padding: 1em 1em 0;
+  }
+
+  .books__year-index__button {
+    padding: .5em .7em;
+  }
+
   #books {
     .books__book {
       img {
-        margin: 1em auto;
-        float: none;
-        max-width: 100%;
-        max-height: 100%;
+        float: left;
+        margin: .35em .8em .5em 0;
+        max-width: 82px;
+        max-height: 126px;
         height: auto;
+      }
+
+      &__description {
+        h3 {
+          font-size: 1.1em;
+        }
       }
     }
   }
