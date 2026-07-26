@@ -1,10 +1,10 @@
 ---
 import { getCollection, render } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { formatPostDate, postsByLocale } from "../../lib/blog";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { formatPostDate, postsByLocale } from "../../../lib/blog";
 
 export async function getStaticPaths() {
-  const posts = postsByLocale(await getCollection("blog"), "pt-BR");
+  const posts = postsByLocale(await getCollection("blog"), "en");
   const postSlug = (id: string) => id.replace(/\.md$/, "");
 
   return posts.map((post) => ({
@@ -21,15 +21,15 @@ const { Content } = await render(post);
   title={`${post.data.title} - Robisson Oliveira`}
   description={post.data.description}
   currentPath="blog"
-  alternatePath={`/en/blog/`}
+  lang="en"
+  alternatePath="/blog/"
 >
   <article class="article">
     <header class="article__header">
       <p class="eyebrow">{post.data.series ?? "Blog"}</p>
       <h1>{post.data.title}</h1>
       <p class="post-meta">
-        {formatPostDate(post.data.pubDate, "pt-BR")}
-        {post.data.language === "en" ? " - English" : ""}
+        {formatPostDate(post.data.pubDate, "en")}
       </p>
       <div class="tag-list">
         {post.data.tags.map((tag) => <span class="tag">{tag}</span>)}

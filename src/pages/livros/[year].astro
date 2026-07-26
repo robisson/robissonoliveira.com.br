@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { bookYears, getBookYear, getBooksMarkup, totalBooks } from "../../lib/books";
+
+export function getStaticPaths() {
+  return bookYears.slice(1).map((item) => ({
+    params: { year: item.year },
+  }));
+}
+
+const year = Astro.params.year ?? "";
+const current = getBookYear(year);
+
+if (!current) {
+  throw new Error(`Unknown book year: ${year}`);
+}
+
+const booksMarkup = getBooksMarkup(current.source);
+---
+
+<BaseLayout
+  title={`Livros de ${current.year} - Robisson Oliveira`}
+  description={`Livros lidos por Robisson Oliveira em ${current.year}.`}
+  currentPath="livros"
+>
+  <div class="books__year-index" aria-label="Indice de livros por ano">
+    <p class="books__year-index__title">Filtrar por ano</p>
+    <p class="books__year-index__total">{totalBooks} livros registrados</p>
+    <div class="books__year-index__buttons">
+      {bookYears.map((item) => (
+        <a
+          class={item.year === current.year ? "books__year-index__button books__year-index__button--active" : "books__year-index__button"}
+          href={item.path}
+          data-year={item.year}
+        >
+          {item.year} <span class="books__year-index__count">({item.count})</span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <Fragment set:html={booksMarkup} />
+</BaseLayout>

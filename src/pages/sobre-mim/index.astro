@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const certifications = [
+  ["kmpI.png", "Kanban System Design KMP I"],
+  ["kmpII.svg", "Kanban Management Professional"],
+  ["azure-solutions-architect-expert-600x600.png", "Microsoft Certified: Azure Solutions Architect Expert"],
+  ["az-204.png", "Microsoft Certified: Azure Developer Associate"],
+  ["azure-devops.png", "Microsoft Certified: Azure DevOps Engineer Expert"],
+  ["nodejs.png", "OpenJS Node.js Services Developer"],
+  ["cka.png", "Certified Kubernetes Administrator"],
+  ["cks.png", "Certified Kubernetes Security Specialist"],
+  ["gcp-architect-professional.png", "Google Cloud Certified Professional Cloud Architect"],
+  ["google-data-engineer.png", "Google Cloud Certified Professional Data Engineer"],
+  ["google-devops.png", "Google Cloud Certified Professional DevOps Engineer"],
+  ["google-developer.png", "Google Cloud Certified Professional Cloud Developer"],
+  ["security-engineer.png", "Google Cloud Certified Professional Security Engineer"],
+  ["machine-learning-gcp.png", "Google Cloud Certified Professional Machine Learning Engineer"],
+  ["aws-cloud-pratictioner.png", "AWS Certified Cloud Practitioner"],
+  ["aws-certified-solutions-associate.png", "AWS Certified Solutions Architect Associate"],
+  ["aws-developer.png", "AWS Certified Developer Associate"],
+  ["aws-sysops.png", "AWS Certified SysOps Administrator Associate"],
+  ["aws-professional.png", "AWS Certified Solutions Architect Professional"],
+  ["aws-devops-engineer.png", "AWS Certified DevOps Engineer Professional"],
+  ["aws-networking.png", "AWS Certified Advanced Networking Specialty"],
+  ["aws-machine-learning-specialist.png", "AWS Certified Machine Learning Specialty"],
+  ["aws-data-analytics.png", "AWS Certified Data Analytics Specialty"],
+  ["aws-security-specilty.png", "AWS Certified Security Specialty"],
+  ["aws-database.png", "AWS Certified Database Specialty"],
+  ["aws-well-achitected-proeficient.png", "AWS Well-Architected Proficient"],
+];
+---
+
+<BaseLayout
+  title="Sobre Robisson Oliveira"
+  description="Sobre Robisson Oliveira."
+  currentPath="sobre"
+  alternatePath="/en/about/"
+>
+  <section class="legacy-section" id="about-me-body">
+    <header class="legacy-section__header">
+      <h1>Sobre mim</h1>
+      <p>O pouco de quando comecei minha carreira profissional e o que faco hoje.</p>
+    </header>
+    <div class="legacy-bio">
+      <img src="/assets/images/robisson-home.png" alt="Robisson Oliveira" />
+      <div>
+        <p class="lead">
+          Comecei minha carreira em 2008 na area de redes e comunicacao de dados. Ao longo dos anos fui analista de infraestrutura, analista de desenvolvimento na area tecnica. Tambem fui lider de desenvolvimento por muitos anos chegando a fazer um spinoff de uma area de TI em uma startup e atuei como CTO.
+        </p>
+        <p class="lead">Atualmente trabalho como Senior Cloud Application Architect na Amazon Web Services (AWS).</p>
+        <p class="lead">No LinkedIn tem mais informacoes dos projetos que participei e outras experiencias.</p>
+        <div class="legacy-social legacy-social--inline">
+          <a title="Perfil no Linkedin" href="https://www.linkedin.com/in/robisson/"><img src="/assets/images/linkedin.png" alt="Perfil no Linkedin" /></a>
+          <a title="Perfil no Medium" href="https://medium.com/@robisson"><img src="/assets/images/medium.png" alt="Perfil no Medium" /></a>
+          <a title="Perfil no Github" href="https://github.com/robisson"><img src="/assets/images/github.png" alt="Perfil no Github" /></a>
+          <a title="Perfil no Twitter" href="https://twitter.com/robissonmkt"><img src="/assets/images/twitter.png" alt="Perfil no Twitter" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="legacy-section">
+    <header class="legacy-section__header">
+      <h1>Certificacoes</h1>
+    </header>
+    <div class="legacy-cert-grid">
+      {certifications.map(([file, alt]) => (
+        <img src={`/blog/wp-content/uploads/certifications/${file}`} alt={alt} title={alt} />
+      ))}
+    </div>
+  </section>
+
+  <section class="legacy-section" id="open-source-project">
+    <header class="legacy-section__header">
+      <h1>Projetos Open Source</h1>
+      <p>Estou tentando na medida do possivel contribuir com a comunidade open source.</p>
+    </header>
+    <div class="legacy-project">
+      <img src="/assets/images/build-like-amazon.png" alt="Build Like Amazon Agent Skills" />
+      <div class="legacy-project__copy">
+        <h2>Build Like Amazon Agent Skills</h2>
+        <p>Uma biblioteca open source de skills, comandos e agentes para orientar agentes de IA em fluxos de engenharia inspirados em como a Amazon cria, opera e evolui servicos distribuidos.</p>
+        <p>O projeto organiza 27 skills e 10 personas bar raiser cobrindo working backwards, design, build, review, deploy, operacao e aprendizado com incidentes.</p>
+        <p class="text-right"><a href="https://github.com/robisson/build-like-amazon-agent-skills">Ver no github.com</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

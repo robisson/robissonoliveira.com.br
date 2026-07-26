@@ -1,0 +1,74 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Robisson Oliveira - Software development and business"
+  description="Robisson Oliveira personal site with articles, projects, books and technology notes."
+  currentPath="home"
+  lang="en"
+  alternatePath="/"
+>
+  <section class="legacy-feature" id="last-article">
+    <div class="legacy-feature__copy">
+      <span class="legacy-label">Latest article</span>
+      <img src="/blog/availability-zone-independence-azi/image-01.png" alt="Understanding Availability Zone Independence" class="legacy-feature__image legacy-feature__image--mobile" />
+      <h1>Understanding Availability Zone Independence (AZI) to increase application resilience</h1>
+      <small>08/12/2024</small>
+      <p class="lead">
+        A broad guide to Availability Zone Independence, design, deployment, observability, and failure response in distributed applications.
+      </p>
+      <p class="text-right"><a href="/en/blog/2024-08-12-understanding-availability-zone-independence-azi/">Read full article</a></p>
+    </div>
+    <div>
+      <img src="/blog/availability-zone-independence-azi/image-01.png" alt="Understanding Availability Zone Independence" class="legacy-feature__image legacy-feature__image--desktop" />
+    </div>
+  </section>
+
+  <section class="legacy-presentation" id="home-presentation">
+    <img class="legacy-profile" src="/assets/images/robisson-home.png" alt="Robisson Oliveira" />
+    <div>
+      <h3>Robisson Oliveira</h3>
+      <p>I currently work as a Senior Cloud Application Architect at Amazon Web Services (AWS).</p>
+      <p>I built this site to share knowledge about things I enjoy and to reinforce what I learn.</p>
+    </div>
+    <div class="legacy-social">
+      <a title="LinkedIn profile" href="https://www.linkedin.com/in/robisson/"><img src="/assets/images/linkedin.png" alt="LinkedIn profile" /></a>
+      <a title="Medium profile" href="https://medium.com/@robisson"><img src="/assets/images/medium.png" alt="Medium profile" /></a>
+      <a title="GitHub profile" href="https://github.com/robisson"><img src="/assets/images/github.png" alt="GitHub profile" /></a>
+      <a title="Twitter profile" href="https://twitter.com/robissonmkt"><img src="/assets/images/twitter.png" alt="Twitter profile" /></a>
+    </div>
+  </section>
+
+  <section class="legacy-section" id="what-i-reading">
+    <header class="legacy-section__header">
+      <h1>What I am reading</h1>
+      <p>I read a lot. Books are my preferred way to learn something new.</p>
+    </header>
+    <div class="legacy-reading">
+      <img src="https://www.robissonoliveira.com.br/blog/wp-content/uploads/books/agentic-mesh.jpg" alt="Agentic Mesh: The GenAI-Powered Autonomous Agent Ecosystem" />
+      <div>
+        <h2>Agentic Mesh: The GenAI-Powered Autonomous Agent Ecosystem</h2>
+        <h4>Eric Broda, Davis Broda</h4>
+        <p>With the rise of autonomous agents, the question is no longer "How do we build agents?" but rather, "How do we manage an entire ecosystem of them?" The book explores interconnected agents that collaborate, transact, and fulfill tasks autonomously through an agentic mesh architecture.</p>
+        <p><a href="/livros/">See the books I have logged</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="legacy-section" id="open-source-project">
+    <header class="legacy-section__header">
+      <h1>Open Source Projects</h1>
+      <p>I try to contribute to the open source community whenever possible.</p>
+    </header>
+    <div class="legacy-project">
+      <img src="/assets/images/build-like-amazon.png" alt="Build Like Amazon Agent Skills" />
+      <div class="legacy-project__copy">
+        <h2>Build Like Amazon Agent Skills</h2>
+        <p>An open source library of skills, commands, and agent personas that guides AI coding agents through engineering workflows inspired by how Amazon builds, operates, and evolves distributed services.</p>
+        <p>The project organizes 27 skills and 10 bar raiser personas across working backwards, design, build, review, deployment, operations, and learning from incidents.</p>
+        <p class="text-right"><a href="https://github.com/robisson/build-like-amazon-agent-skills">View on github.com</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

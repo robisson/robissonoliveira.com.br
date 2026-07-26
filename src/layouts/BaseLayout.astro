@@ -5,24 +5,41 @@ interface Props {
   title: string;
   description?: string;
   currentPath?: string;
+  lang?: "pt-BR" | "en";
+  alternatePath?: string;
 }
 
-const { title, description = "Meu espaco para falar de desenvolvimento de software e negocios.", currentPath = "" } = Astro.props;
+const {
+  title,
+  description = "Meu espaco para falar de desenvolvimento de software e negocios.",
+  currentPath = "",
+  lang = "pt-BR",
+  alternatePath,
+} = Astro.props;
+
+const isEnglish = lang === "en";
+const basePath = isEnglish ? "/en" : "";
 
 const links = [
-  { href: "/", label: "Pagina inicial", key: "home" },
-  { href: "/blog/", label: "Blog", key: "blog" },
-  { href: "/livros.htm", label: "Livros", key: "livros" },
-  { href: "/sobre-mim.htm", label: "Sobre mim", key: "sobre" },
+  { href: `${basePath}/`, label: isEnglish ? "Home" : "Pagina inicial", key: "home" },
+  { href: `${basePath}/blog/`, label: "Blog", key: "blog" },
+  { href: isEnglish ? "/livros/" : "/livros/", label: isEnglish ? "Books" : "Livros", key: "livros" },
+  { href: `${basePath}/${isEnglish ? "about" : "sobre-mim"}/`, label: isEnglish ? "About" : "Sobre mim", key: "sobre" },
 ];
+
+const languageHref = alternatePath ?? (isEnglish ? "/" : "/en/");
+const languageLabel = isEnglish ? "PT" : "EN";
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="alternate" type="application/rss+xml" title="Blog - Robisson Oliveira" href="/rss.xml" />
+    <link rel="alternate" hreflang={isEnglish ? "pt-BR" : "en"} href={languageHref} />
     <title>{title}</title>
   </head>
   <body>
@@ -35,7 +52,31 @@ const links = [
     <nav class="site-nav">
       <div class="site-nav__inner">
         <a class="site-nav__brand" href="/">Robisson Oliveira</a>
-        <div class="site-nav__links">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-label={isEnglish ? "Open menu" : "Abrir menu"}
+          aria-controls="site-menu"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="site-nav__overlay" data-menu-close></div>
+        <div class="site-nav__links" id="site-menu" data-menu>
+          <div class="site-nav__drawer-header">
+            <span>Robisson Oliveira</span>
+            <button
+              class="site-nav__close"
+              type="button"
+              aria-label={isEnglish ? "Close menu" : "Fechar menu"}
+              data-menu-close
+            >
+              x
+            </button>
+          </div>
           {links.map((link) => (
             <a
               class="site-nav__link"
@@ -45,6 +86,9 @@ const links = [
               {link.label}
             </a>
           ))}
+          <a class="site-nav__language" href={languageHref} aria-label={isEnglish ? "Ver em portugues" : "Read in English"}>
+            {languageLabel}
+          </a>
         </div>
       </div>
     </nav>
@@ -53,8 +97,38 @@ const links = [
     </main>
     <footer class="site-footer">
       <div class="site-footer__inner">
-        Robisson Oliveira - Desenvolvimento de software, arquitetura e cloud.
+        {isEnglish
+          ? "Robisson Oliveira - Software development, architecture and cloud."
+          : "Robisson Oliveira - Desenvolvimento de software, arquitetura e cloud."}
       </div>
     </footer>
+    <script>
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const menu = document.querySelector("[data-menu]");
+      const closeTargets = document.querySelectorAll("[data-menu-close]");
+
+      function setMenuOpen(open: boolean) {
+        document.body.classList.toggle("site-menu-open", open);
+        toggle?.setAttribute("aria-expanded", String(open));
+      }
+
+      toggle?.addEventListener("click", () => {
+        setMenuOpen(!document.body.classList.contains("site-menu-open"));
+      });
+
+      closeTargets.forEach((target) => {
+        target.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuOpen(false);
+        }
+      });
+    </script>
   </body>
 </html>
