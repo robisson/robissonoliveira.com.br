@@ -1,0 +1,15 @@
+include:
+  - _astro
+
+exclude:
+  - .astro
+  - dist
+  - node_modules
+  - public
+  - src
+  - astro.config.mjs
+  - gulpfile.js
+  - package-lock.json
+  - package.json
+  - server.js
+  - tsconfig.json
