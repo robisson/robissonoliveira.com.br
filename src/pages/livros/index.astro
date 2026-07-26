@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { bookYears, getBooksMarkup, totalBooks } from "../../lib/books";
+
+const current = bookYears[0];
+const booksMarkup = getBooksMarkup(current.source);
+---
+
+<BaseLayout
+  title="Livros lidos por Robisson Oliveira"
+  description={`Lista de ${totalBooks} livros lidos por Robisson Oliveira, organizada por ano desde 2013.`}
+  currentPath="livros"
+  canonicalPath="/livros/"
+>
+  <div class="books__year-index" aria-label="Indice de livros por ano">
+    <p class="books__year-index__title">Filtrar por ano</p>
+    <p class="books__year-index__total">{totalBooks} livros registrados</p>
+    <label class="books__year-index__select-label" for="books-year-select">Selecionar ano</label>
+    <select class="books__year-index__select" id="books-year-select" data-year-select>
+      {bookYears.map((item) => (
+        <option value={item.path} selected={item.year === current.year}>
+          {item.year} ({item.count})
+        </option>
+      ))}
+    </select>
+    <div class="books__year-index__buttons">
+      {bookYears.map((item) => (
+        <a
+          class={item.year === current.year ? "books__year-index__button books__year-index__button--active" : "books__year-index__button"}
+          href={item.path}
+          data-year={item.year}
+        >
+          {item.year} <span class="books__year-index__count">({item.count})</span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <Fragment set:html={booksMarkup} />
+  <script>
+    document.querySelector("[data-year-select]")?.addEventListener("change", (event) => {
+      const target = event.currentTarget as HTMLSelectElement;
+      if (target.value) {
+        window.location.href = target.value;
+      }
+    });
+  </script>
+</BaseLayout>

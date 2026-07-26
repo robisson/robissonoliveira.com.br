@@ -1,10 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { formatPostDate, postSlug, postsByLocale } from "../../lib/blog";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { formatPostDate, postSlug, postsByLocale } from "../../../lib/blog";
 
-const posts = postsByLocale(await getCollection("blog"), "pt-BR");
-
+const posts = postsByLocale(await getCollection("blog"), "en");
 const featuredPost = posts[0];
 const remainingPosts = posts.slice(1);
 const series = Array.from(new Set(posts.map((post) => post.data.series).filter(Boolean)));
@@ -13,10 +12,11 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
 
 <BaseLayout
   title="Blog - Robisson Oliveira"
-  description="Artigos de Robisson Oliveira sobre arquitetura de software, cloud computing, resiliencia, AWS e engenharia de software."
+  description="Articles by Robisson Oliveira about software architecture, cloud computing, resilience, AWS and software engineering."
   currentPath="blog"
-  alternatePath="/en/blog/"
-  canonicalPath="/blog/"
+  lang="en"
+  alternatePath="/blog/"
+  canonicalPath="/en/blog/"
 >
   <section class="blog-header">
     <div>
@@ -24,20 +24,22 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
     </div>
   </section>
 
-  {featuredPost && (
+  {featuredPost ? (
     <section class="blog-featured">
       <article>
-      <p class="post-card__meta">
-        {formatPostDate(featuredPost.data.pubDate, "pt-BR")}
-        {featuredPost.data.series ? ` - ${featuredPost.data.series}` : ""}
-      </p>
-      <h2><a href={`/blog/${postSlug(featuredPost.id)}/`}>{featuredPost.data.title}</a></h2>
-      <p>{featuredPost.data.description}</p>
-      <div class="tag-list">
-        {featuredPost.data.tags.map((tag) => <span class="tag">{tag}</span>)}
-      </div>
+        <p class="post-card__meta">
+          {formatPostDate(featuredPost.data.pubDate, "en")}
+          {featuredPost.data.series ? ` - ${featuredPost.data.series}` : ""}
+        </p>
+        <h2><a href={`/en/blog/${postSlug(featuredPost.id)}/`}>{featuredPost.data.title}</a></h2>
+        <p>{featuredPost.data.description}</p>
+        <div class="tag-list">
+          {featuredPost.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
       </article>
     </section>
+  ) : (
+    <p>No English posts yet.</p>
   )}
 
   <section class="blog-layout">
@@ -45,11 +47,11 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
       {remainingPosts.map((post) => (
         <article class="post-card">
           <p class="post-card__meta">
-            {formatPostDate(post.data.pubDate, "pt-BR")}
+            {formatPostDate(post.data.pubDate, "en")}
             {post.data.series ? ` - ${post.data.series}` : ""}
           </p>
           <h2 class="post-card__title">
-            <a href={`/blog/${postSlug(post.id)}/`}>{post.data.title}</a>
+            <a href={`/en/blog/${postSlug(post.id)}/`}>{post.data.title}</a>
           </h2>
           <p class="post-card__description">{post.data.description}</p>
           <div class="tag-list">
@@ -67,12 +69,12 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
         </div>
       </section>
       <section>
-        <h2>Temas</h2>
+        <h2>Topics</h2>
         <div class="tag-list">
           {tags.map((tag) => <span class="tag">{tag}</span>)}
         </div>
       </section>
-      <a class="rss-link" href="/rss.xml">RSS do blog</a>
+      <a class="rss-link" href="/en/rss.xml">Blog RSS</a>
     </aside>
   </section>
 </BaseLayout>

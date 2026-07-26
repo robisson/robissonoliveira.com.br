@@ -5,25 +5,106 @@ interface Props {
   title: string;
   description?: string;
   currentPath?: string;
+  lang?: "pt-BR" | "en";
+  alternatePath?: string;
+  canonicalPath?: string;
+  image?: string;
+  type?: "website" | "article" | "profile";
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  tags?: string[];
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description = "Meu espaco para falar de desenvolvimento de software e negocios.", currentPath = "" } = Astro.props;
+const {
+  title,
+  description = "Meu espaco para falar de desenvolvimento de software e negocios.",
+  currentPath = "",
+  lang = "pt-BR",
+  alternatePath,
+  canonicalPath = Astro.url.pathname,
+  image = "/og-default.png",
+  type = "website",
+  publishedTime,
+  modifiedTime,
+  tags = [],
+  structuredData,
+} = Astro.props;
+
+const isEnglish = lang === "en";
+const basePath = isEnglish ? "/en" : "";
+const site = Astro.site ?? new URL("https://www.robissonoliveira.com.br");
+const canonicalUrl = new URL(canonicalPath, site).toString();
+const alternateUrl = alternatePath ? new URL(alternatePath, site).toString() : undefined;
+const imageUrl = new URL(image, site).toString();
+const rssHref = new URL(isEnglish ? "/en/rss.xml" : "/rss.xml", site).toString();
 
 const links = [
-  { href: "/", label: "Pagina inicial", key: "home" },
-  { href: "/blog/", label: "Blog", key: "blog" },
-  { href: "/livros.htm", label: "Livros", key: "livros" },
-  { href: "/sobre-mim.htm", label: "Sobre mim", key: "sobre" },
+  { href: `${basePath}/`, label: isEnglish ? "Home" : "Pagina inicial", key: "home" },
+  { href: `${basePath}/blog/`, label: "Blog", key: "blog" },
+  { href: isEnglish ? "/livros/" : "/livros/", label: isEnglish ? "Recommended Books" : "Livros que Recomendo", key: "livros" },
+  { href: `${basePath}/${isEnglish ? "about" : "sobre-mim"}/`, label: isEnglish ? "About" : "Sobre mim", key: "sobre" },
 ];
+
+const languageHref = alternatePath ?? (isEnglish ? "/" : "/en/");
+const languageLabel = isEnglish ? "PT" : "EN";
+
+const defaultStructuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Robisson Oliveira",
+    url: new URL("/", site).toString(),
+    jobTitle: "Principal Cloud Application Architect",
+    sameAs: [
+      "https://www.linkedin.com/in/robisson/",
+      "https://github.com/robisson",
+      "https://twitter.com/robissonmkt",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Robisson Oliveira",
+    url: new URL("/", site).toString(),
+    inLanguage: lang,
+  },
+];
+
+const jsonLd = structuredData ?? defaultStructuredData;
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="author" content="Robisson Oliveira" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" type="application/rss+xml" title="Blog - Robisson Oliveira" href={rssHref} />
+    {alternateUrl && <link rel="alternate" hreflang={isEnglish ? "pt-BR" : "en"} href={alternateUrl} />}
+    {alternateUrl && <link rel="alternate" hreflang={lang} href={canonicalUrl} />}
+    {alternateUrl && <link rel="alternate" hreflang="x-default" href={isEnglish ? alternateUrl : canonicalUrl} />}
+    <meta property="og:site_name" content="Robisson Oliveira" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content={isEnglish ? "en_US" : "pt_BR"} />
+    {alternateUrl && <meta property="og:locale:alternate" content={isEnglish ? "pt_BR" : "en_US"} />}
+    {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+    {tags.map((tag) => <meta property="article:tag" content={tag} />)}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <title>{title}</title>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
     <div class="top-detail-header" aria-hidden="true">
@@ -35,7 +116,31 @@ const links = [
     <nav class="site-nav">
       <div class="site-nav__inner">
         <a class="site-nav__brand" href="/">Robisson Oliveira</a>
-        <div class="site-nav__links">
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-label={isEnglish ? "Open menu" : "Abrir menu"}
+          aria-controls="site-menu"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="site-nav__overlay" data-menu-close></div>
+        <div class="site-nav__links" id="site-menu" data-menu>
+          <div class="site-nav__drawer-header">
+            <span>Robisson Oliveira</span>
+            <button
+              class="site-nav__close"
+              type="button"
+              aria-label={isEnglish ? "Close menu" : "Fechar menu"}
+              data-menu-close
+            >
+              x
+            </button>
+          </div>
           {links.map((link) => (
             <a
               class="site-nav__link"
@@ -45,6 +150,9 @@ const links = [
               {link.label}
             </a>
           ))}
+          <a class="site-nav__language" href={languageHref} aria-label={isEnglish ? "Ver em portugues" : "Read in English"}>
+            {languageLabel}
+          </a>
         </div>
       </div>
     </nav>
@@ -53,8 +161,38 @@ const links = [
     </main>
     <footer class="site-footer">
       <div class="site-footer__inner">
-        Robisson Oliveira - Desenvolvimento de software, arquitetura e cloud.
+        {isEnglish
+          ? "Robisson Oliveira - Software development, architecture and cloud."
+          : "Robisson Oliveira - Desenvolvimento de software, arquitetura e cloud."}
       </div>
     </footer>
+    <script>
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const menu = document.querySelector("[data-menu]");
+      const closeTargets = document.querySelectorAll("[data-menu-close]");
+
+      function setMenuOpen(open: boolean) {
+        document.body.classList.toggle("site-menu-open", open);
+        toggle?.setAttribute("aria-expanded", String(open));
+      }
+
+      toggle?.addEventListener("click", () => {
+        setMenuOpen(!document.body.classList.contains("site-menu-open"));
+      });
+
+      closeTargets.forEach((target) => {
+        target.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuOpen(false);
+        }
+      });
+    </script>
   </body>
 </html>
