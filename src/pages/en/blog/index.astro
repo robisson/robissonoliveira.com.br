@@ -12,19 +12,16 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
 
 <BaseLayout
   title="Blog - Robisson Oliveira"
-  description="Articles by Robisson Oliveira about architecture, cloud and software engineering."
+  description="Articles by Robisson Oliveira about software architecture, cloud computing, resilience, AWS and software engineering."
   currentPath="blog"
   lang="en"
   alternatePath="/blog/"
+  canonicalPath="/en/blog/"
 >
   <section class="blog-header">
     <div>
-      <p class="eyebrow">Blog</p>
-      <h1>Articles on architecture, cloud and engineering.</h1>
+      <h1 class="blog-title">Blog</h1>
     </div>
-    <p>
-      Markdown posts, versioned in Git, published as static HTML. Clean reading, responsive layout and no platform lock-in.
-    </p>
   </section>
 
   {featuredPost ? (

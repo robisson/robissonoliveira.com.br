@@ -20,12 +20,21 @@ const booksMarkup = getBooksMarkup(current.source);
 
 <BaseLayout
   title={`Livros de ${current.year} - Robisson Oliveira`}
-  description={`Livros lidos por Robisson Oliveira em ${current.year}.`}
+  description={`${current.count} livros lidos por Robisson Oliveira em ${current.year}, com capa, autor, categoria e descricao.`}
   currentPath="livros"
+  canonicalPath={current.path}
 >
   <div class="books__year-index" aria-label="Indice de livros por ano">
     <p class="books__year-index__title">Filtrar por ano</p>
     <p class="books__year-index__total">{totalBooks} livros registrados</p>
+    <label class="books__year-index__select-label" for="books-year-select">Selecionar ano</label>
+    <select class="books__year-index__select" id="books-year-select" data-year-select>
+      {bookYears.map((item) => (
+        <option value={item.path} selected={item.year === current.year}>
+          {item.year} ({item.count})
+        </option>
+      ))}
+    </select>
     <div class="books__year-index__buttons">
       {bookYears.map((item) => (
         <a
@@ -40,4 +49,12 @@ const booksMarkup = getBooksMarkup(current.source);
   </div>
 
   <Fragment set:html={booksMarkup} />
+  <script>
+    document.querySelector("[data-year-select]")?.addEventListener("change", (event) => {
+      const target = event.currentTarget as HTMLSelectElement;
+      if (target.value) {
+        window.location.href = target.value;
+      }
+    });
+  </script>
 </BaseLayout>

@@ -9,7 +9,7 @@ language: "en"
 
 ![Article image 1](/blog/estabilidade-estatica/image-01.jpg)
 
-**TLDR;** After almost 5 years without writing anything here, I decided to write again. Last time, I was writing a series of articles focused on frontend, mainly ReactJs and deeper JavaScript topics. Now, working at AWS as a Senior Cloud Application Architect, I am much closer to the context of **cloud computing and application resilience**, and that is what I will start writing about from now on.
+**TLDR;** After almost 5 years without writing anything here, I decided to write again. Last time, I was writing a series of articles focused on frontend, mainly ReactJs and deeper JavaScript topics. Now, working at AWS as a Principal Cloud Application Architect, I am much closer to the context of **cloud computing and application resilience**, and that is what I will start writing about from now on.
 
 With people, companies, teams, and applications increasingly connected 24 hours a day, the market increasingly demands that applications and services remain always operating and without failures. At least that is what every customer wants and expects when using a service. But being much more pragmatic, “always operating and without failures” does not exist. We are increasingly moving from centralized to distributed contexts, in teams, applications, and businesses.
 

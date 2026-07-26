@@ -13,18 +13,15 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
 
 <BaseLayout
   title="Blog - Robisson Oliveira"
-  description="Artigos de Robisson Oliveira sobre arquitetura, cloud, engenharia de software e JavaScript."
+  description="Artigos de Robisson Oliveira sobre arquitetura de software, cloud computing, resiliencia, AWS e engenharia de software."
   currentPath="blog"
   alternatePath="/en/blog/"
+  canonicalPath="/blog/"
 >
   <section class="blog-header">
     <div>
-      <p class="eyebrow">Blog</p>
-      <h1>Artigos sobre arquitetura, cloud e engenharia.</h1>
+      <h1 class="blog-title">Blog</h1>
     </div>
-    <p>
-      Textos em Markdown, versionados no Git e publicados como HTML estatico. A ideia e manter a leitura limpa, responsiva e independente de plataforma.
-    </p>
   </section>
 
   {featuredPost && (

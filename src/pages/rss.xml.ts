@@ -7,7 +7,7 @@ export async function GET(context: { site: URL }) {
 
   return rss({
     title: "Blog - Robisson Oliveira",
-    description: "Artigos sobre arquitetura, cloud, engenharia de software e JavaScript.",
+    description: "Blog de Robisson Oliveira.",
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
