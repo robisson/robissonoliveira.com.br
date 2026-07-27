@@ -45,6 +45,14 @@ npm run preview
 
 Use esse comando quando quiser testar exatamente o HTML gerado em `dist/`.
 
+Se quiser testar como um servidor estatico simples, sem o dev server do Astro, rode:
+
+```bash
+npm run preview:static
+```
+
+Esse comando gera o build e serve `dist/` em `http://localhost:8080`. Use essa porta para validar a versao estatica final, incluindo CSS, imagens de `/blog/...`, RSS e sitemap. A raiz do servidor precisa ser `dist/`; servir uma subpasta ou outro diretorio pode quebrar caminhos absolutos como `/blog/reactjs-7-dias-hello-world/image-01.png`.
+
 ## Validacao
 
 Antes de publicar ou abrir PR, rode:
@@ -69,6 +77,10 @@ Hoje podem aparecer hints em arquivos legados como `gulpfile.js` e `server.js`, 
 |-- package-lock.json
 |-- tsconfig.json
 |-- README.md
+|-- AGENTS.md
+|-- .codex/
+|   |-- agents/
+|   `-- skills/
 |-- src/
 |   |-- content.config.ts
 |   |-- content/
@@ -205,7 +217,19 @@ Eles foram preservados durante a migracao para reduzir risco e manter historico 
 2. Defina o frontmatter com `title`, `description`, `pubDate`, `tags`, `series` e `language`.
 3. Coloque imagens do post em `public/blog/nome-do-post/`.
 4. Referencie imagens com caminho absoluto a partir da raiz, por exemplo `/blog/nome-do-post/image-01.png`.
-5. Rode `npm run validate`.
+5. Se o post tiver traducao, registre o par de slugs em `src/lib/blog.ts`.
+6. Se o post tiver imagem principal, atualize `postImage()` em `src/lib/blog.ts`.
+7. Rode `npm run validate`.
+
+## Codex, agentes e skills
+
+O projeto agora possui uma camada de instrucoes versionada para uso com Codex:
+
+- `AGENTS.md`: regras principais para qualquer agente trabalhando neste repositorio.
+- `.codex/agents/`: papeis recomendados para migracao de conteudo, publicacao estatica e revisao responsiva/SEO.
+- `.codex/skills/`: checklists operacionais para converter posts do Medium, publicar Astro estatico e revisar responsividade/SEO.
+
+Esses arquivos documentam o fluxo que vem sendo usado aqui: manter o site 100% estatico, converter conteudo para Markdown Astro, gerar HTML no build, validar localmente com `npm run validate` e copiar `dist/.` para a raiz quando a mudanca for publicada pelo GitHub Pages atual.
 
 ## Publicacao
 
