@@ -78,6 +78,17 @@ const jsonLd = structuredData ?? defaultStructuredData;
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0NR1PLPQKW"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-0NR1PLPQKW");
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow,max-image-preview:large" />
