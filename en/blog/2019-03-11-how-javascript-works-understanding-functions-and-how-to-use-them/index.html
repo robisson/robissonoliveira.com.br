@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Let's look at what functions are, how to define them, and how to invoke them in different ways."><meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="Robisson Oliveira"><meta name="generator" content="Astro v7.1.3"><link rel="canonical" href="https://www.robissonoliveira.com.br/en/blog/2019-03-11-how-javascript-works-understanding-functions-and-how-to-use-them/"><link rel="alternate" type="application/rss+xml" title="Blog - Robisson Oliveira" href="https://www.robissonoliveira.com.br/en/rss.xml"><link rel="alternate" hreflang="pt-BR" href="https://www.robissonoliveira.com.br/blog/2019-03-11-como-o-javascript-funciona-entendendo-as-funcoes-e-suas-formas-de-uso/"><link rel="alternate" hreflang="en" href="https://www.robissonoliveira.com.br/en/blog/2019-03-11-how-javascript-works-understanding-functions-and-how-to-use-them/"><link rel="alternate" hreflang="x-default" href="https://www.robissonoliveira.com.br/blog/2019-03-11-como-o-javascript-funciona-entendendo-as-funcoes-e-suas-formas-de-uso/"><meta property="og:site_name" content="Robisson Oliveira"><meta property="og:type" content="article"><meta property="og:title" content="How JavaScript works: understanding functions and how to use them - Robisson Oliveira"><meta property="og:description" content="Let's look at what functions are, how to define them, and how to invoke them in different ways."><meta property="og:url" content="https://www.robissonoliveira.com.br/en/blog/2019-03-11-how-javascript-works-understanding-functions-and-how-to-use-them/"><meta property="og:image" content="https://www.robissonoliveira.com.br/blog/javascript-funcoes/image-01.png"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="pt_BR"><meta property="article:published_time" content="2019-03-11T00:00:00.000Z"><meta property="article:modified_time" content="2019-03-11T00:00:00.000Z"><meta property="article:tag" content="JavaScript"><meta property="article:tag" content="Frontend"><meta property="article:tag" content="Programming"><meta property="article:tag" content="Functions"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How JavaScript works: understanding functions and how to use them - Robisson Oliveira"><meta name="twitter:description" content="Let's look at what functions are, how to define them, and how to invoke them in different ways."><meta name="twitter:image" content="https://www.robissonoliveira.com.br/blog/javascript-funcoes/image-01.png"><title>How JavaScript works: understanding functions and how to use them - Robisson Oliveira</title><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How JavaScript works: understanding functions and how to use them","description":"Let's look at what functions are, how to define them, and how to invoke them in different ways.","image":"https://www.robissonoliveira.com.br/blog/javascript-funcoes/image-01.png","datePublished":"2019-03-11T00:00:00.000Z","dateModified":"2019-03-11T00:00:00.000Z","inLanguage":"en","author":{"@type":"Person","name":"Robisson Oliveira","url":"https://www.robissonoliveira.com.br/"},"publisher":{"@type":"Person","name":"Robisson Oliveira"},"mainEntityOfPage":"https://www.robissonoliveira.com.br/en/blog/2019-03-11-how-javascript-works-understanding-functions-and-how-to-use-them/","keywords":"JavaScript, Frontend, Programming, Functions"}</script><link rel="stylesheet" href="/_astro/BaseLayout.B1p2eIB7.css"></head><body><div class="top-detail-header" aria-hidden="true"><span></span><span></span><span></span><span></span></div><nav class="site-nav"><div class="site-nav__inner"><a class="site-nav__brand" href="/">Robisson Oliveira</a><button class="site-nav__toggle" type="button" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button><div class="site-nav__overlay" data-menu-close></div><div class="site-nav__links" id="site-menu" data-menu><div class="site-nav__drawer-header"><span>Robisson Oliveira</span><button class="site-nav__close" type="button" aria-label="Close menu" data-menu-close>x</button></div><a class="site-nav__link" href="/en/">Home</a><a class="site-nav__link" href="/en/blog/" aria-current="page">Blog</a><a class="site-nav__link" href="/livros/">Recommended Books</a><a class="site-nav__link" href="/en/about/">About</a><a class="site-nav__language" href="/blog/2019-03-11-como-o-javascript-funciona-entendendo-as-funcoes-e-suas-formas-de-uso/" aria-label="Ver em portugues">PT</a></div></div></nav><main class="page"><article class="article"><header class="article__header"><p class="eyebrow">Frontend</p><h1>How JavaScript works: understanding functions and how to use them</h1><p class="post-meta">March 11, 2019</p><div class="tag-list"><span class="tag">JavaScript</span><span class="tag">Frontend</span><span class="tag">Programming</span><span class="tag">Functions</span></div></header><div class="article__body"><p><img src="/blog/javascript-funcoes/image-01.png" alt="Article image 1"></p>
+<p>I had been translating Alexander Zlatkov’s series <a href="https://medium.com/reactbrasil/como-o-javascript-funciona-uma-vis%C3%A3o-geral-da-engine-runtime-e-da-call-stack-471dd5e1aa30"><strong>How JavaScript works</strong></a> for a few weeks. They are all very high-quality articles. Among his articles there was not one about functions in JavaScript, at least not yet, so I decided to write this one.</p>
+<p>I will assume you already know the basics about functions, how to define and use them, and from that point we will go deeper into the concepts.</p>
+<p>We can say JavaScript is a functional language. Everything except global execution code is executed inside a function. But a function in JavaScript is an object. Confusing? Do not worry; by the end of the text this will be clearer.</p>
+<h3 id="quickly-defining-functions-in-javascript">Quickly defining functions in JavaScript</h3>
+<p>According to <a href="http://mozilla.org/">mozilla.org</a>:</p>
+<p>Functions are fundamental building blocks in JavaScript. A function is a JavaScript procedure, a set of statements that performs a task or calculates a value. To use a function, you must define it somewhere in the scope from which you want to call it.</p>
+<h2 id="functions-as-first-class-objects">Functions as first-class objects</h2>
+<p>Functions in JavaScript are known as first-class objects. That is because everything you can do with an object, you can also do with functions. In reality, a function is an object of type <em>Function</em>.</p>
+<p>Therefore, JavaScript functions can be:</p>
+<h3 id="created-literally">Created literally</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> myFunction</span><span style="color:#E1E4E8">(){} </span><span style="color:#6A737D">// defining a function</span></span></code></pre>
+<h3 id="passed-as-parameters-to-other-functions">Passed as parameters to other functions</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> myFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">param</span><span style="color:#E1E4E8">){} </span><span style="color:#6A737D">// defining the function</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// invoking the function and passing another function as a parameter</span></span>
+<span class="line"><span style="color:#B392F0">myFunction</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"function as parameter"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span></code></pre>
+<h3 id="assigned-to-object-properties">Assigned to object properties</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// defining an object with a property that is a function</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> obj </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">  start</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(){}</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// assigning a function dynamically as a property of an object</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> otherObj </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {};</span></span>
+<span class="line"><span style="color:#E1E4E8">otherObj.</span><span style="color:#B392F0">myFunction</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(){};</span></span></code></pre>
+<h3 id="returned-as-the-result-of-a-function">Returned as the result of a function</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> myFunction</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(){} </span><span style="color:#6A737D">// returning a function as result</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h3 id="have-properties-that-can-be-assigned-dynamically">Have properties that can be assigned dynamically</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> myFunction</span><span style="color:#E1E4E8">(){}</span></span>
+<span class="line"><span style="color:#E1E4E8">myFunction.startTime </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#6A737D"> // assigning a property to the function</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// the form below also works</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> otherFunction</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(){}</span></span>
+<span class="line"><span style="color:#E1E4E8">otherFunction.startTime </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span></span></code></pre>
+<p>The examples above show why JavaScript functions are first-class objects and how they can be used exactly like any other object in JavaScript. Now let us see the ways we can define functions and then use them.</p>
+<h2 id="defining-functions">Defining functions</h2>
+<p>In JavaScript there is more than one way to define functions. Each form can change how and when we can invoke and manipulate them. We can define functions as <em>function declarations, function expressions, arrow functions, function constructors</em> and <em>generator functions</em>.</p>
+<h3 id="function-declarations">Function declarations</h3>
+<p>This is the most common way to define functions. We use the keyword <em>function</em> followed by a function name and an optional list of parameters between parentheses. We can define function declarations anywhere in our code and even inside other functions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> createProfile</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#F97583">  function</span><span style="color:#B392F0"> isValid</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#9ECBFF"> 'valid!!'</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Function declarations can be invoked before or after they are defined in the source code. It makes no difference.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">){ </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y }</span></span>
+<span class="line"><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">,</span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">){ </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y }</span></span></code></pre>
+<p>This is called <a href="https://developer.mozilla.org/pt-BR/docs/Glossario/Hoisting"><strong>function hoisting</strong></a>. During the memory creation phase, the JavaScript engine recognizes a function declaration by the <code>function</code> keyword and makes the function available before continuing.</p>
+<h3 id="function-expressions">Function expressions</h3>
+<p>We can use functions like any other JavaScript type. We can use them as expressions that are defined when and where we need them, to execute immediately or not, inside a given context.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> sum</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">myFunction</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(){})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(){})()</span></span>
+<span class="line"><span style="color:#F97583">+function</span><span style="color:#E1E4E8">(){}()</span></span>
+<span class="line"><span style="color:#F97583">-function</span><span style="color:#E1E4E8">(){}()</span></span>
+<span class="line"><span style="color:#F97583">!function</span><span style="color:#E1E4E8">(){}()</span></span>
+<span class="line"><span style="color:#F97583">~function</span><span style="color:#E1E4E8">(){}()</span></span></code></pre>
+<p><strong>In function expressions the name is optional</strong>, because once assigned to a variable they can be invoked by the variable name. Unlike function declarations, <strong>function expressions cannot be invoked before their definition in the code</strong>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">myFunction</span><span style="color:#E1E4E8">() </span><span style="color:#6A737D">// ReferenceError: myFunction is not defined</span></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> myFunction</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(){}</span></span></code></pre>
+<h3 id="arrow-functions">Arrow functions</h3>
+<p>Arrow functions were introduced in <a href="https://www.ecma-international.org/ecma-262/6.0/">ES6</a>. They are a shorter way to define function expressions and help make code easier to read, especially short expressions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> myFunction</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">myFunction</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">)) </span><span style="color:#6A737D">// result is 4</span></span></code></pre>
+<p>This function receives 2 arguments and returns their sum. There is no need for the <code>function</code> keyword, no need to wrap the body in <code>{}</code> for single-expression functions, no need for <code>return</code>, and there is a new <code>=&gt;</code> operator.</p>
+<p>The example above is equivalent to this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> myFunction</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Other valid forms:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> myFunction</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  let</span><span style="color:#E1E4E8"> z </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 2</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> z;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> double</span><span style="color:#F97583"> =</span><span style="color:#FFAB70"> x</span><span style="color:#F97583"> =&gt;</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">let</span><span style="color:#B392F0"> log</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Arrow function!"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>If the function body has more than one line, it must be wrapped in braces. If it returns a value from a multi-line body, <code>return</code> is required. If the function has only one parameter, parentheses are optional.</p>
+<h3 id="function-constructor">Function constructor</h3>
+<p>This is the least common way, in my opinion, to define functions. Function constructors allow us to define functions dynamically, including the signature and body.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> sum </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Function</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'a'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'b'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'return a + b'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">)); </span><span style="color:#6A737D">// prints 8</span></span></code></pre>
+<p>Directly from mozilla.org, this is the signature:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">new</span><span style="color:#B392F0"> Function</span><span style="color:#E1E4E8"> ([arg1[, arg2[, </span><span style="color:#F97583">...</span><span style="color:#E1E4E8">argN]],] functionBody)</span></span></code></pre>
+<p>We pass a list of arguments that will become the function parameters, and the last argument is the function body. This is flexible, but it has a performance cost because strings need to be parsed as valid code through <code>eval</code>.</p>
+<p>Using this method makes it clearer that every function is an object in JavaScript, more specifically a <em>Function object</em>. For more details, check <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">mozilla</a>.</p>
+<h3 id="callback-functions">Callback functions</h3>
+<p>Callback functions are widely discussed in JavaScript. They are not a way to define functions and not a new type. They are only a usage pattern for any of the forms explained above.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#B392F0">ajaxRequest</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/data"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#6A737D">  // Do something when the request is complete</span></span>
+<span class="line"><span style="color:#E1E4E8">})</span></span></code></pre>
+<p>Whenever you see a parameter named <em>callback</em>, which is a very common convention, it means you should pass a function that will be invoked at some point inside that function’s context.</p>
+<h3 id="function-parameters">Function parameters</h3>
+<p>A parameter is the variable name declared in a function definition. After ES6, there are three types of parameters we can use when defining JavaScript functions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> b</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>We can also define <strong>parameters with default values</strong>, used when the function is invoked without those arguments.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">a</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> b;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">() </span><span style="color:#6A737D">// returns 4</span></span>
+<span class="line"><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">) </span><span style="color:#6A737D">// returns 5</span></span>
+<span class="line"><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">) </span><span style="color:#6A737D">// returns 6</span></span></code></pre>
+<p>Before ES6, we would need to write something like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">  a </span><span style="color:#F97583">=</span><span style="color:#F97583"> typeof</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> undefined</span><span style="color:#F97583"> ?</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> :</span><span style="color:#E1E4E8"> b</span></span>
+<span class="line"><span style="color:#E1E4E8">  b </span><span style="color:#F97583">=</span><span style="color:#F97583"> typeof</span><span style="color:#E1E4E8"> b </span><span style="color:#F97583">===</span><span style="color:#79B8FF"> undefined</span><span style="color:#F97583"> ?</span><span style="color:#79B8FF"> 3</span><span style="color:#F97583"> :</span><span style="color:#E1E4E8"> b</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> a </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> b;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Another option is <strong>rest parameters</strong>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> myFunction</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">param1</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">...</span><span style="color:#FFAB70">moreParams</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(param1);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(moreParams);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">myFunction</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">// 2</span></span>
+<span class="line"><span style="color:#6A737D">// [3,4,5,6]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> myFuncTwo</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">...</span><span style="color:#FFAB70">params</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(params)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">myFuncTwo</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">); </span><span style="color:#6A737D">// [1,2,3,4]</span></span></code></pre>
+<p>With the rest operator, <code>...</code> followed by the parameter name, all remaining arguments are grouped into a single array parameter. <strong>The rest parameter must always be the last parameter defined in the function.</strong></p>
+<p>A <strong>parameter</strong> is the variable defined in the function declaration. An <strong>argument</strong> is the value passed to the function when it is invoked. An argument is assigned to a parameter at invocation time.</p>
+<h2 id="invoking-functions">Invoking functions</h2>
+<p>In JavaScript we have five ways to invoke functions: <em>as functions</em>, <em>as methods</em>, <em>as constructors</em> and with the <em>apply</em> and <em>call</em> methods.</p>
+<h3 id="the-arguments-and-this-parameters">The arguments and this parameters</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">arguments</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<p>Our function has only two parameters, so where did <code>arguments</code> and <code>this</code> come from? They are implicit parameters assigned by JavaScript when the function is invoked. <code>arguments</code> is an object with all arguments received by the function. <code>this</code> is the context in which the function was called.</p>
+<p>We can use <code>arguments</code> when we do not know how many arguments we will receive. The value of <code>arguments</code> is always the arguments passed to the function, but <code>this</code> can change depending on how the function is invoked.</p>
+<h3 id="invoking-a-function-as-a-function">Invoking a function as a function</h3>
+<p>This is the most common use: invoking a function by its name followed by <code>()</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> sum</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">arguments</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<p>In this case, <code>this</code> receives the Window object in the browser. In Node.js, it will be the global environment context. If you are in <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a>, invoking a function this way makes <code>this</code> be <code>undefined</code>.</p>
+<p>We can also use Immediately Invoked Function Expressions, or IIFEs:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">(</span><span style="color:#F97583">function</span><span style="color:#E1E4E8">(){ console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"IIFE"</span><span style="color:#E1E4E8">) })()</span></span>
+<span class="line"><span style="color:#F97583">-function</span><span style="color:#E1E4E8">(){ console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"IIFE"</span><span style="color:#E1E4E8">) }()</span></span>
+<span class="line"><span style="color:#F97583">+function</span><span style="color:#E1E4E8">(){ console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"IIFE"</span><span style="color:#E1E4E8">) }()</span></span>
+<span class="line"><span style="color:#F97583">!function</span><span style="color:#E1E4E8">(){ console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"IIFE"</span><span style="color:#E1E4E8">) }()</span></span>
+<span class="line"><span style="color:#F97583">~function</span><span style="color:#E1E4E8">(){ console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"IIFE"</span><span style="color:#E1E4E8">) }()</span></span></code></pre>
+<h3 id="invoking-a-function-as-a-method">Invoking a function as a method</h3>
+<p>A method is a function assigned to a property of an object.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">let</span><span style="color:#E1E4E8"> obj </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">obj.</span><span style="color:#B392F0">sum</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">x</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">y</span><span style="color:#E1E4E8">){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">arguments</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> x </span><span style="color:#F97583">+</span><span style="color:#E1E4E8"> y;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(obj.</span><span style="color:#B392F0">sum</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">));</span></span></code></pre>
+<p>Now <code>this</code> is the object <code>obj</code> itself. This gives us a way to use object-oriented programming concepts, sharing methods and properties through the object context.</p>
+<h3 id="invoking-a-function-as-a-constructor">Invoking a function as a constructor</h3>
+<p>Here we are talking about <strong>constructor functions</strong>, not function constructors. We invoke a function as a constructor using the <code>new</code> operator.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> Person</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> person</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Person</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<p>When we invoke a function as a constructor, a new object is created and assigned to <code>this</code>. If a primitive value is returned, it is ignored; if an object is returned, that object is returned.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> Person</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#79B8FF">  this</span><span style="color:#E1E4E8">.name </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Robisson"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  this</span><span style="color:#E1E4E8">.age </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 33</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> person</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Person</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(person)</span></span></code></pre>
+<p>Functions created to be invoked as constructors can still be invoked as regular functions, but that can create problems when not using strict mode because <code>this</code> may point to <code>window</code>.</p>
+<h3 id="invoking-a-function-with-apply-and-call">Invoking a function with apply and call</h3>
+<p>JavaScript lets us manipulate the context in which functions operate when invoked. That is the purpose of <code>call</code> and <code>apply</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> printArray</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">...</span><span style="color:#FFAB70">array</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">  this</span><span style="color:#E1E4E8">.items </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> array;</span></span>
+<span class="line"><span style="color:#79B8FF">  this</span><span style="color:#E1E4E8">.items.</span><span style="color:#B392F0">forEach</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">item</span><span style="color:#F97583"> =&gt;</span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(item));</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> obj</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {};</span></span>
+<span class="line"><span style="color:#E1E4E8">printArray.</span><span style="color:#B392F0">apply</span><span style="color:#E1E4E8">(obj, [</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">,</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">]);</span></span></code></pre>
+<p>The <code>apply</code> method invokes a function and receives, as its first argument, the object that should be assigned to <code>this</code>. The second argument is an array that becomes the invoked function’s arguments.</p>
+<p>The <code>call</code> method does the same thing, but its signature is different:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">printArray.</span><span style="color:#B392F0">call</span><span style="color:#E1E4E8">(obj, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<p>It receives the context as the first argument and all other arguments are passed directly to the invoked function.</p>
+<p>In <em>Secrets of the JavaScript Ninja</em>, there is a good example of using apply/call to build a foreach:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> forEach</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">list</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">callback</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">  for</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">var</span><span style="color:#E1E4E8"> n </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">; n </span><span style="color:#F97583">&lt;</span><span style="color:#E1E4E8"> list.</span><span style="color:#79B8FF">length</span><span style="color:#E1E4E8">; n</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">    callback.</span><span style="color:#B392F0">call</span><span style="color:#E1E4E8">(list[n], n, list[n]);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Invoking functions is largely about understanding the context in which the function is working. In my experience, many everyday errors happen because of context, so it is worth going deeper into this topic.</p>
+<p>Arrow functions have a particular behavior: they do not have <code>this</code> like other functions. They assume the <code>this</code> from the context in which they were defined.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> button</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">getElementById</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"mybutton"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> myEventClick</span><span style="color:#F97583"> =</span><span style="color:#F97583"> function</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, myEventClick);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> myArrowEventClick</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">this</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">button.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"click"</span><span style="color:#E1E4E8">, myArrowEventClick);</span></span></code></pre>
+<p>Because the arrow function is defined in the global context, <code>this</code> is the <code>window</code> object. This creates confusion when people try to reference the element with <code>this</code> and the expected property is not there.</p>
+<h2 id="generator-functions">Generator functions</h2>
+<p>Generator functions were introduced in ES6. They are defined differently and behave differently too, so I dedicated a section to them.</p>
+<p>Generator functions return a sequence of values, but not all at once. Each time the function is invoked, it returns values until all of them have been returned.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function*</span><span style="color:#B392F0"> testGenerator</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  yield</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  yield</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  yield</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> generatorFunction</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> testGenerator</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(generatorFunction.</span><span style="color:#B392F0">next</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(generatorFunction.</span><span style="color:#B392F0">next</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(generatorFunction.</span><span style="color:#B392F0">next</span><span style="color:#E1E4E8">());</span></span></code></pre>
+<p>When a generator function is invoked, it returns an <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Iteratores_e_geradores"><strong>iterator object</strong></a>. An object is an iterator when it knows how to access items in a collection one at a time while keeping track of the current position in a sequence. In JavaScript, an iterator offers the <code>next()</code> method, which returns the next item with <code>done</code> and <code>value</code> properties.</p>
+<p>We can also loop through the result of a generator function:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">function*</span><span style="color:#B392F0"> testGenerator</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  yield</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  yield</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  yield</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">for</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">let</span><span style="color:#E1E4E8"> item </span><span style="color:#F97583">of</span><span style="color:#B392F0"> testGenerator</span><span style="color:#E1E4E8">()){</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(item);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="more-about-functions">More about functions</h2>
+<p>In this article I did not explain Promises or asynchronous functions with async/await. That was explained in the article <a href="https://medium.com/reactbrasil/como-o-javascript-funciona-o-event-loop-e-o-surgimento-da-programa%C3%A7%C3%A3o-ass%C3%ADncrona-5-maneiras-de-18d0b8d6849a"><strong>How JavaScript works: the event loop and the rise of asynchronous programming plus 5 ways to write better async/await code</strong></a>.</p>
+<p>I also did not mention <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Closures"><strong>closures</strong></a>, even though they are related to function usage. I prefer to talk about them in a future article about objects in JavaScript, where closures are widely used to encapsulate and protect parts of code.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The goal of this article was to be a deep guide on using functions in JavaScript: what functions exist, how we can use them, and some tips that may help. I hope it provides a good knowledge base for anyone using JavaScript day to day.</p>
+<h3 id="references">References</h3>
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Fun%C3%A7%C3%B5es">https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Fun%C3%A7%C3%B5es</a></p>
+</li>
+<li>
+<p><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-13">https://www.ecma-international.org/ecma-262/5.1/#sec-13</a></p>
+</li>
+<li>
+<p><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-function-definitions">https://www.ecma-international.org/ecma-262/6.0/#sec-function-definitions</a></p>
+</li>
+<li>
+<p><a href="http://braziljs.github.io/eloquente-javascript/chapters/funcoes/">http://braziljs.github.io/eloquente-javascript/chapters/funcoes/</a></p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/secrets-of-the-javascript-ninja-second-edition">Secrets of the Javascript ninja, second edition</a> — John Resig</p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function</a></p>
+</li>
+<li>
+<p><a href="https://openclassrooms.com/en/courses/3523231-learn-to-code-with-javascript/4379006-use-constructor-functions">https://openclassrooms.com/en/courses/3523231-learn-to-code-with-javascript/4379006-use-constructor-functions</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode">https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Iteratores_e_geradores">https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Iteratores_e_geradores</a></p>
+</li>
+<li>
+<p><a href="https://github.com/getify/You-Dont-Know-JS">https://github.com/getify/You-Dont-Know-JS</a></p>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Glossario/Hoisting">https://developer.mozilla.org/pt-BR/docs/Glossario/Hoisting</a></p>
+</li>
+<li>
+<p><a href="https://www.ecma-international.org/ecma-262/6.0/">https://www.ecma-international.org/ecma-262/6.0/</a></p>
+</li>
+</ul>
+</div></article></main><footer class="site-footer"><div class="site-footer__inner">Robisson Oliveira - Software development, architecture and cloud.</div></footer><script type="module">var e=document.querySelector(`[data-menu-toggle]`),t=document.querySelector(`[data-menu]`),n=document.querySelectorAll(`[data-menu-close]`);function r(t){document.body.classList.toggle(`site-menu-open`,t),e?.setAttribute(`aria-expanded`,String(t))}e?.addEventListener(`click`,()=>{r(!document.body.classList.contains(`site-menu-open`))}),n.forEach(e=>{e.addEventListener(`click`,()=>r(!1))}),t?.querySelectorAll(`a`).forEach(e=>{e.addEventListener(`click`,()=>r(!1))}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&r(!1)});</script></body></html>

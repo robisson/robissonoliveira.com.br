@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="The goal of this article is to position the reader around the fact that building a ReactJs application for stable, evolving production use may not be as simple as some articles make it look."><meta name="robots" content="index,follow,max-image-preview:large"><meta name="author" content="Robisson Oliveira"><meta name="generator" content="Astro v7.1.3"><link rel="canonical" href="https://www.robissonoliveira.com.br/en/blog/2019-01-26-you-or-your-team-will-not-learn-reactjs-in-7-days-or-in-a-hello-world/"><link rel="alternate" type="application/rss+xml" title="Blog - Robisson Oliveira" href="https://www.robissonoliveira.com.br/en/rss.xml"><link rel="alternate" hreflang="pt-BR" href="https://www.robissonoliveira.com.br/blog/2019-01-26-voce-ou-o-seu-time-nao-vao-aprender-reactjs-em-7-dias-ou-em-um-hello-world/"><link rel="alternate" hreflang="en" href="https://www.robissonoliveira.com.br/en/blog/2019-01-26-you-or-your-team-will-not-learn-reactjs-in-7-days-or-in-a-hello-world/"><link rel="alternate" hreflang="x-default" href="https://www.robissonoliveira.com.br/blog/2019-01-26-voce-ou-o-seu-time-nao-vao-aprender-reactjs-em-7-dias-ou-em-um-hello-world/"><meta property="og:site_name" content="Robisson Oliveira"><meta property="og:type" content="article"><meta property="og:title" content="You or your team will not learn ReactJs in 7 days or with a Hello World! - Robisson Oliveira"><meta property="og:description" content="The goal of this article is to position the reader around the fact that building a ReactJs application for stable, evolving production use may not be as simple as some articles make it look."><meta property="og:url" content="https://www.robissonoliveira.com.br/en/blog/2019-01-26-you-or-your-team-will-not-learn-reactjs-in-7-days-or-in-a-hello-world/"><meta property="og:image" content="https://www.robissonoliveira.com.br/blog/reactjs-7-dias-hello-world/image-01.png"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="pt_BR"><meta property="article:published_time" content="2019-01-26T00:00:00.000Z"><meta property="article:modified_time" content="2019-01-26T00:00:00.000Z"><meta property="article:tag" content="React"><meta property="article:tag" content="JavaScript"><meta property="article:tag" content="Frontend"><meta property="article:tag" content="Software Engineering"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="You or your team will not learn ReactJs in 7 days or with a Hello World! - Robisson Oliveira"><meta name="twitter:description" content="The goal of this article is to position the reader around the fact that building a ReactJs application for stable, evolving production use may not be as simple as some articles make it look."><meta name="twitter:image" content="https://www.robissonoliveira.com.br/blog/reactjs-7-dias-hello-world/image-01.png"><title>You or your team will not learn ReactJs in 7 days or with a Hello World! - Robisson Oliveira</title><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"You or your team will not learn ReactJs in 7 days or with a Hello World!","description":"The goal of this article is to position the reader around the fact that building a ReactJs application for stable, evolving production use may not be as simple as some articles make it look.","image":"https://www.robissonoliveira.com.br/blog/reactjs-7-dias-hello-world/image-01.png","datePublished":"2019-01-26T00:00:00.000Z","dateModified":"2019-01-26T00:00:00.000Z","inLanguage":"en","author":{"@type":"Person","name":"Robisson Oliveira","url":"https://www.robissonoliveira.com.br/"},"publisher":{"@type":"Person","name":"Robisson Oliveira"},"mainEntityOfPage":"https://www.robissonoliveira.com.br/en/blog/2019-01-26-you-or-your-team-will-not-learn-reactjs-in-7-days-or-in-a-hello-world/","keywords":"React, JavaScript, Frontend, Software Engineering"}</script><link rel="stylesheet" href="/_astro/BaseLayout.B1p2eIB7.css"></head><body><div class="top-detail-header" aria-hidden="true"><span></span><span></span><span></span><span></span></div><nav class="site-nav"><div class="site-nav__inner"><a class="site-nav__brand" href="/">Robisson Oliveira</a><button class="site-nav__toggle" type="button" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button><div class="site-nav__overlay" data-menu-close></div><div class="site-nav__links" id="site-menu" data-menu><div class="site-nav__drawer-header"><span>Robisson Oliveira</span><button class="site-nav__close" type="button" aria-label="Close menu" data-menu-close>x</button></div><a class="site-nav__link" href="/en/">Home</a><a class="site-nav__link" href="/en/blog/" aria-current="page">Blog</a><a class="site-nav__link" href="/livros/">Recommended Books</a><a class="site-nav__link" href="/en/about/">About</a><a class="site-nav__language" href="/blog/2019-01-26-voce-ou-o-seu-time-nao-vao-aprender-reactjs-em-7-dias-ou-em-um-hello-world/" aria-label="Ver em portugues">PT</a></div></div></nav><main class="page"><article class="article"><header class="article__header"><p class="eyebrow">Frontend</p><h1>You or your team will not learn ReactJs in 7 days or with a Hello World!</h1><p class="post-meta">January 26, 2019</p><div class="tag-list"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Frontend</span><span class="tag">Software Engineering</span></div></header><div class="article__body"><p><img src="/blog/reactjs-7-dias-hello-world/image-01.png" alt="Article image 1"></p>
+<p>The goal of this article is to position the reader around the fact that building a ReactJs application to run in production in a stable and evolving way may not be as simple as some articles can make it seem.</p>
+<p>With all the current popularity of ReactJs, Vue.js and Angular, there is also a flood of information, articles and video lessons simplifying, in my opinion, the learning curve. This article is based on my own experience learning ReactJs. I started using it in September 2017, right during the transition from <strong>React 15.6 to 16.0</strong>, including the controversy around the license change from MIT to BSD, which later, after some noise, went back to MIT.</p>
+<h2 id="why-did-i-start-using-reactjs">Why did I start using ReactJs?</h2>
+<p>While looking for software to manage Lean with OKR and Kanban in 2017, I could not find any solution that solved the problem we had at the company, so I decided to create one. I concluded that the best approach would be to create a PWA, and I wanted to build both the backend and the frontend with JavaScript.</p>
+<p>Then I faced the doubt I believe everyone still has: <strong>ReactJs, Vue.js or Angular</strong>? I already knew Angular 1.6 and 2.0. Vue.js and ReactJS I had never tested, not even for fun. I found Angular 2.0 complex in architecture and weak in official documentation, and there was also some tension about whether Google would continue with it or not, given the huge breaking change from 1.6 to 2.0. That made me insecure. So I started comparing Vue.js and ReactJs.</p>
+<p>I ended up choosing ReactJs for two main reasons: <strong>community</strong> and <strong>architecture</strong>.</p>
+<h3 id="community">Community</h3>
+<p>I hope not to offend the Vue.js community, which is as large as ReactJs, but in my opinion it was less active in contributing code to the repository. Looking at both projects on GitHub, these were my perceptions in 2017, and they still were when I wrote the article:</p>
+<ul>
+<li>
+<p>Both projects had more than <strong>120 thousand stars</strong>. Vue.js even had more than ReactJs at that point, though it did not in 2017, but I see stars mostly as admirers of the project. They may consume it, but they do not necessarily contribute.</p>
+</li>
+<li>
+<p>ReactJs had almost <strong>5 times more contributors</strong> than Vue.js. I believe this makes a difference in the longevity of the platform, more than the number of stars.</p>
+</li>
+<li>
+<p>Of course, contributors do not necessarily mean meaningful activity, but if we look at each project insights and compare Pulse, Contributors, Commits and Code Frequency, the ReactJs numbers were higher. So I understood that there were in fact more people improving and maintaining ReactJs than Vue.js.</p>
+</li>
+<li>
+<p>Given the size of Facebook, which created and was the main maintainer of ReactJs, I saw more long-term stability. ReactJs is widely used inside Facebook, so they have a lot to lose if the library ceases to exist. Not that this cannot happen, obviously, but that is how I thought about it.</p>
+</li>
+<li>
+<p>If you search on <a href="https://trends.google.com/trends/explore?date=today%205-y&amp;q=%2Fm%2F012l1vxv,%2Fm%2F0j45p7w,%2Fg%2F11c0vmgx5d">Google Trends</a>, ReactJs also appears with more emphasis.</p>
+</li>
+<li>
+<p>I also like looking at the <a href="https://insights.stackoverflow.com/survey/2018/#technology">Stack Overflow Survey</a>.</p>
+</li>
+</ul>
+<p><strong>Architecture</strong></p>
+<p>I basically found JSX, the Virtual DOM and the freedom of developing with ReactJs very interesting. I know that freedom has a cost, and I explain it later.</p>
+<p>I believe that any problem solved with ReactJs can also be solved with the same efficiency using Vue.js or Angular. It only depends on developers mastering the tool and the problem they need to solve. That said, there is also an emotional side to my choice: despite all the points above, I also simply liked coding with ReactJs more.</p>
+<p>Even so, I recommend always paying attention to improvements in Vue.js and Angular, because there is a lot to learn from them.</p>
+<h2 id="do-you-really-need-reactjs-what-problem-does-it-solve">Do you really need ReactJS? What problem does it solve?</h2>
+<p>As ReactJs itself says on GitHub and on the official website, it is:</p>
+<blockquote>
+<p>A declarative, efficient, and flexible JavaScript library for building user interfaces.</p>
+</blockquote>
+<p>And nothing more. Yes, nothing more.</p>
+<p>If you have a problem that can benefit from SPA usage and component-oriented development, and if that application will grow and become more complex in the future, ReactJs is a good candidate for generating and orchestrating those components, in my view.</p>
+<p>In other words, ReactJs is for creating visual interfaces. You will not build a complete application with it alone.</p>
+<p>This is where my dissatisfaction begins with the large number of articles I see with titles like: Learn ReactJs in 7 days, in 5 minutes, or articles saying learning ReactJs has never been so easy. After 14 months developing with ReactJs, these articles seemed to underestimate the learning curve required to put a decent application in production with an acceptable level of quality.</p>
+<p>If your problem can be solved by Hello Worlds or quick tutorials, maybe you do not need ReactJs. A simpler solution may solve it initially.</p>
+<p>I went through the Hello Worlds, the 5 minutes and the 7 days. After that, I still felt I was at square one. So I keep thinking: is it just me? Or is it really not that simple?</p>
+<p>I had been working with software development for 10 years. Whenever I build an application, questions arise around <strong>what, how and why</strong> I am implementing something. I think about how to better reuse code, about tests, code architecture, development patterns, how to solve the present problem while keeping options open for evolution.</p>
+<p>For all these questions, I had difficulty finding documentation or help, and I believe other people may have the same issue. Difficulty may not be the right word, but doubts such as: Am I doing this right? Did I miss something?</p>
+<h2 id="learning-curve">Learning curve</h2>
+<p>Below I list the concepts I consider important when learning ReactJS. All of them were turning points for me. After I understood them, everything made more sense and my code improved.</p>
+<h3 id="modern-javascript-es6-es7-es8-es9-and-so-on">Modern JavaScript: ES6, ES7, ES8, ES9 and so on</h3>
+<p>You can develop with ReactJs using ES5, but I do not know why someone would do that today. Knowledge of the latest JS implementations is very important. Imagine seeing the code below when it is not part of your daily work:</p>
+<p><img src="/blog/reactjs-7-dias-hello-world/image-02.png" alt="Article image 2"></p>
+<p>Is this JavaScript syntax? Is it ReactJs? Is it wrong? What is this thing?</p>
+<p>Based on these questions, it is important to know modern JavaScript. It will be everywhere in ReactJs, in tutorials and in documentation. They already assume you know it. At minimum, I believe you should know what belongs to the language and what belongs to the library you are using.</p>
+<h2 id="jsx-syntax-extension-to-javascript">JSX: syntax extension to JavaScript</h2>
+<p>In short, JSX is a syntax introduced in ReactJs to represent how a component should look when rendered.</p>
+<p>See the code below:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> todoList</span><span style="color:#E1E4E8">(){</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> &lt;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;Task 1&lt;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>This code will render, with more code involved in the process obviously, a div with the text “Task 1” in the browser.</p>
+<p>JSX has been criticized a lot because it looks like it mixes HTML with JavaScript. But when you go deeper, you understand the benefit and why it is used. <a href="https://reactjs.org/docs/introducing-jsx.html">Here</a> is the official documentation.</p>
+<h3 id="virtual-dom">Virtual DOM</h3>
+<p>The Virtual DOM is an in-memory representation of the DOM maintained by ReactJs. When there is a change in the DOM, ReactJs uses a process called <a href="https://reactjs.org/docs/reconciliation.html">Reconciliation</a> to identify what changed and render incrementally, reducing browser rendering costs. A complete explanation can be seen in the <a href="https://reactjs.org/docs/faq-internals.html">official documentation</a> and in this <a href="https://www.youtube.com/watch?v=ZCuYPiUIONs">video</a>.</p>
+<p>If you intend to go deeper in understanding ReactJs, I really advise you to download the source code and understand what it is doing. There are sophisticated algorithms and concepts that make ReactJs what it is.</p>
+<h3 id="component-lifecycle">Component lifecycle</h3>
+<p>This is a subject I always discuss with the team: if you are using any library or framework, understand its lifecycle. There is always one.</p>
+<p>Understanding the lifecycle of a ReactJs component allows you to create more optimized code and, at minimum, prevents unnecessary renders, significantly improving performance.</p>
+<h3 id="functional-programming">Functional programming</h3>
+<p>At first I had some difficulty with functional programming concepts, so I had to study them more deeply. You do not need to go deep into functional programming to learn ReactJs, but to develop in a more elegant way and simplify your code, I believe you should at least be aware of concepts such as <strong>pure functions</strong> and the basic functions for handling arrays, such as <strong>map, reduce</strong> and <strong>filter</strong>. Understanding <strong>higher-order functions</strong> and <strong>immutability</strong> is also important.</p>
+<h3 id="state-management">State management</h3>
+<p>For me, the concept that added the most to me as a programmer when learning ReactJs was definitely application state management. State is a broad term when we talk about web applications. ReactJs applications have components with local state. In a simplistic way, state is basically an atomic object or an aggregate of objects with all the information that needs to live and be modified in the browser.</p>
+<p>Imagine a JSON object representing the entire visual state of your application. For example, if there is a modal, it may be displayed or not. That would be the state of a component or of the application. As I said, state management is a broad term.</p>
+<p>There are state management libraries almost as famous as ReactJs, such as Redux and MobX, which can even be used without ReactJs. These libraries help us turn local state into global state. This is a poor explanation, but the key point is: study <strong>state management</strong>.</p>
+<p>At that moment, I saw Facebook’s new proposal for managing state and component lifecycles with <a href="https://reactjs.org/docs/hooks-intro.html"><strong>Hooks</strong></a> as a turning point.</p>
+<h3 id="spa-single-page-application">SPA: Single Page Application</h3>
+<p>At this point you probably know what an SPA is, but it is worth highlighting that ReactJs is aimed at SPA development. So you should be aware of that when developing. Your application will, or at least should, load “everything” in a single page, or at least the critical part of your application. Everything else would be loaded asynchronously.</p>
+<p>I leave the <a href="https://en.wikipedia.org/wiki/Single-page_application">Wikipedia</a> description here.</p>
+<p><strong>PWA: Progressive Web Apps</strong></p>
+<p>In my case, I wanted to build a PWA with ReactJs. Anyone who has developed a PWA that follows all principles knows it is not that easy either. With ReactJs plus PWA come questions such as: when should I initialize my Service Workers? How should I handle components to support offline-first? How should I style things to support Critical Render Path and Instant Loading?</p>
+<ul>
+<li>This <a href="https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-i-introduction-50679aef2b12">article by Addy Osmani</a> brings some ideas.</li>
+</ul>
+<p>I also read this book:</p>
+<ul>
+<li><a href="https://www.amazon.com/Progressive-Web-Apps-React-lightning-ebook/dp/B076SZY9P9">Progressive Web Apps with ReactJs</a></li>
+</ul>
+<h3 id="component-oriented-development">Component-oriented development</h3>
+<p>ReactJs lets you split the UI into reusable pieces that can be combined to form more complex UIs. In other words, it allows you to create components and combine them to form other components.</p>
+<p>What is a component? How large should a component be before I need to split it? Or how small should it be?</p>
+<p>The <a href="https://reactjs.org/docs/thinking-in-react.html">official documentation</a> has a basic explanation of the subject. The important part is learning how to think in components. And a reminder: Web Components are not ReactJs. That is another widely discussed topic and can cause confusion.</p>
+<h3 id="tdd-test-driven-development">TDD: Test Driven Development</h3>
+<p>Today I am somewhat radical about this subject. I believe that in 2018 nobody should start new code or a new project without thinking about <strong>tests first</strong>. It is the best long-term investment in application quality. Doing TDD with ReactJs was very different from what I was used to.</p>
+<p>Do I test only one component? Can I test end to end? Should I test state changes? How do I mock components, APIs and so on?</p>
+<p>This subject was hard to find documentation or help for, so I kept jumping from tutorial to tutorial and reading some books. Among the main tools I use today are <a href="https://jestjs.io/docs/en/tutorial-react">Jest</a>, <a href="https://github.com/airbnb/enzyme">Enzyme</a>, <a href="https://www.chaijs.com/">Chai</a> and <a href="https://mochajs.org/">Mocha</a>.</p>
+<h3 id="server-side-rendering">Server-side rendering</h3>
+<p>If you are developing an application where SEO is important, meaning the various pages of your application need to be indexed by search engines such as Google, you will need server-side rendering.</p>
+<p>Because ReactJs is a JavaScript library running in the browser, only after all your code has been downloaded from the server, parsed and executed does your application really come to life and gain its appearance. From the perspective of the search crawler, depending on how you programmed it, your application may be just a blank page. For the search engine, that has zero relevance. You disappear from the map.</p>
+<p>Imagine spending time developing a ReactJs application and, when it goes live, the company’s revenue drops because you lost all organic traffic from Google.</p>
+<p><a href="https://reactjs.org/docs/react-dom-server.html">Server-side rendering</a> is the process that allows you to generate components on the backend. It is like a typical HTML page being loaded: until all JavaScript is loaded, it remains without interactivity, but the content is already available and can be indexed by search engines.</p>
+<p>For me, server-side rendering also improves perceived performance for the user.</p>
+<h3 id="static-type-checker">Static Type Checker</h3>
+<p>This is already a slightly more advanced concept. JavaScript is a dynamic and weakly typed language. It also performs type coercion automatically.</p>
+<p>Because of this, as the code grows, it can become hard to find performance bottlenecks or refactor. To help with that, Facebook created <a href="https://flow.org">Flow</a>. It allows you to define types for variables, objects, functions and custom types. Your code becomes more readable and less prone to bugs caused by type coercion.</p>
+<p>An alternative to Flow is using TypeScript to develop ReactJs applications. I like TypeScript a lot and almost used it in the project. I only did not because I wanted to try something different with Flow and stay closer to the official ReactJs implementation.</p>
+<h3 id="learn-how-to-debug-your-application">Learn how to debug your application</h3>
+<p>Debugging ReactJs applications is a little annoying, but after you get used to the tools it becomes easy. I basically use React Developer Tools, Redux DevTools and the Visual Studio Code debugger with Chrome.</p>
+<p>Learning to use these tools well will help a lot. And do not forget Chrome DevTools.</p>
+<h3 id="reactjs-ecosystem">ReactJs ecosystem</h3>
+<p>Remember when I said ReactJS is only for creating visual interfaces? So what about everything else a robust application may need?</p>
+<ul>
+<li>
+<p>A way to route between pages.</p>
+</li>
+<li>
+<p>A way to make HTTP requests.</p>
+</li>
+<li>
+<p>A way to support other languages in the application.</p>
+</li>
+</ul>
+<p>ReactJs answers none of these questions. You have the freedom to do it however you want. That is where the problems start. You have to find another library that solves your problem or create one yourself.</p>
+<p>The problem is that you may end up using a library that may not work in the future, since ReactJs evolves without worrying about these third parties.</p>
+<p>Some of the most popular libraries that make up the ReactJs ecosystem are:</p>
+<ul>
+<li>
+<p><a href="https://github.com/ReactTraining/react-router">React Router</a>, mainly for routing between components and pages.</p>
+</li>
+<li>
+<p><a href="https://github.com/axios/axios">Axios</a>, for handling HTTP requests.</p>
+</li>
+<li>
+<p><a href="https://github.com/apollographql/apollo-client">Apollo Client</a>, useful if your backend is not a REST API or simple AJAX callbacks and you are already deeper into ReactJs and GraphQL.</p>
+</li>
+<li>
+<p><a href="https://github.com/i18next/react-i18next">React i18next</a>, if you need to support other languages in your application.</p>
+</li>
+</ul>
+<p>I mentioned only a few examples, but the fact you should remember is that ReactJs will only generate your visual components. Everything else you need will require research, dependency maturity analysis and some risk taking.</p>
+<h3 id="webpack">Webpack</h3>
+<p>When developing a ReactJs application, you will probably use features that do not work in browsers without a transpilation process from the code you wrote to the code the browser understands. Examples include JSX and newer JavaScript features. Usually this is done by a <strong>task runner</strong> or <strong>bundler</strong>. Webpack is both.</p>
+<p>Although it is a separate tool, I see it as a fundamental part of your development ecosystem. The <a href="https://survivejs.com/webpack/what-is-webpack/">official documentation</a> is extensive.</p>
+<h3 id="code-development-standards-and-style-guides">Code development standards and style guides</h3>
+<p>Preferably before starting, define the coding standards you or your team will follow. If possible, bind those standards to requirements in a continuous integration pipeline, so code outside the standard cannot go to production.</p>
+<p>I started with the AirBnB standards below:</p>
+<ul>
+<li>
+<p><a href="https://github.com/airbnb/javascript/tree/master/react">AirBnb Code style ReactJs</a></p>
+</li>
+<li>
+<p><a href="https://github.com/airbnb/javascript">AirBnb Code Style Javascript</a></p>
+</li>
+<li>
+<p><a href="https://github.com/airbnb/javascript/tree/master/css-in-javascript">AirBnb Code Style Css in JS</a></p>
+</li>
+</ul>
+<p>After some time I centralized all this configuration through <a href="https://prettier.io/">Prettier</a>, which I found simpler.</p>
+<p>These standards were configured in the IDE I used and also in <a href="https://travis-ci.org/">TravisCI</a>, <a href="https://codeclimate.com/">Code Climate</a> and <a href="https://www.codacy.com/">Codacy</a>, and were validated on every commit to the repository.</p>
+<h3 id="how-do-you-architect-all-this-together">How do you architect all this together?</h3>
+<p>This was another major doubt for me. How do I organize my code and, more importantly, my components? Even if my application has hundreds or thousands of components in the future, how do I keep its complexity and modularity flexible?</p>
+<p>ReactJs does not answer that either.</p>
+<p>Facebook created a boilerplate tool to create a default application template: <a href="https://github.com/facebook/create-react-app">create-react-app</a>. I did not use it because when I started the project it did not support server-side rendering. Another reason was that it felt too much like a black box to me; I wanted to truly understand how to assemble a ReactJs development environment.</p>
+<p>Basically, create-react-app generates all files and directories for you to start developing your application, including configuration for running tests and linters.</p>
+<p>For structuring a project, these were the important questions for me:</p>
+<ul>
+<li>
+<p>Understand stateful and stateless components.</p>
+</li>
+<li>
+<p>Study the main design patterns used in ReactJs applications. At minimum, understand <a href="https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0">container components and presentational components</a>.</p>
+</li>
+<li>
+<p>Without proper handling, a ReactJs application is a single JavaScript file your page has to load. The larger your application gets, the larger this file becomes. Imagine your application two years from now with 5,000 components and 10 MB to load and execute. For this there are <a href="https://reactjs.org/docs/code-splitting.html">code splitting and lazy loading</a>, which divide your code into smaller parts and load each part only when it is really needed. This is fundamental for keeping performance as your application grows.</p>
+</li>
+</ul>
+<p>I usually read a lot of programming books. The books below helped a lot when defining the application structure:</p>
+<ul>
+<li>
+<p><a href="https://www.amazon.com.br/React-Design-Patterns-Best-Practices-ebook/dp/B01LFAN88E">React Design Patterns and Best Practices</a></p>
+</li>
+<li>
+<p><a href="https://www.fullstackreact.com/">FullStack React</a></p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/react-in-action">React in Action</a></p>
+</li>
+<li>
+<p><a href="https://www.manning.com/books/react-quickly">React Quickly</a></p>
+</li>
+</ul>
+<p>Here are three links I find useful when deciding how to structure projects:</p>
+<p><a href="https://daveceddia.com/react-project-structure/">How to Structure Your React Project</a></p>
+<p><a href="https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed">The 100% correct way to structure a React app (or why there is no such thing)</a></p>
+<p>Note: do not get carried away by the idea of a “100% correct way”, but it is an excellent article.</p>
+<p><a href="https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1">How to better organize your React applications?</a></p>
+<h2 id="pay-attention-to-the-community">Pay attention to the community</h2>
+<p>Good software is updated software. The closer you are to the latest releases, the better I consider it. So pay attention to the <a href="https://github.com/facebook/react/releases">improvements and breaking changes</a> in the official repository.</p>
+<p>You will have to use third-party libraries that are outside ReactJs but inside the <strong>ecosystem</strong>. Pay attention to those changes too, and whether they align with the official repository.</p>
+<p>My main tip, regardless of your experience level, is to join the <a href="https://react-brasil-slack.herokuapp.com/"><strong>React Brasil Slack group</strong></a>. There were almost 5,000 people exchanging information all the time. You could stay connected all day and still not keep up. There were conversations for people who had never heard of ReactJs through expert, ninja, master level and so on.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The post became long and may have given the impression that I want to say developing with ReactJs is super complicated and that you should not do it. That is not the intention. The issue is that when we build a real application that needs to generate value for its users, the huge number of tutorials available does not help much. In fact, on the “how to do it” side, not even my post helps.</p>
+<p>I only wanted to list some topics I realized I needed to learn when obstacles appeared in the project. You do not need to master all these topics, but I think you at least need to know they exist.</p>
+<p>I have heard people saying that adding ReactJs to project X or Y was a mistake. But they underestimated the learning curve. They left something they knew very well and moved to a new concept thinking they would keep the same pace. Every change has a performance gap at the beginning. That is what I wanted to point out in this post.</p>
+<p>I intend to write other articles showing everything from how I assembled the ReactJs development environment to the project architecture and some important refactoring points I went through.</p>
+</div></article></main><footer class="site-footer"><div class="site-footer__inner">Robisson Oliveira - Software development, architecture and cloud.</div></footer><script type="module">var e=document.querySelector(`[data-menu-toggle]`),t=document.querySelector(`[data-menu]`),n=document.querySelectorAll(`[data-menu-close]`);function r(t){document.body.classList.toggle(`site-menu-open`,t),e?.setAttribute(`aria-expanded`,String(t))}e?.addEventListener(`click`,()=>{r(!document.body.classList.contains(`site-menu-open`))}),n.forEach(e=>{e.addEventListener(`click`,()=>r(!1))}),t?.querySelectorAll(`a`).forEach(e=>{e.addEventListener(`click`,()=>r(!1))}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&r(!1)});</script></body></html>
