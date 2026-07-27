@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { formatPostDate, postSlug, postsByLocale } from "../../lib/blog";
+import { formatPostDate, postImage, postSlug, postsByLocale } from "../../lib/blog";
 
 const posts = postsByLocale(await getCollection("blog"), "pt-BR");
 
@@ -27,15 +27,20 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
   {featuredPost && (
     <section class="blog-featured">
       <article>
-      <p class="post-card__meta">
-        {formatPostDate(featuredPost.data.pubDate, "pt-BR")}
-        {featuredPost.data.series ? ` - ${featuredPost.data.series}` : ""}
-      </p>
-      <h2><a href={`/blog/${postSlug(featuredPost.id)}/`}>{featuredPost.data.title}</a></h2>
-      <p>{featuredPost.data.description}</p>
-      <div class="tag-list">
-        {featuredPost.data.tags.map((tag) => <span class="tag">{tag}</span>)}
-      </div>
+        <a class="blog-featured__image" href={`/blog/${postSlug(featuredPost.id)}/`} aria-label={featuredPost.data.title}>
+          <img src={postImage(featuredPost.id)} alt={featuredPost.data.title} />
+        </a>
+        <div>
+          <p class="post-card__meta">
+            {formatPostDate(featuredPost.data.pubDate, "pt-BR")}
+            {featuredPost.data.series ? ` - ${featuredPost.data.series}` : ""}
+          </p>
+          <h2><a href={`/blog/${postSlug(featuredPost.id)}/`}>{featuredPost.data.title}</a></h2>
+          <p>{featuredPost.data.description}</p>
+          <div class="tag-list">
+            {featuredPost.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </div>
       </article>
     </section>
   )}
@@ -44,6 +49,9 @@ const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags))).sort()
     <div class="post-list post-list--grid">
       {remainingPosts.map((post) => (
         <article class="post-card">
+          <a class="post-card__image" href={`/blog/${postSlug(post.id)}/`} aria-label={post.data.title}>
+            <img src={postImage(post.id)} alt={post.data.title} />
+          </a>
           <p class="post-card__meta">
             {formatPostDate(post.data.pubDate, "pt-BR")}
             {post.data.series ? ` - ${post.data.series}` : ""}
