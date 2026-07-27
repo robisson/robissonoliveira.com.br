@@ -1,6 +1,7 @@
 ---
 title: "Você ou o seu time não vão aprender ReactJs em 7 dias ou em um Hello World!"
-description: "O objetivo desse artigo é posicionar o leitor de que desenvolver com ReactJs uma aplicação para rodar em produção de forma estável e evoluindo pode não ser tão simples como alguns artigos dão a impressão."
+seoTitle: "ReactJs em produção não se aprende em 7 dias"
+description: "Uma reflexão prática sobre por que criar aplicações ReactJs estáveis para produção exige mais do que tutoriais rápidos e Hello World."
 pubDate: 2019-01-26
 tags: ["React","JavaScript","Frontend","Software Engineering"]
 series: "Frontend"

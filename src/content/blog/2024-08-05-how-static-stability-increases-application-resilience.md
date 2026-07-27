@@ -1,5 +1,6 @@
 ---
 title: "How static stability increases your application's resilience"
+seoTitle: "Static stability and application resilience"
 description: "How the concept of static stability and a few related patterns can make distributed applications more resilient."
 pubDate: 2024-08-05
 tags: ["AWS", "Resilience", "Reliability", "Microservices", "High Availability"]

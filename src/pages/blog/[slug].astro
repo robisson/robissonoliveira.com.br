@@ -19,6 +19,7 @@ const alternateSlug = translatedPostSlug(post.id);
 const canonicalPath = `/blog/${slug}/`;
 const alternatePath = alternateSlug ? `/en/blog/${alternateSlug}/` : "/en/blog/";
 const image = postImage(post.id);
+const pageTitle = post.data.seoTitle ?? post.data.title;
 const site = Astro.site ?? new URL("https://www.robissonoliveira.com.br");
 const articleUrl = new URL(canonicalPath, site).toString();
 const encodedArticleUrl = encodeURIComponent(articleUrl);
@@ -77,7 +78,7 @@ const articleStructuredData = {
 ---
 
 <BaseLayout
-  title={`${post.data.title} - Robisson Oliveira`}
+  title={`${pageTitle} - Robisson Oliveira`}
   description={post.data.description}
   currentPath="blog"
   alternatePath={alternatePath}
