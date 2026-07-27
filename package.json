@@ -6,6 +6,7 @@
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host 0.0.0.0",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 0.0.0.0",
+    "preview:static": "npm run build && python3 -m http.server 8080 --directory dist",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "validate": "npm run check && npm run build"
   },
