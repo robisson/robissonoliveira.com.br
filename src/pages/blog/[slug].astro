@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { formatPostDate, postImage, postSlug, postsByLocale, translatedPostSlug } from "../../lib/blog";
+import { formatPostDate, postImage, postImageMetadata, postSlug, postsByLocale, translatedPostSlug } from "../../lib/blog";
 
 export async function getStaticPaths() {
   const posts = postsByLocale(await getCollection("blog"), "pt-BR");
@@ -19,6 +19,7 @@ const alternateSlug = translatedPostSlug(post.id);
 const canonicalPath = `/blog/${slug}/`;
 const alternatePath = alternateSlug ? `/en/blog/${alternateSlug}/` : "/en/blog/";
 const image = postImage(post.id);
+const imageMetadata = postImageMetadata(post.id);
 const pageTitle = post.data.seoTitle ?? post.data.title;
 const site = Astro.site ?? new URL("https://www.robissonoliveira.com.br");
 const articleUrl = new URL(canonicalPath, site).toString();
@@ -84,6 +85,10 @@ const articleStructuredData = {
   alternatePath={alternatePath}
   canonicalPath={canonicalPath}
   image={image}
+  imageAlt={post.data.title}
+  imageWidth={imageMetadata.width}
+  imageHeight={imageMetadata.height}
+  imageType={imageMetadata.type}
   type="article"
   publishedTime={post.data.pubDate}
   modifiedTime={post.data.updatedDate ?? post.data.pubDate}

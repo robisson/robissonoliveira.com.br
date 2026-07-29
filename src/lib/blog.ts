@@ -2,6 +2,11 @@ import type { CollectionEntry } from "astro:content";
 
 export type BlogPost = CollectionEntry<"blog">;
 export type Locale = "pt-BR" | "en";
+export type PostImageMetadata = {
+  width: number;
+  height: number;
+  type: string;
+};
 
 export function postSlug(id: string) {
   return id.replace(/\.md$/, "");
@@ -62,6 +67,32 @@ export function postImage(id: string) {
   }
 
   return "/assets/images/robisson-home.png";
+}
+
+export function postImageMetadata(id: string): PostImageMetadata {
+  const slug = postSlug(id);
+
+  if (slug.includes("constant-work") || slug.includes("trabalho-constante")) {
+    return { width: 2085, height: 900, type: "image/png" };
+  }
+
+  if (slug.includes("availability-zone-independence-azi")) {
+    return { width: 977, height: 541, type: "image/png" };
+  }
+
+  if (slug.includes("estabilidade-estatica") || slug.includes("static-stability")) {
+    return { width: 1400, height: 379, type: "image/jpeg" };
+  }
+
+  if (slug.includes("reactjs-em-7-dias") || slug.includes("learn-reactjs-in-7-days")) {
+    return { width: 2000, height: 392, type: "image/png" };
+  }
+
+  if (slug.includes("javascript-funciona") || slug.includes("javascript-works")) {
+    return { width: 1920, height: 1080, type: "image/png" };
+  }
+
+  return { width: 330, height: 492, type: "image/png" };
 }
 
 export function sortPosts(posts: BlogPost[]) {
