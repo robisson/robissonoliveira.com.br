@@ -30,7 +30,7 @@
 <li><strong>Amplified failures:</strong> The fallback mode may end up amplifying the impact of a failure instead of mitigating it. For example, if the fallback is to query a database directly instead of using a cache, a massive cache failure can overload the database and cause a cascading failure.</li>
 <li><strong>Testing difficulty:</strong> Adequately testing bimodal behavior is hard, because the fallback mode may rarely be activated in production. When activated, the real conditions may be very different from the test conditions, leading to unforeseen failures.</li>
 </ol>
-<h2 id="and-fallbacks-they-can-hurt-more-than-they-help">And fallbacks? They can hurt more than they help</h2>
+<h2 id="what-about-fallbacks-they-can-hurt-more-than-they-help">What about fallbacks? They can hurt more than they help</h2>
 <p>When discussing resilience, it is impossible not to talk about <strong>fallbacks</strong>. And before going deeper, let’s start with a few related definitions: fallback and failover. <strong>Failover</strong> means executing the activity again on a different copy of the endpoint or, preferably, running multiple parallel copies of the activity to increase the chances that at least one of them succeeds. <strong>Fallback</strong> means using a different mechanism to obtain the same result.</p>
 <p>Fallback strategies are frequently seen as a solution for increasing the resilience of distributed systems. The logic behind fallbacks is simple: if one component of the system fails, another can take over its functions, ensuring the system keeps operating. However, in practice, fallbacks often hurt more than they help, especially in complex distributed systems.</p>
 <h3 id="fallback-in-an-e-commerce-checkout">Fallback in an e-commerce checkout</h3>

@@ -1,13 +1,19 @@
 ---
-title: "Resilience beyond the obvious: The principle of constant work"
-seoTitle: "Resilience beyond the obvious: The principle of constant work"
-description: "Learn how the Constant Work principle avoids bimodal behavior, reduces dangerous fallbacks, and improves distributed application resilience."
-pubDate: "2026-07-29"
-tags: ["Resilience", "Distributed Systems", "AWS", "Reliability", "Architecture"]
-series: "Cloud Resilience"
-language: "en"
+title: 'Resilience beyond the obvious: The principle of constant work'
+seoTitle: 'Resilience beyond the obvious: The principle of constant work'
+description: >-
+  Learn how the Constant Work principle avoids bimodal behavior, reduces
+  dangerous fallbacks, and improves distributed application resilience.
+pubDate: 2026-07-29
+tags:
+  - Resilience
+  - Distributed Systems
+  - AWS
+  - Reliability
+  - Architecture
+series: Cloud Resilience
+language: en
 ---
-
 **TLDR;** This post is about one of the things that most blew my mind since I started working at AWS with large-scale distributed systems: **many of the approaches our engineering intuition swears will increase resilience are exactly the ones that make us more vulnerable.** Fallbacks, emergency modes, "plan Bs" that only run when something goes wrong — they look like prudence, but they hide a trap. In this post we will discuss an alternative to that: the constant work principle.
 
 Let me start with a question that sounds silly. When your system fails, does it start doing **more** work or **less**? Stop and think about it for a second. Most systems we design answer "more" — when the cache goes down, we hit the database; when a node dies, the others take over its load; when something errors, we log ten times as much. And that's the problem: we design systems that do **more work at precisely the worst possible moment**, when they're already under stress. It's like a car whose brakes require more force the faster you go.
@@ -30,9 +36,9 @@ For example, consider an e-commerce service that normally accesses product infor
 
 Other examples of bimodal behavior are:
 
-- **Occasional resource consumption** - processes that run only periodically and are shut down when not in use. This can create bimodal behavior if the system's load peak coincides with the periodic process running, overloading the system.
-- **Garbage collection in Java** - The unpredictable nature of Java's garbage collection can introduce bimodal performance, with some requests suffering significant delays due to GC pauses.
-- **Error log output -** log output when the system is operating normally has, for example, 1kb of logs being generated, but when a failure occurs it has a 10kb log output because it is printing much more information about what is happening. This can also be a problem if the application is already overloaded, especially with I/O.
+* **Occasional resource consumption** - processes that run only periodically and are shut down when not in use. This can create bimodal behavior if the system's load peak coincides with the periodic process running, overloading the system.
+* **Garbage collection in Java** - The unpredictable nature of Java's garbage collection can introduce bimodal performance, with some requests suffering significant delays due to GC pauses.
+* **Error log output -** log output when the system is operating normally has, for example, 1kb of logs being generated, but when a failure occurs it has a 10kb log output because it is printing much more information about what is happening. This can also be a problem if the application is already overloaded, especially with I/O.
 
 ## Problems with Bimodal Behaviors
 
@@ -43,7 +49,7 @@ Although bimodal behaviors may seem like a logical solution for handling failure
 3. **Amplified failures:** The fallback mode may end up amplifying the impact of a failure instead of mitigating it. For example, if the fallback is to query a database directly instead of using a cache, a massive cache failure can overload the database and cause a cascading failure.
 4. **Testing difficulty:** Adequately testing bimodal behavior is hard, because the fallback mode may rarely be activated in production. When activated, the real conditions may be very different from the test conditions, leading to unforeseen failures.
 
-## And fallbacks? They can hurt more than they help
+## What about fallbacks? They can hurt more than they help
 
 When discussing resilience, it is impossible not to talk about **fallbacks**. And before going deeper, let's start with a few related definitions: fallback and failover. **Failover** means executing the activity again on a different copy of the endpoint or, preferably, running multiple parallel copies of the activity to increase the chances that at least one of them succeeds. **Fallback** means using a different mechanism to obtain the same result.
 
@@ -57,9 +63,9 @@ That fallback looks prudent, but it has changed the nature of the work in the ap
 
 Although this strategy may keep some sales flowing in the short term, it can lead to a series of problems:
 
-- **Increased latency in the critical path:** longer timeouts and multiple attempts make the customer wait longer exactly when the system is already unstable.
-- **Ambiguous business states:** orders become "pending manual review", "pre-approved", "authorized without fraud detection", or "waiting for reconciliation", creating operational paths that are rarely exercised.
-- **Manual work and backed-up queues:** the fallback shifts load to another system or to people, accumulating an operational debt that must be paid after the incident.
+* **Increased latency in the critical path:** longer timeouts and multiple attempts make the customer wait longer exactly when the system is already unstable.
+* **Ambiguous business states:** orders become "pending manual review", "pre-approved", "authorized without fraud detection", or "waiting for reconciliation", creating operational paths that are rarely exercised.
+* **Manual work and backed-up queues:** the fallback shifts load to another system or to people, accumulating an operational debt that must be paid after the incident.
 
 Notice that the manual review queue does not remove the work; it only pushes that work into the future. If the incident lasts long enough, recovery stops being only "bring fraud detection back" and starts including a second question: who is going to pay the accumulated debt without bringing down the rest of the system?
 
@@ -292,7 +298,7 @@ In the first case, the cache failure *transforms* the system's behavior. In the 
 
 We saw that the big problem with the cache is the bimodal behavior of the *cache miss*: while there are hits, the database is protected; when the cache empties, all the traffic slams the database at once. The right question is not "how do I make a better fallback to the database?", but "how do I make the cache stop being bimodal?".
 
-The answer [DynamoDB adopts internally](https://www.youtube.com/watch?v=4GKXx9vIqsk&t=2400s) is to treat the cache as a structure that does **constant work**, and not as an opportunistic optimization. Instead of populating the cache on demand (which creates the fragile "hot when full, catastrophic when empty" pattern), you keep the relevant dataset — routing tables, partition metadata, membership information — always loaded and being updated at a fixed cadence, regardless of whether there is a request or not. The cache never "empties under load" because it doesn't depend on traffic to fill itself: it's updated all the time, at the same rhythm, whether the system is idle or at peak.
+The answer [DynamoDB adopts internally](https://www.youtube.com/watch?v=4GKXx9vIqsk\&t=2400s) is to treat the cache as a structure that does **constant work**, and not as an opportunistic optimization. Instead of populating the cache on demand (which creates the fragile "hot when full, catastrophic when empty" pattern), you keep the relevant dataset — routing tables, partition metadata, membership information — always loaded and being updated at a fixed cadence, regardless of whether there is a request or not. The cache never "empties under load" because it doesn't depend on traffic to fill itself: it's updated all the time, at the same rhythm, whether the system is idle or at peak.
 
 The practical effect is that **the cache miss stops being a load event**. There's no longer a moment when the database receives a flood of queries because the cache expired — the data is already there, always, because keeping it updated is the system's normal work, not a reaction to a failure. You pay the cost of keeping everything loaded all the time, but in exchange you eliminate the latency cliff and the cascading failure. It's the same philosophy as Route 53 checking all endpoints: always do the maximum work so that failure doesn't represent a jump in load.
 
@@ -540,16 +546,16 @@ Apply constant work where the work is bounded, the worst-case cost is acceptable
 
 ### Fallback vs. constant work
 
-| Dimension | Fallback (bimodal) | Constant Work (unimodal) |
-| --- | --- | --- |
-| **Operating modes** | Two: normal and emergency | Just one, always the same |
-| **Behavior under failure** | Changes path, triggers rare logic | Changes nothing — same work |
-| **Load at the moment of failure** | Spikes (peak right when the system is fragile) | Constant, no spikes |
-| **Testability** | Poor: rare mode, poorly exercised | Excellent: the only mode runs all the time |
-| **Cascading-failure risk** | High: the fallback becomes the vector of collapse | Low: no transition, no amplification |
-| **Code complexity** | Higher: extra detection and switching logic | Lower: one path, predictable |
-| **Resource cost under normal conditions** | Lower: spends only what's needed | Higher: pays for the worst case always |
-| **Best application** | Avoid when possible; ok if it preserves uniformity | Control planes, routing, config, health check |
+| Dimension                                 | Fallback (bimodal)                                 | Constant Work (unimodal)                      |
+| ----------------------------------------- | -------------------------------------------------- | --------------------------------------------- |
+| **Operating modes**                       | Two: normal and emergency                          | Just one, always the same                     |
+| **Behavior under failure**                | Changes path, triggers rare logic                  | Changes nothing — same work                   |
+| **Load at the moment of failure**         | Spikes (peak right when the system is fragile)     | Constant, no spikes                           |
+| **Testability**                           | Poor: rare mode, poorly exercised                  | Excellent: the only mode runs all the time    |
+| **Cascading-failure risk**                | High: the fallback becomes the vector of collapse  | Low: no transition, no amplification          |
+| **Code complexity**                       | Higher: extra detection and switching logic        | Lower: one path, predictable                  |
+| **Resource cost under normal conditions** | Lower: spends only what's needed                   | Higher: pays for the worst case always        |
+| **Best application**                      | Avoid when possible; ok if it preserves uniformity | Control planes, routing, config, health check |
 
 ## Conclusion
 
@@ -563,16 +569,16 @@ In the end, this does not mean you should never use fallbacks, caches, or the ap
 
 ## References
 
-- [https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146](https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146)
-- [https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/](https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/)
-- [https://news.ycombinator.com/item?id=34103426](https://news.ycombinator.com/item?id=34103426)
-- [https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_prevent_interaction_failure_constant_work.html](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_prevent_interaction_failure_constant_work.html)
-- [https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_static_stability.html](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_static_stability.html)
-- [https://aws.amazon.com/builders-library/challenges-with-distributed-systems/](https://aws.amazon.com/builders-library/challenges-with-distributed-systems/)
-- [https://a-nickels-worth.dev/posts/modesharm/](https://a-nickels-worth.dev/posts/modesharm/)
-- [https://aws.amazon.com/builders-library/minimizing-correlated-failures-in-distributed-systems/](https://aws.amazon.com/builders-library/minimizing-correlated-failures-in-distributed-systems/)
-- [https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/)
-- [https://aws.amazon.com/builders-library/reliability-and-constant-work/?did=ba_card&trk=ba_card](https://aws.amazon.com/builders-library/reliability-and-constant-work/?did=ba_card&trk=ba_card)
-- [https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/](https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/)
-- [https://www.youtube.com/watch?v=4GKXx9vIqsk&t=646s](https://www.youtube.com/watch?v=4GKXx9vIqsk&t=646s)
-- [https://builder.aws.com/content/3EuRcgkTP1MI0c7zM8W6HL3WIqA/avoiding-insurmountable-queue-backlogs](https://builder.aws.com/content/3EuRcgkTP1MI0c7zM8W6HL3WIqA/avoiding-insurmountable-queue-backlogs)
+* [https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146](https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146)
+* [https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/](https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/)
+* [https://news.ycombinator.com/item?id=34103426](https://news.ycombinator.com/item?id=34103426)
+* [https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel\_prevent\_interaction\_failure\_constant\_work.html](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_prevent_interaction_failure_constant_work.html)
+* [https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel\_withstand\_component\_failures\_static\_stability.html](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_withstand_component_failures_static_stability.html)
+* [https://aws.amazon.com/builders-library/challenges-with-distributed-systems/](https://aws.amazon.com/builders-library/challenges-with-distributed-systems/)
+* [https://a-nickels-worth.dev/posts/modesharm/](https://a-nickels-worth.dev/posts/modesharm/)
+* [https://aws.amazon.com/builders-library/minimizing-correlated-failures-in-distributed-systems/](https://aws.amazon.com/builders-library/minimizing-correlated-failures-in-distributed-systems/)
+* [https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/](https://aws.amazon.com/builders-library/avoiding-overload-in-distributed-systems-by-putting-the-smaller-service-in-control/)
+* [https://aws.amazon.com/builders-library/reliability-and-constant-work/?did=ba\_card\&trk=ba\_card](https://aws.amazon.com/builders-library/reliability-and-constant-work/?did=ba_card\&trk=ba_card)
+* [https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/](https://aws.amazon.com/builders-library/avoiding-insurmountable-queue-backlogs/)
+* [https://www.youtube.com/watch?v=4GKXx9vIqsk\&t=646s](https://www.youtube.com/watch?v=4GKXx9vIqsk\&t=646s)
+* [https://builder.aws.com/content/3EuRcgkTP1MI0c7zM8W6HL3WIqA/avoiding-insurmountable-queue-backlogs](https://builder.aws.com/content/3EuRcgkTP1MI0c7zM8W6HL3WIqA/avoiding-insurmountable-queue-backlogs)
