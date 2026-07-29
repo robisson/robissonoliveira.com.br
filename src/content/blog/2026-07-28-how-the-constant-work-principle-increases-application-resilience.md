@@ -1,6 +1,6 @@
 ---
-title: "How the Constant Work Principle Increases Your Application's Resilience"
-seoTitle: "Constant Work and application resilience"
+title: "Resilience beyond the obvious: The principle of constant work"
+seoTitle: "Resilience beyond the obvious: The principle of constant work"
 description: "Learn how the Constant Work principle avoids bimodal behavior, reduces dangerous fallbacks, and improves distributed application resilience."
 pubDate: "2026-07-28"
 tags: ["Resilience", "Distributed Systems", "AWS", "Reliability", "Architecture"]
@@ -92,7 +92,7 @@ def complete_order(order):
 
 In the first case, the system keeps accepting work it cannot complete through the normal path. In the second, it preserves the semantics of the flow: either the order goes through the known path, or it fails explicitly and in a controlled way.
 
-## A classic case of redistribution failure
+## Immediate shard redistribution after failure
 
 Another pattern that appears in distributed systems is recovery that competes with real traffic. Imagine a cluster partitioned by shards. In normal operation, each node serves its share of traffic and keeps its state warm in memory. When one node fails, the others do not just receive more requests; they also start copying partitions, recalculating ownership, rebuilding indexes, and warming local caches to absorb what was lost.
 
@@ -102,7 +102,7 @@ Notice the inversion: the failure reduced available capacity and, at the same ti
 
 This kind of incident highlights the central lesson of this post: the recovery mode was triggered at exactly the worst possible moment — under maximum stress — and, instead of protecting the system, became the very vector of the widespread failure.
 
-### The fallback that deletes the customer's work
+## The fallback that deletes the customer's work
 
 The danger of an emergency mode is not just overloading another component — it's making destructive decisions based on incomplete information. Imagine a shopping cart service that, upon receiving errors from an overloaded catalog service, interpreted "I couldn't look up this product" as "this product no longer exists" and removed items from customers' carts en masse. The fallback did *different* work from the normal path, and that different work was actively harmful. The lesson is harsh: a fallback mode must never treat "failed to obtain the data" as "data absent" — the absence of a response is not a response.
 
@@ -133,13 +133,15 @@ def sync_cart(item_id):
 
 The difference is between a system that, in doubt, destroys the customer's work, and one that, in doubt, preserves it.
 
-### The recovery that brings it all down again
+## The recovery that brings it all down again
 
 A detail almost nobody considers: bimodality also strikes during *recovery*. After a failure, turning the system back on "all at once" can be as dangerous as the original failure. A service that had disabled a cache layer and then reactivated it instantly to 100% of traffic saw the cache unable to absorb the sudden surge: timeouts, retry queues doubling the work, and availability dropping again. Recovery is also a mode — and the transition back to normal needs to be gradual (a ramp of 20% at a time, for example), otherwise the very act of recovering becomes a second incident.
 
 ![Instant versus gradual recovery: turning 100% of the traffic back on at once pushes the load beyond the capacity of the just-recovered component and causes a second collapse; with a gradual 20%-at-a-time ramp, traffic stays below capacity and recovery completes without incident](/blog/constant-work/en/image-02.png)
 
 ## Why do Fallbacks fail?
+
+Think of the following metaphor. A bank bought an emergency generator and, every month, briefly started it up to "test" it — the engine caught, and everyone felt reassured. On the day the power actually went out, the generator started and, fifteen minutes later, died: the monthly test had never exercised it *under real, sustained load*. It's the perfect metaphor for fallback: a path that seems to work in superficial tests, but that is only truly called upon at the worst moment — and fails exactly there. If an emergency mode doesn't run continuously under real conditions, you don't have a contingency plan; you have an assumption.
 
 **Latency and Load Overlap:** One of the biggest problems with fallbacks is that they can introduce additional latency. When a system switches to a fallback mode, it generally does so in response to a failure or an overload condition. However, this transition can add extra processing time, especially if the fallback involves queries to slower components, such as a database instead of a cache.
 
@@ -189,10 +191,6 @@ def process_batch(items):
 ```
 
 In the first case, the load under failure is a multiple of the normal load. In the second, it tends to shrink each cycle — the opposite of an avalanche.
-
-### The metaphor of the generator that only starts on blackout day
-
-A bank bought an emergency generator and, every month, briefly started it up to "test" it — the engine caught, and everyone felt reassured. On the day the power actually went out, the generator started and, fifteen minutes later, died: the monthly test had never exercised it *under real, sustained load*. It's the perfect metaphor for fallback: a path that seems to work in superficial tests, but that is only truly called upon at the worst moment — and fails exactly there. If an emergency mode doesn't run continuously under real conditions, you don't have a contingency plan; you have an assumption.
 
 ## Constant Work: There's Another Way to Think!
 
