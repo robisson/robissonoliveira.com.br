@@ -1,5 +1,10 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatPostDate, postImage, postSlug, postsByLocale } from "../../lib/blog";
+
+const posts = postsByLocale(await getCollection("blog"), "en");
+const latestPost = posts[0];
 ---
 
 <BaseLayout
@@ -14,16 +19,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section class="legacy-feature" id="last-article">
     <div class="legacy-feature__copy">
       <span class="legacy-label">Latest article</span>
-      <img src="/blog/availability-zone-independence-azi/image-01.png" alt="Understanding Availability Zone Independence" class="legacy-feature__image legacy-feature__image--mobile" />
-      <h1>Understanding Availability Zone Independence (AZI) to increase application resilience</h1>
-      <small>08/12/2024</small>
-      <p class="lead">
-        A broad guide to Availability Zone Independence, design, deployment, observability, and failure response in distributed applications.
-      </p>
-      <p class="text-right"><a href="/en/blog/2024-08-12-understanding-availability-zone-independence-azi/">Read full article</a></p>
+      {latestPost && (
+        <>
+          <img src={postImage(latestPost.id)} alt={latestPost.data.title} class="legacy-feature__image legacy-feature__image--mobile" />
+          <h1>{latestPost.data.title}</h1>
+          <small>{formatPostDate(latestPost.data.pubDate, "en")}</small>
+          <p class="lead">{latestPost.data.description}</p>
+          <p class="text-right"><a href={`/en/blog/${postSlug(latestPost.id)}/`}>Read full article</a></p>
+        </>
+      )}
     </div>
     <div>
-      <img src="/blog/availability-zone-independence-azi/image-01.png" alt="Understanding Availability Zone Independence" class="legacy-feature__image legacy-feature__image--desktop" />
+      {latestPost && (
+        <img src={postImage(latestPost.id)} alt={latestPost.data.title} class="legacy-feature__image legacy-feature__image--desktop" />
+      )}
     </div>
   </section>
 

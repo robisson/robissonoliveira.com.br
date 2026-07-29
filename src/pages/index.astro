@@ -1,5 +1,11 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { formatPostDate, postImage, postSlug, postsByLocale } from "../lib/blog";
+
+const posts = postsByLocale(await getCollection("blog"), "pt-BR");
+const latestPost = posts[0];
+const latestCards = posts.slice(0, 2);
 ---
 
 <BaseLayout
@@ -13,26 +19,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="legacy-feature" id="last-article">
     <div class="legacy-feature__copy">
       <span class="legacy-label">Ultimo artigo</span>
+      {latestPost && (
+        <>
       <img
-        src="/blog/availability-zone-independence-azi/image-01.png"
-        alt="Entendendo Availability Zone Independence"
+        src={postImage(latestPost.id)}
+        alt={latestPost.data.title}
         class="legacy-feature__image legacy-feature__image--mobile"
       />
-      <h1>Entendendo o que e Availability Zone Independence (AZI) para aumentar a resiliencia das aplicacoes</h1>
-      <small>12/08/2024</small>
-      <p class="lead">
-        Um guia abrangente sobre Availability Zone Independence, design, deploy, observabilidade e resposta a falhas em aplicacoes distribuidas.
-      </p>
+      <h1>{latestPost.data.title}</h1>
+      <small>{formatPostDate(latestPost.data.pubDate, "pt-BR")}</small>
+      <p class="lead">{latestPost.data.description}</p>
       <p class="text-right">
-        <a href="/blog/2024-08-12-entendendo-availability-zone-independence-azi/">Ler artigo completo</a>
+        <a href={`/blog/${postSlug(latestPost.id)}/`}>Ler artigo completo</a>
       </p>
+        </>
+      )}
     </div>
     <div>
+      {latestPost && (
       <img
-        src="/blog/availability-zone-independence-azi/image-01.png"
-        alt="Entendendo Availability Zone Independence"
+        src={postImage(latestPost.id)}
+        alt={latestPost.data.title}
         class="legacy-feature__image legacy-feature__image--desktop"
       />
+      )}
     </div>
   </section>
 
@@ -86,18 +96,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p>Estou tentando escrever um post por semana, nem sempre e possivel.</p>
     </header>
     <div class="legacy-article-grid">
-      <article class="legacy-article-card">
-        <img src="/blog/availability-zone-independence-azi/image-01.png" alt="Entendendo Availability Zone Independence" />
-        <h3>Entendendo o que e Availability Zone Independence (AZI)</h3>
-        <p>12/08/2024</p>
-        <a href="/blog/2024-08-12-entendendo-availability-zone-independence-azi/">Ler artigo completo</a>
-      </article>
-      <article class="legacy-article-card">
-        <img src="/blog/estabilidade-estatica/image-01.jpg" alt="Estabilidade estatica e resiliencia de aplicacoes" />
-        <h3>Como a estabilidade estatica aumenta a resiliencia da sua aplicacao</h3>
-        <p>05/08/2024</p>
-        <a href="/blog/2024-08-05-como-a-estabilidade-estatica-aumenta-a-resiliencia-da-sua-aplicacao/">Ler artigo completo</a>
-      </article>
+      {latestCards.map((post) => (
+        <article class="legacy-article-card">
+          <img src={postImage(post.id)} alt={post.data.title} />
+          <h3>{post.data.title}</h3>
+          <p>{formatPostDate(post.data.pubDate, "pt-BR")}</p>
+          <a href={`/blog/${postSlug(post.id)}/`}>Ler artigo completo</a>
+        </article>
+      ))}
     </div>
   </section>
 
