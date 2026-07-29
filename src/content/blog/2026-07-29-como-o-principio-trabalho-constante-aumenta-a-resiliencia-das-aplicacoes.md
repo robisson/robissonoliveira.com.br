@@ -32,7 +32,7 @@ Porém, um dos desafios mais sutis no desenvolvimento de sistemas distribuídos 
 
 Por exemplo, considere um serviço de e-commerce que normalmente acessa informações de produtos a partir de um cache em memória. Se o cache falhar ou se tornar indisponível, o sistema pode entrar em um modo de fallback onde consulta diretamente o banco de dados para obter as informações necessárias. Esse é um exemplo clássico de comportamento bimodal. Quando tudo está operando bem, a aplicação se alimenta do cache, mas quando o cache falha por qualquer motivo ou começa a apresentar uma grande taxa de *cache miss* é que começam os problemas. Vamos ver o diagrama abaixo:
 
-![Comportamento bimodal: em modo normal o cache absorve o tráfego e o banco fica protegido; quando o cache falha, 100% do tráfego desaba no banco, que fica sobrecarregado e provoca falha em cascata](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-01.png)
+![Comportamento bimodal: em modo normal o cache absorve o tráfego e o banco fica protegido; quando o cache falha, 100% do tráfego desaba no banco, que fica sobrecarregado e provoca falha em cascata](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-01.png)
 
 Outros exemplos de comportamento bimodais são:
 
@@ -106,7 +106,7 @@ Outro padrão que aparece em sistemas distribuídos é a recuperação que compe
 
 Perceba a inversão, a falha reduziu a capacidade disponível e, ao mesmo tempo, acionou trabalho extra de recuperação. O sistema tenta se curar fazendo mais CPU, mais rede, mais I/O e mais alocação de memória exatamente quando tem menos folga. O resultado esperado era uma degradação graciosa; o resultado real pode ser uma segunda onda de falhas, agora causada pelo próprio mecanismo de recuperação.
 
-![Redistribuição imediata após falha: quando um nó cai, os nós restantes recebem mais tráfego e ainda executam cópia de shards, reconstrução de índices e aquecimento de estado; a recuperação passa a competir com o tráfego real e pode gerar uma segunda onda de falhas](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-09.png)
+![Redistribuição imediata após falha: quando um nó cai, os nós restantes recebem mais tráfego e ainda executam cópia de shards, reconstrução de índices e aquecimento de estado; a recuperação passa a competir com o tráfego real e pode gerar uma segunda onda de falhas](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-09.png)
 
 Esse tipo de incidente destaca a lição central deste post: o modo de recuperação foi acionado exatamente no pior momento possível — sob estresse máximo — e, em vez de proteger o sistema, tornou-se o próprio vetor da falha generalizada.
 
@@ -145,13 +145,13 @@ A diferença é entre um sistema que, na dúvida, destrói o trabalho do cliente
 
 Um detalhe que quase ninguém considera: a bimodalidade também ataca na *recuperação*. Depois de uma falha, religar o sistema "de uma vez só" pode ser tão perigoso quanto a falha original. Um serviço que havia desativado uma camada de cache e depois a reativou instantaneamente para 100% do tráfego viu o cache ser incapaz de absorver a enxurrada súbita: timeouts, filas de retry dobrando o trabalho e a disponibilidade caindo novamente. A recuperação também é um modo — e a transição de volta ao normal precisa ser gradual (uma rampa de 20% em 20%, por exemplo), senão o próprio ato de recuperar vira um segundo incidente.
 
-![Retomada instantânea versus gradual: ao religar 100% do tráfego de uma vez, a carga ultrapassa a capacidade do componente recém-recuperado e provoca um segundo colapso; com uma rampa gradual de 20% em 20%, o tráfego permanece sempre abaixo da capacidade e a recuperação se completa sem incidente](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-02.png)
+![Retomada instantânea versus gradual: ao religar 100% do tráfego de uma vez, a carga ultrapassa a capacidade do componente recém-recuperado e provoca um segundo colapso; com uma rampa gradual de 20% em 20%, o tráfego permanece sempre abaixo da capacidade e a recuperação se completa sem incidente](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-02.png)
 
 ### O retry em lote que multiplica a carga
 
 Retentar é saudável para falhas transitórias e isoladas — mas retentar *lotes inteiros* quando só uma parte falhou transforma um soluço em avalanche. Considere um cliente que reenvia um batch completo de requisições a cada falha parcial: sob estresse, ele pode gerar dezenas de vezes o tráfego normal contra os componentes já degradados, impedindo justamente a recuperação. O modo de falha (retry agressivo de tudo) tem um perfil de carga radicalmente diferente do modo normal — bimodalidade clássica. A correção é retry granular (só o que de fato falhou), com backoff exponencial e teto de taxa.
 
-![Retry do lote inteiro versus granular: quando um único item de um lote de 100 falha, reenviar o lote completo repetidamente gera até 20 vezes a carga sobre um componente já degradado e impede a recuperação; reenviar apenas o item que falhou, com backoff e teto de taxa, mantém a carga praticamente constante](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-03.png)
+![Retry do lote inteiro versus granular: quando um único item de um lote de 100 falha, reenviar o lote completo repetidamente gera até 20 vezes a carga sobre um componente já degradado e impede a recuperação; reenviar apenas o item que falhou, com backoff e teto de taxa, mantém a carga praticamente constante](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-03.png)
 
 O contraste aparece direto no código do cliente:
 
@@ -210,7 +210,7 @@ Além disso, a necessidade de manter e testar continuamente os modos de fallback
 
 ## Há outra forma de pensar: O Princípio do Trabalho Constante
 
-O princípio do trabalho constante([constant work](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_prevent_interaction_failure_constant_work.html)) baseia-se na ideia de que um sistema deve realizar a mesma quantidade de trabalho, independentemente da carga ou das condições de operação. Em vez de alternar entre os modos, o sistema opera de maneira uniforme, realizando operações consistentes em todas as situações. Isso elimina a necessidade de modos de fallback e reduz a complexidade e os riscos associados aos comportamentos bimodais.
+O princípio do trabalho constante([trabalho constante](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_prevent_interaction_failure_constant_work.html)) baseia-se na ideia de que um sistema deve realizar a mesma quantidade de trabalho, independentemente da carga ou das condições de operação. Em vez de alternar entre os modos, o sistema opera de maneira uniforme, realizando operações consistentes em todas as situações. Isso elimina a necessidade de modos de fallback e reduz a complexidade e os riscos associados aos comportamentos bimodais.
 
 ### Operação consistente
 
@@ -248,7 +248,7 @@ Vale nomear um conceito que anda de mãos dadas com o trabalho constante: a [**e
 
 A relação entre os dois é direta: **o trabalho constante** **é o mecanismo que produz estabilidade estática.** O Route 53 é estaticamente estável justamente *porque* faz trabalho constante — quando uma Zona de Disponibilidade cai, ele não precisa reagir, recalcular ou mudar de modo, porque já estava verificando todos os endpoints o tempo todo. A perda da AZ não representa um evento novo a ser tratado; representa apenas menos respostas positivas dentro do mesmo trabalho que já era feito. É por isso que os dois princípios aparecem sempre juntos na literatura de confiabilidade da AWS: trabalho constante é o *como*, static stability é o *resultado*.
 
-![Comparação da carga ao longo do tempo: na abordagem reativa (bimodal) há um pico de carga no exato momento da falha, enquanto no constant work a carga permanece constante, sem picos, tornando a falha um não-evento](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-04.png)
+![Comparação da carga ao longo do tempo: na abordagem reativa (bimodal) há um pico de carga no exato momento da falha, enquanto no trabalho constante a carga permanece constante, sem picos, tornando a falha um não-evento](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-04.png)
 
 ## Failover sobre fallback
 
@@ -258,7 +258,7 @@ O fallback é bimodal por definição: ele existe para criar um segundo modo de 
 
 O ponto central é este: **prefira failover para recursos redundantes e idênticos, e desconfie de qualquer fallback que troque a natureza do trabalho.** Um failover para uma réplica read-only do banco é seguro porque a réplica faz o mesmo que o primário fazia. Já um fallback que, diante da falha do cache, começa a martelar o banco de dados com o padrão de acesso do cache não é redundância — é um segundo modo de operação, com perfil de carga diferente, que ninguém dimensionou. É por isso que failover sobre fallback é quase sempre a escolha mais resiliente: você elimina o modo bimodal em vez de criá-lo.
 
-![Failover versus fallback: no failover o tráfego é redirecionado para réplicas idênticas e saudáveis fazendo o mesmo trabalho (unimodal); no fallback o sistema aciona um caminho raro e diferente, criando um segundo modo de operação](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-05.png)
+![Failover versus fallback: no failover o tráfego é redirecionado para réplicas idênticas e saudáveis fazendo o mesmo trabalho (unimodal); no fallback o sistema aciona um caminho raro e diferente, criando um segundo modo de operação](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-05.png)
 
 Veja a diferença na prática. Primeiro, o **fallback bimodal** — o padrão perigoso:
 
@@ -367,7 +367,7 @@ A abordagem de trabalho constante inverte a lógica: **distribua sempre a config
 
 Isso traz um benefício adicional silencioso: **a configuração passa a ser auto-corretiva.** Como o estado completo é reaplicado o tempo todo, qualquer divergência — um nó que perdeu uma atualização, um estado corrompido, um deploy parcial — é curada no próximo ciclo, sem intervenção. Você troca a "eficiência" de mandar só o delta pela robustez de um sistema que converge sozinho para o estado correto e nunca tem um pico de trabalho de configuração.
 
-![Distribuição de configuração: a abordagem por delta incremental gera picos enormes durante eventos de grande mudança, enquanto o snapshot completo em cadência fixa mantém o trabalho constante e previsível](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-06.png)
+![Distribuição de configuração: a abordagem por delta incremental gera picos enormes durante eventos de grande mudança, enquanto o snapshot completo em cadência fixa mantém o trabalho constante e previsível](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-06.png)
 
 Em código, o contraste fica claro no que cada nó faz a cada ciclo:
 
@@ -399,7 +399,7 @@ A alternativa de trabalho constante é transformar backup e restore em fluxo con
 
 E o restore? A mesma lógica se aplica: quanto mais frequentemente você exercita a restauração — idealmente de forma contínua e automatizada, validando backups o tempo todo — menos ele é um modo raro e assustador. **Um restore que roda todo dia como parte da operação normal não é um fallback; é trabalho constante.** Você descobre que o backup está corrompido num teste de terça-feira, não durante o incêndio.
 
-![Backup periódico versus contínuo: o job periódico concentra picos pesados de I/O em janelas específicas, enquanto o backup contínuo por streaming dilui o trabalho numa corrente fina e constante ao longo do tempo](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-07.png)
+![Backup periódico versus contínuo: o job periódico concentra picos pesados de I/O em janelas específicas, enquanto o backup contínuo por streaming dilui o trabalho numa corrente fina e constante ao longo do tempo](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-07.png)
 
 ## Filas, backlogs e trabalho constante
 
@@ -409,7 +409,7 @@ Quando o sistema está saudável, esse deslocamento parece inofensivo. O produto
 
 O comportamento bimodal aparece na recuperação. Depois de uma hora de problema, o sistema volta e tenta "colocar a casa em ordem": aumenta a concorrência, sobe mais workers, reduz delays, retenta mensagens antigas e tenta drenar o backlog o mais rápido possível. Parece a atitude correta, mas pode ser exatamente o segundo incidente. O banco, a API downstream, o serviço de pagamento, o storage ou qualquer dependência que participa do processamento passa a receber uma carga que nunca receberia no modo normal.
 
-![Fila com backlog bimodal: produtores alimentam a fila, a fila acumula mais de 100 mil mensagens, consumidores escalam e retentam, dependências saturam e os retries voltam a alimentar o backlog; o gráfico mostra o trabalho executado disparando durante a recuperação](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-11.png)
+![Fila com backlog bimodal: produtores alimentam a fila, a fila acumula mais de 100 mil mensagens, consumidores escalam e retentam, dependências saturam e os retries voltam a alimentar o backlog; o gráfico mostra o trabalho executado disparando durante a recuperação](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-11.png)
 
 O trabalho constante aplicado a filas não significa processar tudo sempre, porque o volume de mensagens pode crescer sem limite. Esse é um ponto importante: filas normalmente vivem no data plane, e data planes não têm o mesmo teto previsível de um conjunto de health checks ou de uma tabela de configuração. Então a pergunta muda. Não é "como faço o trabalho máximo o tempo todo?", e sim: **como mantenho constante e segura a taxa de trabalho executada, mesmo quando a fila cresce?**
 
@@ -442,7 +442,7 @@ Esse código parece elástico, mas é bimodal. Em modo normal, o sistema consome
 
 Um desenho mais resiliente faz o oposto: mantém uma taxa segura de consumo, isola workloads, trata mensagens antigas como outra classe de trabalho e aplica backpressure quando as dependências estão degradadas.
 
-![Fila com trabalho constante: produtores alimentam uma fila que considera prioridade e idade da mensagem, mensagens antigas seguem para backlog, TTL ou DLQ, o processamento passa por rate limit por workload, consumidores trabalham em taxa segura e as dependências recebem carga previsível; o gráfico mostra o trabalho executado ficando controlado](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-12.png)
+![Fila com trabalho constante: produtores alimentam uma fila que considera prioridade e idade da mensagem, mensagens antigas seguem para backlog, TTL ou DLQ, o processamento passa por rate limit por workload, consumidores trabalham em taxa segura e as dependências recebem carga previsível; o gráfico mostra o trabalho executado ficando controlado](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-12.png)
 
 ```python
 # ✅ Trabalho constante: taxa segura, isolamento e dívida controlada
@@ -492,7 +492,7 @@ O mesmo vale para APIs: uma resposta que normalmente carrega um payload enxuto, 
 
 O princípio de trabalho constante aplicado aqui é buscar **uniformidade de trabalho por requisição, independentemente do resultado.** Log de erro e log de sucesso devem ter ordens de grandeza parecidas — se você precisa de mais detalhe para depurar, use amostragem ou níveis de log ajustáveis sob demanda, em vez de um salto automático de volume no pior instante. Respostas de erro devem ter tamanho previsível, comparável às de sucesso. A meta é que **a falha não seja mais cara, em recursos, do que o sucesso** — porque no momento em que a falha custa mais, ela vira combustível para a cascata.
 
-![Uniformidade de trabalho por requisição: no modo bimodal o log de erro (10kb) é dez vezes maior que o de sucesso (1kb), consumindo I/O justo quando o sistema está frágil; no constant work o log de erro tem tamanho comparável ao de sucesso](/blog/2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes/constant-work/pt/image-08.png)
+![Uniformidade de trabalho por requisição: no modo bimodal o log de erro (10kb) é dez vezes maior que o de sucesso (1kb), consumindo I/O justo quando o sistema está frágil; no trabalho constante o log de erro tem tamanho comparável ao de sucesso](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/trabalho-constante/pt/image-08.png)
 
 O anti-padrão costuma se esconder num detalhe inocente do tratamento de erro:
 

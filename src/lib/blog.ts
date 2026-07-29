@@ -8,10 +8,10 @@ export function postSlug(id: string) {
 }
 
 const translationSlugs: Record<string, string> = {
-  "2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes":
+  "2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes":
     "2026-07-29-how-the-constant-work-principle-increases-application-resilience",
   "2026-07-29-how-the-constant-work-principle-increases-application-resilience":
-    "2026-07-29-como-o-principio-constant-work-aumenta-a-resiliencia-das-aplicacoes",
+    "2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes",
   "2024-08-05-como-a-estabilidade-estatica-aumenta-a-resiliencia-da-sua-aplicacao":
     "2024-08-05-how-static-stability-increases-application-resilience",
   "2024-08-05-how-static-stability-increases-application-resilience":
@@ -41,8 +41,8 @@ export function postImage(id: string) {
     return "/blog/constant-work/en/image-01.png";
   }
 
-  if (slug.includes("constant-work")) {
-    return "/blog/constant-work/pt/image-01.png";
+  if (slug.includes("trabalho-constante")) {
+    return "/blog/trabalho-constante/pt/image-01.png";
   }
 
   if (slug.includes("availability-zone-independence-azi")) {
