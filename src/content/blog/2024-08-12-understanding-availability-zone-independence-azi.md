@@ -1,6 +1,6 @@
 ---
 title: "Understanding Availability Zone Independence (AZI) to increase application resilience"
-seoTitle: "Availability Zone Independence (AZI) in practice"
+seoTitle: "Understanding Availability Zone Independence (AZI) to increase application resilience"
 description: "A broad guide to Availability Zone Independence, design, deployment, observability, and failure response in distributed applications."
 pubDate: 2024-08-12
 tags: ["AWS", "Resilience", "High Availability", "Microservices"]

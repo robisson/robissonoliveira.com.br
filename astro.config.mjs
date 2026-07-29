@@ -102,7 +102,6 @@ export default defineConfig({
     markdoc(),
     ...(process.env.SKIP_KEYSTATIC === "true" ? [] : [keystatic()]),
     sitemap({
-      lastmod: new Date(),
       serialize(item) {
         const path = new URL(item.url).pathname;
 

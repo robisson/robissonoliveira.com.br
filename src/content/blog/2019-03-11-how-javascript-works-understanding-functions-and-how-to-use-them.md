@@ -1,6 +1,6 @@
 ---
 title: "How JavaScript works: understanding functions and how to use them"
-seoTitle: "How JavaScript functions work"
+seoTitle: "How JavaScript works: understanding functions and how to use them"
 description: "Let's look at what functions are, how to define them, and how to invoke them in different ways."
 pubDate: 2019-03-11
 tags: ["JavaScript", "Frontend", "Programming", "Functions"]

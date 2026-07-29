@@ -1,6 +1,6 @@
 ---
 title: "You or your team will not learn ReactJs in 7 days or with a Hello World!"
-seoTitle: "ReactJs in production is not learned in 7 days"
+seoTitle: "You or your team will not learn ReactJs in 7 days or with a Hello World!"
 description: "A practical reflection on why building stable ReactJs applications for production requires more than quick tutorials and Hello World examples."
 pubDate: 2019-01-26
 tags: ["React", "JavaScript", "Frontend", "Software Engineering"]

@@ -1,6 +1,6 @@
 ---
 title: "Como a estabilidade estática aumenta a resiliência da sua aplicação"
-seoTitle: "Estabilidade estática e resiliência de aplicações"
+seoTitle: "Como a estabilidade estática aumenta a resiliência da sua aplicação"
 description: "Vamos ver como o conceito de estabilidade estática e alguns padrões dessa abordagem podem tornar as aplicações distribuídas mais resilientes."
 pubDate: 2024-08-05
 tags: ["AWS", "Resilience", "Reliability", "Microservices", "High Availability"]

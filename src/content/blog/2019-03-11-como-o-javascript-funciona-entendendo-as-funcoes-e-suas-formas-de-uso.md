@@ -1,6 +1,6 @@
 ---
 title: "Como o Javascript funciona: entendendo as funções e suas formas de uso"
-seoTitle: "Como funções JavaScript funcionam"
+seoTitle: "Como o Javascript funciona: entendendo as funções e suas formas de uso"
 description: "Vamos ver o que são, como definir e invocar funções de diferentes formas."
 pubDate: 2019-03-11
 tags: ["JavaScript","Frontend","Programming","Functions"]

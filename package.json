@@ -34,5 +34,10 @@
     "@keystatic/core": "^0.6.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "overrides": {
+    "brace-expansion": "5.0.8",
+    "minimatch": "10.2.6",
+    "sharp": "0.35.3"
   }
 }
