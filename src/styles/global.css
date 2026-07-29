@@ -1278,6 +1278,12 @@ p {
   }
 }
 
+@media (min-width: 1200px) {
+  .article {
+    max-width: 900px;
+  }
+}
+
 @media (max-width: 900px) {
   .home-hero,
   .home-section--split,
