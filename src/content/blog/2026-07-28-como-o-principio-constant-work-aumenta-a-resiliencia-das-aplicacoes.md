@@ -47,7 +47,7 @@ Embora os comportamentos bimodais possam parecer uma solução lógica para lida
 
 Estratégias de fallback são frequentemente vistas como uma solução para aumentar a resiliência de sistemas distribuídos. A lógica por trás dos fallbacks é simples: se um componente do sistema falhar, outro pode assumir suas funções, garantindo que o sistema continue a operar. No entanto, na prática, os fallbacks muitas vezes mais atrapalham do que ajudam, especialmente em sistemas distribuídos complexos.
 
-## Fallback em um checkout
+### Fallback em um checkout
 
 Imagine um checkout que normalmente chama um serviço de antifraude síncrono antes de aprovar um pedido. Enquanto tudo está saudável, o fluxo é simples: o pedido chega, o antifraude responde, o pagamento é autorizado e a compra segue. Mas quando o antifraude começa a falhar, a tentação é criar um "modo especial": tentar uma segunda API, consultar regras locais antigas, aumentar o timeout ou colocar pedidos em uma fila de revisão manual.
 
@@ -92,7 +92,7 @@ def finalizar_pedido(pedido):
 
 No primeiro caso, o sistema continua aceitando trabalho que não consegue concluir pelo caminho normal. No segundo, ele preserva a semântica do fluxo: ou o pedido passa pelo caminho conhecido, ou falha de forma explícita e controlada.
 
-## Redistribuição imediata de shards após falha
+### Redistribuição imediata de shards após falha
 
 Outro padrão que aparece em sistemas distribuídos é a recuperação que compete com o tráfego real. Imagine um cluster particionado por shards. Em operação normal, cada nó atende sua fatia de tráfego e mantém seu estado quente em memória. Quando um nó cai, os demais não recebem apenas mais requisições; eles também começam a copiar partições, recalcular ownership, reconstruir índices e aquecer caches locais para absorver o que foi perdido.
 
@@ -102,7 +102,7 @@ Perceba a inversão: a falha reduziu a capacidade disponível e, ao mesmo tempo,
 
 Esse tipo de incidente destaca a lição central deste post: o modo de recuperação foi acionado exatamente no pior momento possível — sob estresse máximo — e, em vez de proteger o sistema, tornou-se o próprio vetor da falha generalizada.
 
-## O fallback que apaga o trabalho do cliente
+### O fallback que apaga o trabalho do cliente
 
 O perigo de um modo de emergência não é só sobrecarregar outro componente — é tomar decisões destrutivas com base em informação incompleta. Imagine um serviço de carrinho de compras que, ao receber erros de um serviço de catálogo sobrecarregado, interpretou "não consegui consultar este produto" como "este produto não existe mais" e removeu os itens dos carrinhos dos clientes em massa. O fallback fez um trabalho *diferente* do normal, e esse trabalho diferente foi ativamente prejudicial. A lição é dura: um modo de fallback jamais deve tratar "falha ao obter o dado" como "dado ausente" — a ausência de resposta não é uma resposta.
 
@@ -133,7 +133,7 @@ def sincronizar_carrinho(item_id):
 
 A diferença é entre um sistema que, na dúvida, destrói o trabalho do cliente, e um que, na dúvida, o preserva.
 
-## A retomada que derruba de novo
+### A retomada que derruba de novo
 
 Um detalhe que quase ninguém considera: a bimodalidade também ataca na *recuperação*. Depois de uma falha, religar o sistema "de uma vez só" pode ser tão perigoso quanto a falha original. Um serviço que havia desativado uma camada de cache e depois a reativou instantaneamente para 100% do tráfego viu o cache ser incapaz de absorver a enxurrada súbita: timeouts, filas de retry dobrando o trabalho e a disponibilidade caindo novamente. A recuperação também é um modo — e a transição de volta ao normal precisa ser gradual (uma rampa de 20% em 20%, por exemplo), senão o próprio ato de recuperar vira um segundo incidente.
 
@@ -143,19 +143,27 @@ Um detalhe que quase ninguém considera: a bimodalidade também ataca na *recupe
 
 Pense na seguinte metáfora. Um banco comprou um gerador de emergência e, todo mês, ligava-o brevemente para "testar" — o motor pegava, e todos ficavam tranquilos. No dia em que a energia realmente caiu, o gerador ligou e, quinze minutos depois, morreu: o teste mensal nunca o havia exercitado *sob carga real e sustentada*. É a metáfora perfeita do fallback: um caminho que parece funcionar nos testes superficiais, mas que só é cobrado de verdade no pior momento — e falha exatamente aí. Se um modo de emergência não roda continuamente sob condições reais, você não tem um plano de contingência; você tem uma suposição.
 
-**Latência e Sobreposição de Carga:** Um dos maiores problemas com os fallbacks é que eles podem introduzir latência adicional. Quando um sistema passa para um modo de fallback, ele geralmente faz isso em resposta a uma falha ou uma condição de sobrecarga. No entanto, essa transição pode adicionar um tempo extra de processamento, especialmente se o fallback envolver consultas a componentes mais lentos, como um banco de dados em vez de um cache.
+### Latência e sobreposição de carga
+
+Um dos maiores problemas com os fallbacks é que eles podem introduzir latência adicional. Quando um sistema passa para um modo de fallback, ele geralmente faz isso em resposta a uma falha ou uma condição de sobrecarga. No entanto, essa transição pode adicionar um tempo extra de processamento, especialmente se o fallback envolver consultas a componentes mais lentos, como um banco de dados em vez de um cache.
 
 Além disso, como discutido anteriormente, a sobrecarga em um componente de fallback pode causar uma falha em cascata. Em vez de resolver o problema, o fallback pode ampliá-lo, resultando em uma interrupção mais ampla e mais severa.
 
-**Modos de Operação Raros e Mal Testados:** Fallbacks são, por definição, modos de operação que não são usados regularmente. Isso significa que eles são menos testados, tanto em ambientes de desenvolvimento quanto em produção. Quando eles são ativados, é mais provável que ocorram falhas não previstas, o que pode levar a comportamentos inesperados.
+### Modos de operação raros e mal testados
+
+Fallbacks são, por definição, modos de operação que não são usados regularmente. Isso significa que eles são menos testados, tanto em ambientes de desenvolvimento quanto em produção. Quando eles são ativados, é mais provável que ocorram falhas não previstas, o que pode levar a comportamentos inesperados.
 
 Em um sistema distribuído, onde diferentes componentes podem estar espalhados por várias regiões geográficas e infraestruturas, a complexidade de testar e validar todos os cenários de fallback é enorme. Mesmo com testes abrangentes, há sempre o risco de cenários imprevisíveis ocorrerem em produção.
 
-**Falhas em Cascata:** Uma das falhas mais críticas associadas aos fallbacks é a falha em cascata. Isso ocorre quando o componente de fallback é sobrecarregado por um fluxo inesperado de tráfego ou falhas subsequentes, causando uma série de falhas que se propagam por todo o sistema.
+### Falhas em cascata
+
+Uma das falhas mais críticas associadas aos fallbacks é a falha em cascata. Isso ocorre quando o componente de fallback é sobrecarregado por um fluxo inesperado de tráfego ou falhas subsequentes, causando uma série de falhas que se propagam por todo o sistema.
 
 Um exemplo clássico seria uma redistribuição imediata de partições depois da perda de um nó. Os nós restantes precisam atender mais tráfego e, ao mesmo tempo, copiar estado, reconstruir índices e aquecer memória. Se eles não tiverem folga para absorver os dois trabalhos juntos, a recuperação pode derrubar justamente os nós que deveriam estabilizar o sistema.
 
-**Complexidade de Implementação:** Implementar fallbacks muitas vezes requer adicionar lógica extra ao sistema, o que aumenta a complexidade do código e torna o sistema mais difícil de manter e evoluir. Essa complexidade adicional pode introduzir novos bugs e tornar o sistema mais propenso a falhas.
+### Complexidade de implementação
+
+Implementar fallbacks muitas vezes requer adicionar lógica extra ao sistema, o que aumenta a complexidade do código e torna o sistema mais difícil de manter e evoluir. Essa complexidade adicional pode introduzir novos bugs e tornar o sistema mais propenso a falhas.
 
 Além disso, a necessidade de manter e testar continuamente os modos de fallback adiciona uma carga operacional significativa, aumentando os custos e a dificuldade de gerenciar o sistema.
 
@@ -192,25 +200,33 @@ def processar_lote(itens):
 
 No primeiro caso, a carga sob falha é um múltiplo da carga normal. No segundo, ela tende a diminuir a cada ciclo — o oposto de uma avalanche.
 
-## Constant Work: Há uma outra forma de pensar!
+## Constant Work: há outra forma de pensar
 
 O princípio de **constant work** baseia-se na ideia de que um sistema deve realizar a mesma quantidade de trabalho, independentemente da carga ou das condições de operação. Em vez de alternar entre os modos, o sistema opera de maneira uniforme, realizando operações consistentes em todas as situações. Isso elimina a necessidade de modos de fallback e reduz a complexidade e os riscos associados aos comportamentos bimodais.
 
 ## Como Constant Work Aumenta a Resiliência
 
-**Operação Consistente:** Ao adotar o princípio de constant work, um sistema garante que a mesma quantidade de trabalho seja realizada, independentemente do número de solicitações ou da saúde dos componentes do sistema. Isso significa que o sistema não precisa alterar seu comportamento em resposta a condições adversas, tornando-o mais previsível e fácil de gerenciar.
+### Operação consistente
+
+Ao adotar o princípio de constant work, um sistema garante que a mesma quantidade de trabalho seja realizada, independentemente do número de solicitações ou da saúde dos componentes do sistema. Isso significa que o sistema não precisa alterar seu comportamento em resposta a condições adversas, tornando-o mais previsível e fácil de gerenciar.
 
 Por exemplo, no serviço Amazon Route 53, os servidores de DNS realizam a mesma operação de verificação de saúde de endpoints, independentemente de quantos endpoints estejam saudáveis ou falhando. Essa consistência garante que o sistema continue operando de maneira confiável, mesmo em caso de falhas massivas, como a perda de uma Zona de Disponibilidade.
 
-**Redução de Variabilidade:** Um dos maiores desafios em sistemas distribuídos é lidar com a variabilidade na carga e nas condições operacionais. A variabilidade pode causar flutuações no desempenho e aumentar a probabilidade de falhas. Ao operar de maneira constante, um sistema elimina a variabilidade, mantendo um desempenho estável e previsível.
+### Redução de variabilidade
+
+Um dos maiores desafios em sistemas distribuídos é lidar com a variabilidade na carga e nas condições operacionais. A variabilidade pode causar flutuações no desempenho e aumentar a probabilidade de falhas. Ao operar de maneira constante, um sistema elimina a variabilidade, mantendo um desempenho estável e previsível.
 
 No caso do Route 53, mesmo que centenas ou milhares de endpoints falhem simultaneamente, o sistema realiza o mesmo trabalho, sem aumentar o tempo de processamento ou sobrecarregar os recursos. Isso elimina a possibilidade de uma falha em cascata, onde um componente falha e sobrecarrega outros, levando a um colapso do sistema.
 
-**Anti-Fragilidade:** Sistemas baseados em constant work podem se tornar anti-frágeis, ou seja, podem melhorar seu desempenho sob condições de estresse. Por exemplo, em um sistema onde menos trabalho é necessário sob alta carga (como a redução da carga em urnas de café à medida que o café é servido), o sistema pode se tornar mais eficiente em momentos de maior estresse.
+### Anti-fragilidade
+
+Sistemas baseados em constant work podem se tornar anti-frágeis, ou seja, podem melhorar seu desempenho sob condições de estresse. Por exemplo, em um sistema onde menos trabalho é necessário sob alta carga (como a redução da carga em urnas de café à medida que o café é servido), o sistema pode se tornar mais eficiente em momentos de maior estresse.
 
 Um exemplo prático é o AWS Hyperplane, que configura componentes como Network Load Balancers. O Hyperplane aplica constantemente configurações máximas, mesmo que poucas sejam necessárias, garantindo que, independentemente do número de mudanças, o sistema continue operando de forma eficiente e sem sobrecarga.
 
-**Simples de Implementar e Manter:** Uma das maiores vantagens do constant work é a simplicidade. Como o sistema opera da mesma maneira em todas as condições, a lógica é mais simples e direta. Isso não só torna o sistema mais fácil de implementar, mas também reduz a necessidade de testes complexos e a probabilidade de introduzir novos bugs.
+### Simples de implementar e manter
+
+Uma das maiores vantagens do constant work é a simplicidade. Como o sistema opera da mesma maneira em todas as condições, a lógica é mais simples e direta. Isso não só torna o sistema mais fácil de implementar, mas também reduz a necessidade de testes complexos e a probabilidade de introduzir novos bugs.
 
 Além disso, a simplicidade torna o sistema mais fácil de manter a longo prazo. Equipes de engenharia podem entender rapidamente como o sistema opera, e novas funcionalidades podem ser adicionadas sem o risco de quebrar a lógica existente.
 
@@ -389,7 +405,7 @@ Quando o sistema está saudável, esse deslocamento parece inofensivo. O produto
 
 O comportamento bimodal aparece na recuperação. Depois de uma hora de problema, o sistema volta e tenta "colocar a casa em ordem": aumenta a concorrência, sobe mais workers, reduz delays, retenta mensagens antigas e tenta drenar o backlog o mais rápido possível. Parece a atitude correta, mas pode ser exatamente o segundo incidente. O banco, a API downstream, o serviço de pagamento, o storage ou qualquer dependência que participa do processamento passa a receber uma carga que nunca receberia no modo normal.
 
-![Filas: backlog bimodal versus trabalho constante. Na drenagem bimodal, o backlog leva a escala agressiva, pico nas dependências e retries que aumentam o atraso. No trabalho constante, o sistema mantém taxa segura, backpressure, limites por workload e carga previsível nas dependências](/blog/constant-work/pt/image-10.png)
+![Fila com backlog bimodal: produtores alimentam a fila, a fila acumula mais de 100 mil mensagens, consumidores escalam e retentam, dependências saturam e os retries voltam a alimentar o backlog; o gráfico mostra o trabalho executado disparando durante a recuperação](/blog/constant-work/pt/image-11.png)
 
 O *constant work* aplicado a filas não significa processar tudo sempre, porque o volume de mensagens pode crescer sem limite. Esse é um ponto importante: filas normalmente vivem no data plane, e data planes não têm o mesmo teto previsível de um conjunto de health checks ou de uma tabela de configuração. Então a pergunta muda. Não é "como faço o trabalho máximo o tempo todo?", e sim: **como mantenho constante e segura a taxa de trabalho executada, mesmo quando a fila cresce?**
 
@@ -421,6 +437,8 @@ def consumir_fila():
 Esse código parece elástico, mas é bimodal. Em modo normal, o sistema consome numa taxa confortável. Sob backlog, ele muda a própria personalidade: mais concorrência, retries mais agressivos, mais pressão nas dependências e maior chance de transformar recuperação em avalanche. O backlog passa a dirigir o sistema.
 
 Um desenho mais resiliente faz o oposto: mantém uma taxa segura de consumo, isola workloads, trata mensagens antigas como outra classe de trabalho e aplica backpressure quando as dependências estão degradadas.
+
+![Fila com trabalho constante: produtores alimentam uma fila que considera prioridade e idade da mensagem, mensagens antigas seguem para backlog, TTL ou DLQ, o processamento passa por rate limit por workload, consumidores trabalham em taxa segura e as dependências recebem carga previsível; o gráfico mostra o trabalho executado ficando controlado](/blog/constant-work/pt/image-12.png)
 
 ```python
 # ✅ Trabalho constante: taxa segura, isolamento e dívida controlada
@@ -510,11 +528,17 @@ A meta é simples: a falha não pode custar mais recursos que o sucesso, senão 
 
 Seria desonesto vender o constant work como uma bala de prata — ele tem um custo real, e reconhecê-lo é o que separa uma decisão de engenharia madura de uma moda cega.
 
-**Você paga pelo pior caso o tempo todo.** A essência do constant work é dimensionar para o máximo e operar sempre nesse nível, mesmo quando a carga real é baixa. Isso significa desperdício deliberado de recursos: CPU, memória, banda e, no fim, dinheiro. Num sistema com carga muito baixa ou muito esporádica, manter o motor sempre no talo pode não se justificar economicamente.
+### Você paga pelo pior caso o tempo todo
 
-**Ele pressupõe um volume de trabalho limitado e conhecido.** O padrão funciona lindamente quando o "trabalho total" tem um teto previsível: um número finito de health checks, uma tabela de configuração que cabe em memória, um conjunto de rotas que não cresce sem limite. Quando o volume de dados a processar pode crescer de forma ilimitada ou tem cardinalidade muito alta, "fazer sempre o trabalho máximo" deixa de ser constante e vira simplesmente caro e inviável — você não vai pré-carregar um dataset de terabytes "só por garantia".
+A essência do constant work é dimensionar para o máximo e operar sempre nesse nível, mesmo quando a carga real é baixa. Isso significa desperdício deliberado de recursos: CPU, memória, banda e, no fim, dinheiro. Num sistema com carga muito baixa ou muito esporádica, manter o motor sempre no talo pode não se justificar economicamente.
 
-**A regra prática:** aplique constant work onde o trabalho é limitado, o custo do pior caso é aceitável e a previsibilidade sob falha vale mais que a economia de recursos em regime normal — tipicamente em planos de controle, roteamento, health checking e distribuição de configuração. Para data planes com volume ilimitado, como filas de eventos, prefira outras ferramentas (backpressure, isolamento por células, limites por workload, TTL, DLQ e degradação que preserva uniformidade). Nesses casos, o trabalho constante não é "processar tudo sempre"; é manter uma taxa segura e previsível de processamento. O objetivo nunca é "fazer trabalho constante a qualquer custo" — é **eliminar a bimodalidade**, e o constant work é uma das formas de fazer isso, não a única.
+### Ele pressupõe um volume de trabalho limitado e conhecido
+
+O padrão funciona lindamente quando o "trabalho total" tem um teto previsível: um número finito de health checks, uma tabela de configuração que cabe em memória, um conjunto de rotas que não cresce sem limite. Quando o volume de dados a processar pode crescer de forma ilimitada ou tem cardinalidade muito alta, "fazer sempre o trabalho máximo" deixa de ser constante e vira simplesmente caro e inviável — você não vai pré-carregar um dataset de terabytes "só por garantia".
+
+### A regra prática
+
+Aplique constant work onde o trabalho é limitado, o custo do pior caso é aceitável e a previsibilidade sob falha vale mais que a economia de recursos em regime normal — tipicamente em planos de controle, roteamento, health checking e distribuição de configuração. Para data planes com volume ilimitado, como filas de eventos, prefira outras ferramentas (backpressure, isolamento por células, limites por workload, TTL, DLQ e degradação que preserva uniformidade). Nesses casos, o trabalho constante não é "processar tudo sempre"; é manter uma taxa segura e previsível de processamento. O objetivo nunca é "fazer trabalho constante a qualquer custo" — é **eliminar a bimodalidade**, e o constant work é uma das formas de fazer isso, não a única.
 
 ## Fallback vs. Constant Work: um resumo
 
@@ -539,7 +563,7 @@ Isso não é grátis, e eu não quero te vender uma bala de prata: você paga pe
 
 No fim, resiliência de verdade não é ter um plano brilhante para quando tudo dá errado. É construir um sistema que mal percebe que algo deu errado — porque ele continua, teimosamente, fazendo sempre a mesma coisa.
 
-**Referências:**
+## Referências
 
 - [https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146](https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146)
 - [https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/](https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/)

@@ -47,7 +47,7 @@ Although bimodal behaviors may seem like a logical solution for handling failure
 
 Fallback strategies are frequently seen as a solution for increasing the resilience of distributed systems. The logic behind fallbacks is simple: if one component of the system fails, another can take over its functions, ensuring the system keeps operating. However, in practice, fallbacks often hurt more than they help, especially in complex distributed systems.
 
-## Fallback in a checkout flow
+### Fallback in a checkout flow
 
 Imagine a checkout flow that normally calls a synchronous fraud detection service before approving an order. While everything is healthy, the flow is simple: the order arrives, fraud detection responds, payment is authorized, and the purchase continues. But when fraud detection starts failing, the temptation is to create a "special mode": try a second API, consult old local rules, increase the timeout, or place orders into a manual review queue.
 
@@ -92,7 +92,7 @@ def complete_order(order):
 
 In the first case, the system keeps accepting work it cannot complete through the normal path. In the second, it preserves the semantics of the flow: either the order goes through the known path, or it fails explicitly and in a controlled way.
 
-## Immediate shard redistribution after failure
+### Immediate shard redistribution after failure
 
 Another pattern that appears in distributed systems is recovery that competes with real traffic. Imagine a cluster partitioned by shards. In normal operation, each node serves its share of traffic and keeps its state warm in memory. When one node fails, the others do not just receive more requests; they also start copying partitions, recalculating ownership, rebuilding indexes, and warming local caches to absorb what was lost.
 
@@ -102,7 +102,7 @@ Notice the inversion: the failure reduced available capacity and, at the same ti
 
 This kind of incident highlights the central lesson of this post: the recovery mode was triggered at exactly the worst possible moment — under maximum stress — and, instead of protecting the system, became the very vector of the widespread failure.
 
-## The fallback that deletes the customer's work
+### The fallback that deletes the customer's work
 
 The danger of an emergency mode is not just overloading another component — it's making destructive decisions based on incomplete information. Imagine a shopping cart service that, upon receiving errors from an overloaded catalog service, interpreted "I couldn't look up this product" as "this product no longer exists" and removed items from customers' carts en masse. The fallback did *different* work from the normal path, and that different work was actively harmful. The lesson is harsh: a fallback mode must never treat "failed to obtain the data" as "data absent" — the absence of a response is not a response.
 
@@ -133,7 +133,7 @@ def sync_cart(item_id):
 
 The difference is between a system that, in doubt, destroys the customer's work, and one that, in doubt, preserves it.
 
-## The recovery that brings it all down again
+### The recovery that brings it all down again
 
 A detail almost nobody considers: bimodality also strikes during *recovery*. After a failure, turning the system back on "all at once" can be as dangerous as the original failure. A service that had disabled a cache layer and then reactivated it instantly to 100% of traffic saw the cache unable to absorb the sudden surge: timeouts, retry queues doubling the work, and availability dropping again. Recovery is also a mode — and the transition back to normal needs to be gradual (a ramp of 20% at a time, for example), otherwise the very act of recovering becomes a second incident.
 
@@ -143,19 +143,27 @@ A detail almost nobody considers: bimodality also strikes during *recovery*. Aft
 
 Think of the following metaphor. A bank bought an emergency generator and, every month, briefly started it up to "test" it — the engine caught, and everyone felt reassured. On the day the power actually went out, the generator started and, fifteen minutes later, died: the monthly test had never exercised it *under real, sustained load*. It's the perfect metaphor for fallback: a path that seems to work in superficial tests, but that is only truly called upon at the worst moment — and fails exactly there. If an emergency mode doesn't run continuously under real conditions, you don't have a contingency plan; you have an assumption.
 
-**Latency and Load Overlap:** One of the biggest problems with fallbacks is that they can introduce additional latency. When a system switches to a fallback mode, it generally does so in response to a failure or an overload condition. However, this transition can add extra processing time, especially if the fallback involves queries to slower components, such as a database instead of a cache.
+### Latency and load overlap
+
+One of the biggest problems with fallbacks is that they can introduce additional latency. When a system switches to a fallback mode, it generally does so in response to a failure or an overload condition. However, this transition can add extra processing time, especially if the fallback involves queries to slower components, such as a database instead of a cache.
 
 Furthermore, as discussed earlier, overload on a fallback component can cause a cascading failure. Instead of solving the problem, the fallback can amplify it, resulting in a broader and more severe outage.
 
-**Rare and Poorly Tested Operating Modes:** Fallbacks are, by definition, operating modes that are not used regularly. This means they are less tested, both in development environments and in production. When they are activated, unforeseen failures are more likely to occur, which can lead to unexpected behaviors.
+### Rare and poorly tested operating modes
+
+Fallbacks are, by definition, operating modes that are not used regularly. This means they are less tested, both in development environments and in production. When they are activated, unforeseen failures are more likely to occur, which can lead to unexpected behaviors.
 
 In a distributed system, where different components may be spread across various geographic regions and infrastructures, the complexity of testing and validating all fallback scenarios is enormous. Even with comprehensive testing, there is always the risk of unpredictable scenarios occurring in production.
 
-**Cascading Failures:** One of the most critical failures associated with fallbacks is the cascading failure. This occurs when the fallback component is overloaded by an unexpected flow of traffic or subsequent failures, causing a series of failures that propagate throughout the entire system.
+### Cascading failures
+
+One of the most critical failures associated with fallbacks is the cascading failure. This occurs when the fallback component is overloaded by an unexpected flow of traffic or subsequent failures, causing a series of failures that propagate throughout the entire system.
 
 A classic example would be immediate partition redistribution after the loss of a node. The remaining nodes need to serve more traffic and, at the same time, copy state, rebuild indexes, and warm memory. If they do not have enough room to absorb both kinds of work together, recovery can bring down the very nodes that were supposed to stabilize the system.
 
-**Implementation Complexity:** Implementing fallbacks often requires adding extra logic to the system, which increases code complexity and makes the system harder to maintain and evolve. This additional complexity can introduce new bugs and make the system more prone to failures.
+### Implementation complexity
+
+Implementing fallbacks often requires adding extra logic to the system, which increases code complexity and makes the system harder to maintain and evolve. This additional complexity can introduce new bugs and make the system more prone to failures.
 
 Furthermore, the need to continuously maintain and test fallback modes adds significant operational burden, increasing costs and the difficulty of managing the system.
 
@@ -192,25 +200,33 @@ def process_batch(items):
 
 In the first case, the load under failure is a multiple of the normal load. In the second, it tends to shrink each cycle — the opposite of an avalanche.
 
-## Constant Work: There's Another Way to Think!
+## Constant Work: there is another way to think
 
 The **constant work** principle is based on the idea that a system should perform the same amount of work regardless of load or operating conditions. Instead of switching between modes, the system operates uniformly, performing consistent operations in all situations. This eliminates the need for fallback modes and reduces the complexity and risks associated with bimodal behaviors.
 
 ## How Constant Work Increases Resilience
 
-**Consistent Operation:** By adopting the constant work principle, a system ensures that the same amount of work is performed regardless of the number of requests or the health of the system's components. This means the system does not need to change its behavior in response to adverse conditions, making it more predictable and easier to manage.
+### Consistent operation
+
+By adopting the constant work principle, a system ensures that the same amount of work is performed regardless of the number of requests or the health of the system's components. This means the system does not need to change its behavior in response to adverse conditions, making it more predictable and easier to manage.
 
 For example, in the Amazon Route 53 service, the DNS servers perform the same endpoint health-checking operation regardless of how many endpoints are healthy or failing. This consistency ensures the system keeps operating reliably, even in the case of massive failures, such as the loss of an Availability Zone.
 
-**Reduced Variability:** One of the biggest challenges in distributed systems is dealing with variability in load and operating conditions. Variability can cause performance fluctuations and increase the probability of failures. By operating in a constant manner, a system eliminates variability, maintaining stable and predictable performance.
+### Reduced variability
+
+One of the biggest challenges in distributed systems is dealing with variability in load and operating conditions. Variability can cause performance fluctuations and increase the probability of failures. By operating in a constant manner, a system eliminates variability, maintaining stable and predictable performance.
 
 In the case of Route 53, even if hundreds or thousands of endpoints fail simultaneously, the system performs the same work, without increasing processing time or overloading resources. This eliminates the possibility of a cascading failure, where one component fails and overloads others, leading to a system collapse.
 
-**Anti-Fragility:** Systems based on constant work can become anti-fragile, meaning they can improve their performance under stress conditions. For example, in a system where less work is needed under high load (like the reduction of load in coffee urns as coffee is served), the system can become more efficient during moments of greater stress.
+### Anti-fragility
+
+Systems based on constant work can become anti-fragile, meaning they can improve their performance under stress conditions. For example, in a system where less work is needed under high load (like the reduction of load in coffee urns as coffee is served), the system can become more efficient during moments of greater stress.
 
 A practical example is AWS Hyperplane, which configures components like Network Load Balancers. Hyperplane constantly applies maximum configurations, even if few are needed, ensuring that regardless of the number of changes, the system keeps operating efficiently and without overload.
 
-**Simple to Implement and Maintain:** One of the biggest advantages of constant work is simplicity. Because the system operates the same way in all conditions, the logic is simpler and more direct. This not only makes the system easier to implement, but also reduces the need for complex testing and the probability of introducing new bugs.
+### Simple to implement and maintain
+
+One of the biggest advantages of constant work is simplicity. Because the system operates the same way in all conditions, the logic is simpler and more direct. This not only makes the system easier to implement, but also reduces the need for complex testing and the probability of introducing new bugs.
 
 Furthermore, the simplicity makes the system easier to maintain in the long term. Engineering teams can quickly understand how the system operates, and new features can be added without the risk of breaking existing logic.
 
@@ -389,7 +405,7 @@ When the system is healthy, that shift looks harmless. The producer publishes, t
 
 The bimodal behavior appears during recovery. After one hour of trouble, the system comes back and tries to "catch up": increase concurrency, launch more workers, reduce delays, retry old messages, and drain the backlog as fast as possible. That sounds like the right thing to do, but it can be exactly the second incident. The database, downstream API, payment service, storage, or any dependency involved in processing starts receiving a load it would never receive in normal mode.
 
-![Queues: bimodal backlog versus constant work. In bimodal draining, the backlog leads to aggressive scaling, dependency load spikes, and retries that increase delay. In constant work, the system keeps a safe rate, backpressure, workload limits, and predictable load on dependencies](/blog/constant-work/en/image-10.png)
+![Queue with bimodal backlog: producers feed the queue, the queue accumulates more than 100 thousand messages, consumers scale and retry, dependencies saturate, and retries feed the backlog again; the chart shows executed work spiking during recovery](/blog/constant-work/en/image-11.png)
 
 *Constant work* applied to queues does not mean processing everything all the time, because the volume of messages can grow without bound. This is an important point: queues usually live in the data plane, and data planes do not have the same predictable ceiling as a set of health checks or a configuration table. So the question changes. It is not "how do I always do the maximum work?", but: **how do I keep the executed work rate constant and safe, even when the queue grows?**
 
@@ -421,6 +437,8 @@ def consume_queue():
 This code looks elastic, but it is bimodal. In normal mode, the system consumes at a comfortable rate. Under backlog, it changes its own personality: more concurrency, more aggressive retries, more pressure on dependencies, and a higher chance of turning recovery into an avalanche. The backlog starts driving the system.
 
 A more resilient design does the opposite: it keeps a safe consumption rate, isolates workloads, treats old messages as a different class of work, and applies backpressure when dependencies are degraded.
+
+![Queue with constant work: producers feed a queue that considers message priority and age, old messages go to backlog, TTL, or DLQ, processing goes through per-workload rate limits, consumers work at a safe rate, and dependencies receive predictable load; the chart shows executed work staying controlled](/blog/constant-work/en/image-12.png)
 
 ```python
 # ✅ Constant work: safe rate, isolation, and controlled debt
@@ -510,11 +528,17 @@ The goal is simple: failure cannot cost more resources than success, otherwise t
 
 It would be dishonest to sell constant work as a silver bullet — it has a real cost, and acknowledging it is what separates a mature engineering decision from a blind fad.
 
-**You pay for the worst case all the time.** The essence of constant work is to size for the maximum and always operate at that level, even when the real load is low. This means deliberate waste of resources: CPU, memory, bandwidth, and ultimately money. In a system with very low or very sporadic load, keeping the engine always floored may not be economically justified.
+### You pay for the worst case all the time
 
-**It assumes a bounded, known volume of work.** The pattern works beautifully when the "total work" has a predictable ceiling: a finite number of health checks, a configuration table that fits in memory, a set of routes that doesn't grow without limit. When the volume of data to be processed can grow unbounded or has very high cardinality, "always doing the maximum work" stops being constant and simply becomes expensive and unfeasible — you're not going to pre-load a terabyte dataset "just in case".
+The essence of constant work is to size for the maximum and always operate at that level, even when the real load is low. This means deliberate waste of resources: CPU, memory, bandwidth, and ultimately money. In a system with very low or very sporadic load, keeping the engine always floored may not be economically justified.
 
-**The practical rule:** apply constant work where the work is bounded, the worst-case cost is acceptable, and predictability under failure is worth more than resource savings under normal conditions — typically in control planes, routing, health checking, and configuration distribution. For data planes with unbounded volume, such as event queues, prefer other tools (backpressure, cell-based isolation, per-workload limits, TTL, DLQ, and degradation that preserves uniformity). In those cases, constant work is not "process everything all the time"; it is keeping a safe and predictable processing rate. The goal is never "do constant work at any cost" — it's to **eliminate bimodality**, and constant work is one of the ways to do that, not the only one.
+### It assumes a bounded, known volume of work
+
+The pattern works beautifully when the "total work" has a predictable ceiling: a finite number of health checks, a configuration table that fits in memory, a set of routes that doesn't grow without limit. When the volume of data to be processed can grow unbounded or has very high cardinality, "always doing the maximum work" stops being constant and simply becomes expensive and unfeasible — you're not going to pre-load a terabyte dataset "just in case".
+
+### The practical rule
+
+Apply constant work where the work is bounded, the worst-case cost is acceptable, and predictability under failure is worth more than resource savings under normal conditions — typically in control planes, routing, health checking, and configuration distribution. For data planes with unbounded volume, such as event queues, prefer other tools (backpressure, cell-based isolation, per-workload limits, TTL, DLQ, and degradation that preserves uniformity). In those cases, constant work is not "process everything all the time"; it is keeping a safe and predictable processing rate. The goal is never "do constant work at any cost" — it's to **eliminate bimodality**, and constant work is one of the ways to do that, not the only one.
 
 ## Fallback vs. Constant Work: a summary
 
@@ -539,7 +563,7 @@ This isn't free, and I don't want to sell you a silver bullet: you pay for the w
 
 In the end, real resilience isn't having a brilliant plan for when everything goes wrong. It's building a system that barely notices something went wrong — because it keeps, stubbornly, doing the same thing as always.
 
-**References:**
+## References
 
 - [https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146](https://medium.com/@linoyzaga/scaling-applications-with-constant-work-pattern-f253176b3146)
 - [https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/](https://aws.amazon.com/blogs/architecture/doing-constant-work-to-avoid-failures/)
