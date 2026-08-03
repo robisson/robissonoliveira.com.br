@@ -48,7 +48,7 @@ const imageUrl = new URL(image, site).toString();
 const rssHref = new URL(isEnglish ? "/en/rss.xml" : "/rss.xml", site).toString();
 
 const links = [
-  { href: `${basePath}/`, label: isEnglish ? "Home" : "Pagina inicial", key: "home" },
+  { href: `${basePath}/`, label: isEnglish ? "Home" : "Página inicial", key: "home" },
   { href: `${basePath}/blog/`, label: "Blog", key: "blog" },
   { href: isEnglish ? "/livros/" : "/livros/", label: isEnglish ? "Recommended Books" : "Livros que Recomendo", key: "livros" },
   { href: `${basePath}/${isEnglish ? "about" : "sobre-mim"}/`, label: isEnglish ? "About" : "Sobre mim", key: "sobre" },

@@ -24,5 +24,6 @@ Esta pasta documenta os agentes e skills recomendados para trabalhar neste site 
 - `skills/seo-release-validation.md`: checklist final de SEO antes de publicar.
 - `skills/astro-static-publish.md`: passo a passo para publicar o build estatico neste repo.
 - `skills/responsive-seo-check.md`: checklist de responsividade e SEO.
+- `skills/article-interactive-components.md`: padrao para simuladores e componentes interativos dentro de artigos tecnicos.
 
 Use `AGENTS.md` na raiz como fonte principal de regras do projeto.

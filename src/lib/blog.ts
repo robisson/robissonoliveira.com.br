@@ -46,6 +46,10 @@ export function postImage(id: string) {
     return "/blog/constant-work/en/image-01.png";
   }
 
+  if (slug.includes("hedging-pattern")) {
+    return "/blog/2026-07-29-resiliencia-alem-do-obvio-hedging-pattern/hedging-pattern/pt/image-01.png";
+  }
+
   if (slug.includes("trabalho-constante")) {
     return "/blog/trabalho-constante/pt/image-01.png";
   }
@@ -76,6 +80,10 @@ export function postImageMetadata(id: string): PostImageMetadata {
     return { width: 2085, height: 900, type: "image/png" };
   }
 
+  if (slug.includes("hedging-pattern")) {
+    return { width: 1496, height: 850, type: "image/png" };
+  }
+
   if (slug.includes("availability-zone-independence-azi")) {
     return { width: 977, height: 541, type: "image/png" };
   }
@@ -96,7 +104,15 @@ export function postImageMetadata(id: string): PostImageMetadata {
 }
 
 export function sortPosts(posts: BlogPost[]) {
-  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return posts.sort((a, b) => {
+    const dateOrder = b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+
+    if (dateOrder !== 0) {
+      return dateOrder;
+    }
+
+    return postSlug(b.id).localeCompare(postSlug(a.id));
+  });
 }
 
 export function postsByLocale(posts: BlogPost[], locale: Locale) {
