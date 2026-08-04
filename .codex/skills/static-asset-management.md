@@ -26,3 +26,4 @@ curl -s -o /dev/null -w '%{http_code} %{content_type} %{size_download}\n' http:/
 - `public/` e copiado para `dist/`.
 - Evite URLs absolutas de producao para assets que devem funcionar localmente.
 - Confira tamanho e tipo de conteudo para detectar HTML de erro servido como imagem.
+- Em artigos bilingues, use uma unica imagem tecnica em ingles para as versoes `pt-BR` e `en` sempre que a imagem contiver texto interno, labels de graficos, caixas de decisao, diagramas ou termos de programacao. Mantenha as copias byte-a-byte iguais entre os diretorios de idioma e traduza apenas texto externo do artigo.

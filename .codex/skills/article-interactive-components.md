@@ -37,6 +37,12 @@ Siga a mesma proporcao e linguagem visual do simulador atual:
 - Para `canvas`, use tamanho intrinseco em torno de `760x300` e CSS responsivo com `width: 100%; height: auto;`.
 - No mobile, deixe o componente ocupar a largura do artigo como imagens: `margin: 28px -16px`, sem bordas laterais.
 
+## Imagens e diagramas de apoio
+
+Quando um artigo bilingue tiver imagens, graficos ou diagramas tecnicos usados nas duas versoes do texto, mantenha o conteudo interno da imagem em ingles. O mesmo PNG deve ser reutilizado em `pt-BR` e `en`; traduza apenas o texto do artigo, `alt text`, legenda externa ou paragrafo explicativo quando necessario.
+
+Essa regra evita divergencia visual entre idiomas e preserva termos tecnicos de programacao, observabilidade, arquitetura e resiliencia no formato em que o leitor normalmente os encontra.
+
 ## Estrutura de markup
 
 No Markdown, use apenas um marcador textual:

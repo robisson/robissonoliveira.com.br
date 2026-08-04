@@ -17,6 +17,10 @@ const translationSlugs: Record<string, string> = {
     "2026-07-29-how-the-constant-work-principle-increases-application-resilience",
   "2026-07-29-how-the-constant-work-principle-increases-application-resilience":
     "2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes",
+  "2026-08-03-resiliencia-alem-do-obvio-hedging-pattern":
+    "2026-08-03-resilience-beyond-the-obvious-hedging-pattern-and-tail-latency",
+  "2026-08-03-resilience-beyond-the-obvious-hedging-pattern-and-tail-latency":
+    "2026-08-03-resiliencia-alem-do-obvio-hedging-pattern",
   "2024-08-05-como-a-estabilidade-estatica-aumenta-a-resiliencia-da-sua-aplicacao":
     "2024-08-05-how-static-stability-increases-application-resilience",
   "2024-08-05-how-static-stability-increases-application-resilience":
@@ -46,8 +50,12 @@ export function postImage(id: string) {
     return "/blog/constant-work/en/image-01.png";
   }
 
-  if (slug.includes("hedging-pattern")) {
-    return "/blog/2026-07-29-resiliencia-alem-do-obvio-hedging-pattern/hedging-pattern/pt/image-01.png";
+  if (slug.includes("resilience-beyond-the-obvious-hedging-pattern-and-tail-latency")) {
+    return "/blog/2026-08-03-resilience-beyond-the-obvious-hedging-pattern-and-tail-latency/hedging-pattern/en/image-01.png";
+  }
+
+  if (slug.includes("resiliencia-alem-do-obvio-hedging-pattern")) {
+    return "/blog/2026-08-03-resiliencia-alem-do-obvio-hedging-pattern/hedging-pattern/pt/image-01.png";
   }
 
   if (slug.includes("trabalho-constante")) {
