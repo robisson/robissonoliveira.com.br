@@ -12,6 +12,8 @@ language: "en"
 
 **TLDR;** After almost 5 years without writing anything here, I decided to write again. Last time, I was writing a series of articles focused on frontend, mainly ReactJs and deeper JavaScript topics. Now, working at AWS as a Principal Cloud Application Architect, I am much closer to the context of **cloud computing and application resilience**, and that is what I will start writing about from now on.
 
+> Read the Portuguese version here: [Como a estabilidade estática aumenta a resiliência da sua aplicação](/blog/2024-08-05-como-a-estabilidade-estatica-aumenta-a-resiliencia-da-sua-aplicacao/).
+
 With people, companies, teams, and applications increasingly connected 24 hours a day, the market increasingly demands that applications and services remain always operating and without failures. At least that is what every customer wants and expects when using a service. But being much more pragmatic, “always operating and without failures” does not exist. We are increasingly moving from centralized to distributed contexts, in teams, applications, and businesses.
 
 In this increasingly distributed context, I really like Amazon CTO Werner Vogels' phrase: “Everything fails all the time.” It is with this mindset that we need to design our applications to be more resilient.

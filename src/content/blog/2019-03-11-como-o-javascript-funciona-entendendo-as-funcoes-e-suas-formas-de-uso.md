@@ -8,6 +8,9 @@ series: "Frontend"
 language: "pt-BR"
 ---
 
+> Leia a versão em inglês aqui: [How JavaScript works: understanding functions and how to use them](/en/blog/2019-03-11-how-javascript-works-understanding-functions-and-how-to-use-them/).
+
+
 ![Imagem 1 do artigo](/blog/javascript-funcoes/image-01.png)
 
 Eu venho traduzindo há algumas semanas a série de artigos do Alexander Zlatkov [**como o Javascript funciona**](https://medium.com/reactbrasil/como-o-javascript-funciona-uma-vis%C3%A3o-geral-da-engine-runtime-e-da-call-stack-471dd5e1aa30). São todos artigos de qualidade altíssima. Entre os artigos dele não tem um para falar das funções em Javascript, pelo menos não ainda, então esse eu resolvi escrever.

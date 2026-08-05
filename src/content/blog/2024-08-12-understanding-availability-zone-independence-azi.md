@@ -10,6 +10,8 @@ language: "en"
 
 **TLDR;** The idea of this post is to explore, in a broad way, a concept we do not discuss enough in the context of distributed systems development, but that makes a major difference for applications that need a high level of resilience. We will look at the design, deployment, observability, and failure response of an application that has the characteristic of being Availability Zone Independent (AZI).
 
+> Read the Portuguese version here: [Entendendo o que é Availability Zone Independence(AZI) para aumentar a resiliência das aplicações](/blog/2024-08-12-entendendo-availability-zone-independence-azi/).
+
 In the previous post [How static stability increases your application's resilience](/en/blog/2024-08-05-how-static-stability-increases-application-resilience/) we discussed how an application can keep operating without changing its state, even when dependencies fail totally or partially. Many examples I gave were related to the failure of an availability zone.
 
 I used the term Availability Zone Independence (AZI) in the title of this post, but you may also find articles about the same subject using the term Availability Zone Affinity. I will use the first one because I think it better reflects the result I expect when I apply this concept to application design: making the application more resilient when failures happen, or, more specifically, making it fail independently when we are talking about availability zones.

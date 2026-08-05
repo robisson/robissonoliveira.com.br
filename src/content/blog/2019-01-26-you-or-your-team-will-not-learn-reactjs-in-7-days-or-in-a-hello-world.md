@@ -8,6 +8,9 @@ series: "Frontend"
 language: "en"
 ---
 
+> Read the Portuguese version here: [Você ou o seu time não vão aprender ReactJs em 7 dias ou em um Hello World!](/blog/2019-01-26-voce-ou-o-seu-time-nao-vao-aprender-reactjs-em-7-dias-ou-em-um-hello-world/).
+
+
 ![Article image 1](/blog/reactjs-7-dias-hello-world/image-01.png)
 
 The goal of this article is to position the reader around the fact that building a ReactJs application to run in production in a stable and evolving way may not be as simple as some articles can make it seem.

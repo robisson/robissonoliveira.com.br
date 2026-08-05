@@ -16,6 +16,8 @@ language: en
 ---
 **TLDR;** This post is about one of the things that most blew my mind since I started working at AWS with large-scale distributed systems: **many of the approaches our engineering intuition swears will increase resilience are exactly the ones that make us more vulnerable.** Fallbacks, emergency modes, "plan Bs" that only run when something goes wrong — they look like prudence, but they hide a trap. In this post we will discuss an alternative to that: the constant work principle.
 
+> Read the Portuguese version here: [Resiliência além do óbvio: O princípio do trabalho constante](/blog/2026-07-29-como-o-principio-trabalho-constante-aumenta-a-resiliencia-das-aplicacoes/).
+
 Let me start with a question that sounds silly. When your system fails, does it start doing **more** work or **less**? Stop and think about it for a second. Most systems we design answer "more" — when the cache goes down, we hit the database; when a node dies, the others take over its load; when something errors, we log ten times as much. And that's the problem: we design systems that do **more work at precisely the worst possible moment**, when they're already under stress. It's like a car whose brakes require more force the faster you go.
 
 That inversion is the root of what we call **bimodal behavior** — and understanding it changes the way you design your application's architecture.

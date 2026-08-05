@@ -8,6 +8,9 @@ series: "Frontend"
 language: "pt-BR"
 ---
 
+> Leia a versão em inglês aqui: [You or your team will not learn ReactJs in 7 days or with a Hello World!](/en/blog/2019-01-26-you-or-your-team-will-not-learn-reactjs-in-7-days-or-in-a-hello-world/).
+
+
 ![Imagem 1 do artigo](/blog/reactjs-7-dias-hello-world/image-01.png)
 
 O objetivo desse artigo é posicionar o leitor de que desenvolver com ReactJs uma aplicação para rodar em produção de forma estável e evoluindo, pode não ser tão simples como alguns artigos podem dar a impressão.

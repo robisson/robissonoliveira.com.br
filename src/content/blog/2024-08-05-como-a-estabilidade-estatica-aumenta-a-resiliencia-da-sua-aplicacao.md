@@ -12,6 +12,8 @@ language: "pt-BR"
 
 **TLDR;** Depois de quase 5 anos sem escrever nada aqui, resolvi voltar a escrever. Da última vez, eu estava numa série de artigos voltados ao frontend, principalmente ReactJs e assuntos mais profundos de Javascript. Agora trabalhando na AWS como Principal Cloud Application Architect, estou muito inserido no contexto de **cloud computing e resiliência de aplicações** e é sobre isso que vou começar a escrever a partir de agora.
 
+> Leia a versão em inglês aqui: [How static stability increases your application's resilience](/en/blog/2024-08-05-how-static-stability-increases-application-resilience/).
+
 Atualmente com as pessoas, empresas, times e aplicações cada vez mais conectadas 24 horas por dia é cada vez mais demandado pelo mercado que as aplicações e serviços desenvolvidos estejam operando sempre e sem falhas. Pelo menos isso é o desejado e esperado por qualquer cliente no momento que vai utilizar um serviço. Mas sendo bem mais pragmático o “operando sempre e sem falhas” não existe, estamos cada vez mais num contexto de migração do centralizado para o distribuído, em termos de times, aplicações e negócios.
 
 Nesse contexto cada vez mais distribuído, gosto muito da frase do CTO da Amazon Werner Vogels que diz “Everything fail all the time” que traduzindo seria “Todas as coisas falham o tempo todo”. E é em cima desse “mindset” que precisamos fazer o design de nossas aplicações a fim de serem mais resilientes.

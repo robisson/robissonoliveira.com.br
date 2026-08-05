@@ -8,6 +8,9 @@ series: "Frontend"
 language: "en"
 ---
 
+> Read the Portuguese version here: [Como o Javascript funciona: entendendo as funções e suas formas de uso](/blog/2019-03-11-como-o-javascript-funciona-entendendo-as-funcoes-e-suas-formas-de-uso/).
+
+
 ![Article image 1](/blog/javascript-funcoes/image-01.png)
 
 I had been translating Alexander Zlatkov's series [**How JavaScript works**](https://medium.com/reactbrasil/como-o-javascript-funciona-uma-vis%C3%A3o-geral-da-engine-runtime-e-da-call-stack-471dd5e1aa30) for a few weeks. They are all very high-quality articles. Among his articles there was not one about functions in JavaScript, at least not yet, so I decided to write this one.

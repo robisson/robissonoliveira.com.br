@@ -10,6 +10,8 @@ language: "pt-BR"
 
 **TLDR;** A ideia desse post é explorar de forma bem abrangente(assim espero) um conceito que falamos pouco no contexto de desenvolvimento de sistemas distribuídos, mas que faz uma grande diferença em aplicações que precisam de elevado nível de resiliência. Vamos ver sobre o design, deploy, observability e a resposta a falhas de uma aplicação que tem a característica de ser Availability Zone Independence(AZI).
 
+> Leia a versão em inglês aqui: [Understanding Availability Zone Independence (AZI) to increase application resilience](/en/blog/2024-08-12-understanding-availability-zone-independence-azi/).
+
 No último post [Como a estabilidade estática aumenta a resiliência da sua aplicação](/blog/2024-08-05-como-a-estabilidade-estatica-aumenta-a-resiliencia-da-sua-aplicacao/) falamos como uma aplicação pode continuar operando sem mudar o seu estado, mesmo quando as dependências falham total ou parcialmente. Muitos exemplos que dei foram relacionados a falha de uma zona de disponibilidade.
 
 Usei no título desse post o termo Availability Zone Independence(AZI), mas você pode encontrar artigos relacionados ao mesmo assunto por Availability Zone Affinity. Vou usar o primeiro, porque acho que reflete melhor o resultado que espero quando aplico esse conceito no design de aplicações, tornar a aplicação mais resiliente quando falhas acontecem, ou ainda, falhar de forma independente quando falamos de zonas de disponibilidade.
