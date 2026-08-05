@@ -16,6 +16,8 @@ language: en
 ---
 **TLDR:** The hedging pattern boosts resilience by using speculative redundancy to reduce an application's exposure to tail latency. That’s a rather pompous-sounding phrase, isn't it? But the idea is simple: launch a primary request attempt to a destination, wait for a duration based on the operation's expected behavior, and—if it takes longer than that threshold—send a second attempt via another plausibly healthy path. The application uses the first valid response and cancels the losing attempt (or limits its cost). Today’s topic is the hedging pattern and tail latency; I’ll mention upfront that we’ll see plenty of numbers in this article, along with a bit of math (hopefully correct).
 
+> Read the Portuguese version here: [Resiliência além do óbvio #2: Hedging pattern e tail latency](/blog/2026-08-03-resiliencia-alem-do-obvio-hedging-pattern/).
+
 In distributed systems, not every failure appears as unavailability. Often a dependency keeps responding, but responds too late: a replica goes through a GC pause, a local queue grows, a network route gets worse, a specific partition becomes temporarily slower. The hedging pattern increases resilience when it prevents that localized variation from defining the application's final experience.
 
 The pattern only works well when there is independence between paths, idempotency, cancellation and a budget for extra load. Without these controls, the same mechanism that should mask a localized slowdown can double traffic during a correlated degradation and turn protection into incident amplification.
