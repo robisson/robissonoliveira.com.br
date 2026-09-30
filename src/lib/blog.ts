@@ -46,6 +46,10 @@ export function translatedPostSlug(id: string) {
 export function postImage(id: string) {
   const slug = postSlug(id);
 
+  if (slug.includes("high-throughput-ledger-on-dynamodb")) {
+    return "/blog/high-throughput-ledger/image1.png";
+  }
+
   if (slug.includes("how-the-constant-work")) {
     return "/blog/constant-work/en/image-01.png";
   }
@@ -83,6 +87,10 @@ export function postImage(id: string) {
 
 export function postImageMetadata(id: string): PostImageMetadata {
   const slug = postSlug(id);
+
+  if (slug.includes("high-throughput-ledger-on-dynamodb")) {
+    return { width: 3200, height: 1120, type: "image/png" };
+  }
 
   if (slug.includes("constant-work") || slug.includes("trabalho-constante")) {
     return { width: 2085, height: 900, type: "image/png" };
